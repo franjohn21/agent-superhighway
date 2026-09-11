@@ -6,7 +6,7 @@ const positions = [
   { id: "muse", context: "Your day to day", side: "left", position: 2 },
   { id: "instinct", context: "Bookings & payments", side: "right", position: 0 },
   { id: "boardy", context: "Introductions", side: "right", position: 1 },
-  { id: "stanley", context: "Plans & preferences", side: "right", position: 2 },
+  { id: "stanley", context: "AI head of content", side: "right", position: 2 },
 ] as const;
 
 export const agents = positions.map((position) => ({

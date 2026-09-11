@@ -44,8 +44,8 @@ export const connectors = [
     id: "stanley",
     name: "Stanley",
     image: "stanley.webp",
-    description: "Plans & preferences",
-    role: "My personal assistant, knows my plans and preferences",
+    description: "AI head of content",
+    role: "My AI head of content, runs my social posts and videos",
     website: "https://www.getstanley.ai/",
   },
   {
