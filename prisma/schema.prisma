@@ -45,6 +45,8 @@ model Inbox {
   archive   Boolean         @default(true)
   /// Per-inbox data key, wrapped with MESSAGE_KEY. Encrypts message bodies at rest.
   dataKey   String
+  /// The highway's shareable invite link token. Anyone with it can request to join; the owner approves.
+  inviteToken String @unique @default(dbgenerated("replace(gen_random_uuid()::text, '-', '')"))
   createdAt DateTime        @default(now())
   members   Member[]
   messages  Message[]
@@ -79,6 +81,8 @@ model Member {
   invitedAt        DateTime     @default(now())
   joinedAt         DateTime?
   cappedNotifiedAt DateTime?
+  /// Joined through the highway's shareable link and is waiting for the owner to approve.
+  requestedViaLink Boolean      @default(false)
   hourWindowStart  DateTime?
   hourCount        Int          @default(0)
   messages         Message[]

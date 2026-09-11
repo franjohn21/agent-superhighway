@@ -8,7 +8,7 @@ import { newWrappedDataKey } from "@/lib/crypto";
 import { db } from "@/lib/db";
 import { env } from "@/lib/env";
 import { requireInbox } from "@/lib/guard";
-import { postFromOwner, removeMember, sendInvitation } from "@/lib/highway";
+import { activateMember, postFromOwner, removeMember, sendInvitation } from "@/lib/highway";
 import { sendPlain } from "@/lib/mail/send";
 import { magicLinkText } from "@/lib/mail/templates";
 import { currentUser, destroySession } from "@/lib/session";
@@ -97,6 +97,50 @@ export async function updateMemberRole(formData: FormData): Promise<void> {
   await db.member.updateMany({ where: { id: field(formData, "memberId"), inboxId: inbox.id, isOwner: false }, data: { role, intro } });
   revalidatePath("/members");
   redirect("/members");
+}
+
+/** Someone opened the highway's shareable link and asked to join. They wait for the owner unless the owner already invited that address. */
+export async function requestJoin(formData: FormData): Promise<void> {
+  const token = field(formData, "token");
+  const inbox = await db.inbox.findUnique({ where: { inviteToken: token } });
+  if (!inbox) redirect("/join/h/invalid");
+  const email = normalizeEmail(field(formData, "email"));
+  const name = field(formData, "name").slice(0, 80);
+  const kind = field(formData, "kind") === "PERSON" ? "PERSON" : "AGENT";
+  const intro = field(formData, "intro").slice(0, 600);
+  if (!isValidEmail(email) || !name) redirect(`/join/h/${token}?error=A+name+and+a+real+email+address+are+needed`);
+  if (email === inbox.address) redirect(`/join/h/${token}?error=That+is+the+highway+itself`);
+  const existing = await db.member.findUnique({ where: { inboxId_email: { inboxId: inbox.id, email } } });
+  if (existing?.status === "ACTIVE") redirect(`/join/h/${token}?done=already`);
+  if (existing?.status === "PENDING" && !existing.requestedViaLink) {
+    // The owner already invited this exact address, so the link is as good as a reply.
+    await activateMember(existing.id, intro);
+    redirect(`/join/h/${token}?done=joined`);
+  }
+  if (existing) {
+    await db.member.update({ where: { id: existing.id }, data: { name, kind, intro, status: "PENDING", requestedViaLink: true, invitedAt: new Date(), joinedAt: null } });
+  } else {
+    await db.member.create({ data: { inboxId: inbox.id, email, name, kind, intro, requestedViaLink: true, inviteToken: randomBytes(24).toString("base64url") } });
+  }
+  redirect(`/join/h/${token}?done=requested`);
+}
+
+export async function approveMember(formData: FormData): Promise<void> {
+  const { inbox } = await requireInbox();
+  const member = await db.member.findFirst({ where: { id: field(formData, "memberId"), inboxId: inbox.id, status: "PENDING", requestedViaLink: true } });
+  if (member) {
+    await activateMember(member.id, member.intro);
+    await db.member.update({ where: { id: member.id }, data: { requestedViaLink: false } });
+  }
+  revalidatePath("/members");
+  redirect("/members");
+}
+
+export async function resetInviteLink(): Promise<void> {
+  const { inbox } = await requireInbox();
+  await db.inbox.update({ where: { id: inbox.id }, data: { inviteToken: randomBytes(18).toString("hex") } });
+  revalidatePath("/members");
+  redirect("/members?reset=1");
 }
 
 export async function resendInvitation(formData: FormData): Promise<void> {

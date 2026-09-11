@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
-import { addMember, removeMemberAction, resendInvitation, updateMemberRole } from "@/app/actions";
+import { addMember, approveMember, removeMemberAction, resendInvitation, updateMemberRole } from "@/app/actions";
 import { CopyButton } from "@/components/CopyButton";
 import type { MemberKind, MemberStatus } from "@/generated/prisma/client";
 import type { Connector } from "./catalog";
@@ -29,7 +29,18 @@ export type ConnectionMember = {
   isOwner: boolean;
   /** The join link bound to this member's address. Works even when the invitation email cannot be sent. */
   inviteUrl: string;
+  /** Asked to join through the highway's shareable link and is waiting for approval. */
+  requestedViaLink: boolean;
 };
+
+export function ApproveForm({ member }: { member: ConnectionMember }) {
+  return (
+    <form action={approveMember} className={styles.approve}>
+      <input type="hidden" name="memberId" value={member.id} />
+      <Submit pendingLabel="Approving…">Approve</Submit>
+    </form>
+  );
+}
 
 export function Submit({
   children,
@@ -139,7 +150,16 @@ export function MemberDetails({ member }: { member: ConnectionMember }) {
           <Submit pendingLabel="Saving…">Save details</Submit>
         </div>
       </form>
-      {member.status === "PENDING" && (
+      {member.status === "PENDING" && member.requestedViaLink && (
+        <div className={styles.resend}>
+          <p>
+            Asked to join through your invite link as {member.email}.
+            {member.intro ? ` They said: “${member.intro}”` : ""}
+          </p>
+          <ApproveForm member={member} />
+        </div>
+      )}
+      {member.status === "PENDING" && !member.requestedViaLink && (
         <>
           <div className={styles.resend}>
             <p>

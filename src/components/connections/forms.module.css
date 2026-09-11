@@ -185,3 +185,10 @@
     flex-direction: column;
   }
 }
+
+.approve {
+  display: inline-flex;
+}
+.approve .submit {
+  padding: 8px 12px;
+}

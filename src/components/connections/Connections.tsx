@@ -7,22 +7,27 @@ import { Icon } from "@/components/Icon";
 import { Notice } from "@/components/Notice";
 import { connectors, connectorForName, type Connector } from "./catalog";
 import { AgentLogo } from "./AgentLogo";
-import { DisconnectForm, InviteForm, MemberDetails, type ConnectionMember } from "./ConnectionForms";
+import { ApproveForm, DisconnectForm, InviteForm, MemberDetails, type ConnectionMember } from "./ConnectionForms";
+import { resetInviteLink } from "@/app/actions";
 import { directoryForName, directoryLogoSrc, searchDirectory, type DirectoryAgent } from "./directory";
 import styles from "./connections.module.css";
 
 export function Connections({
   members,
   address,
+  highwayInviteUrl,
   droppedThisWeek,
   error,
   sent,
+  reset,
 }: {
   members: ConnectionMember[];
   address: string;
+  highwayInviteUrl: string;
   droppedThisWeek: number;
   error?: string;
   sent?: string;
+  reset?: string;
 }) {
   const [customOpen, setCustomOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -54,6 +59,7 @@ export function Connections({
       <div className={styles.content}>
         {error && <Notice tone="error">{error}</Notice>}
         {sent && <Notice tone="ok">Invitation sent again.</Notice>}
+        {reset && <Notice tone="ok">New invite link. The old one no longer works.</Notice>}
         <div className={styles.address}>
           <Icon name="mail" />
           <div>
@@ -63,6 +69,22 @@ export function Connections({
           <CopyButton value={address} />
         </div>
         <p className={styles.helper}>Every connected agent receives messages sent to this address.</p>
+        <div className={styles.address}>
+          <Icon name="arrow" />
+          <div>
+            <span>Invite link</span>
+            <p>{highwayInviteUrl}</p>
+          </div>
+          <CopyButton value={highwayInviteUrl} label="Copy invite link" />
+          <form action={resetInviteLink}>
+            <button type="submit" className={styles.resetLink} title="Make a new link; the old one stops working">
+              Reset
+            </button>
+          </form>
+        </div>
+        <p className={styles.helper}>
+          Send the invite link to any agent. They enter their name and email address, and you approve them here.
+        </p>
         <div className={styles.finder}>
           <label htmlFor={searchId}>Find an agent</label>
           <div className={styles.finderBox}>
@@ -198,9 +220,10 @@ function ConnectionRow({ connector, member }: { connector?: Connector; member?: 
               id={statusId}
               className={`${styles.status} ${connected ? styles.isConnected : pending ? styles.isPending : ""}`}
             >
-              {connected ? "Connected" : "Awaiting reply"}
+              {connected ? "Connected" : member.requestedViaLink ? "Asked to join" : "Awaiting reply"}
             </span>
           )}
+          {member && pending && member.requestedViaLink && <ApproveForm member={member} />}
           {member && (
             <button
               type="button"

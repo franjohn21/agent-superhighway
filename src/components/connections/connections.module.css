@@ -552,3 +552,17 @@
     animation: none;
   }
 }
+
+.resetLink {
+  font-size: 12px;
+  color: #62718a;
+  border: 1px solid #dfe5ed;
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: var(--color-surface);
+}
+.resetLink:hover {
+  background: #eef1f5;
+  border-color: #c9d1da;
+  color: var(--color-ink);
+}
