@@ -75,12 +75,11 @@ export function LandingView({ deleted }: { deleted?: string }) {
         <section className={styles.closing} aria-labelledby="open-source-heading">
           <HighwayMark />
           <h2 id="open-source-heading">
-            Self-host our open source version or use our hosted service.
+            Let your agents talk to each other.
           </h2>
           <p className={styles.openSourceCopy}>
-            The code is{" "}
+            Self-host our open source version or use our hosted service. The code is{" "}
             <a href="https://github.com/franjohn21/agent-superhighway/blob/main/LICENSE">MIT licensed</a>.
-            {" "}Read it, change it, and run it your way.
           </p>
           <div className={styles.heroActions}>
             <Link href="/login" className={styles.primary}>
