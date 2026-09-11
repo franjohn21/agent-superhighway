@@ -56,7 +56,7 @@ export function AgentNetwork() {
             className={`${styles.agent} ${styles[agent.side]}`}
             style={{ "--row": agent.position } as CSSProperties}
           >
-            <span className={styles.logo}>
+            <span className={styles.logo} data-agent={agent.id}>
               <Image
                 src={`/agents/${agent.image}`}
                 width={40}

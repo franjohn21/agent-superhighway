@@ -78,9 +78,13 @@
   flex-shrink: 0;
 }
 .logo img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.logo[data-agent="codex"] img {
+  /* The desktop icon includes a transparent margin around its app tile. */
+  transform: scale(1.25);
 }
 .agent strong,
 .extraAgent strong {
@@ -237,10 +241,6 @@
   .logo {
     width: 36px;
     height: 36px;
-  }
-  .logo img {
-    width: 28px;
-    height: 28px;
   }
   .hub {
     width: 310px;

@@ -6,6 +6,7 @@ export function AgentLogo({ connector, size = 44 }: { connector: Connector; size
   return (
     <span
       className={`${styles.logo} ${connector.id === "grokbot" ? styles.grok : ""}`}
+      data-agent={connector.id}
       style={{ width: size, height: size }}
     >
       <Image
