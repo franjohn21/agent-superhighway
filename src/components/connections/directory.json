@@ -1,0 +1,1917 @@
+[
+  {
+    "slug": "1-800-chatgpt",
+    "name": "1-800-ChatGPT",
+    "tagline": "Call or text ChatGPT, no account",
+    "about": "Text 1-800-ChatGPT the same way you would text a friend, right from Messages.",
+    "website": "https://help.openai.com/en/articles/10193193-1-800-chatgpt-calling-and-messaging-chatgpt-with-your-phone",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "1-800-chatgpt.png",
+    "store": "https://www.imessage.store/agent/1-800-chatgpt"
+  },
+  {
+    "slug": "222",
+    "name": "222",
+    "tagline": "IRL social facilitator",
+    "about": "222 helps you meet new people and deepen relationships by matching you based on personality and taking you to shared experiences. You pick the place, they find your people.",
+    "website": "https://222.place",
+    "categories": [
+      "Social"
+    ],
+    "number": "(215) 833-1455",
+    "logo": "222.png",
+    "store": "https://www.imessage.store/agent/222"
+  },
+  {
+    "slug": "agentphone",
+    "name": "AgentPhone",
+    "tagline": "Phone numbers for AI agents",
+    "about": "Text AgentPhone the same way you would text a friend, right from Messages.",
+    "website": "https://agentphone.ai",
+    "categories": [],
+    "number": "",
+    "logo": "agentphone.png",
+    "store": "https://www.imessage.store/agent/agentphone"
+  },
+  {
+    "slug": "airtap",
+    "name": "Airtap",
+    "tagline": "Operates your mobile apps by text",
+    "about": "Text Airtap the same way you would text a friend, right from Messages.",
+    "website": "https://airtap.ai",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "airtap.png",
+    "store": "https://www.imessage.store/agent/airtap"
+  },
+  {
+    "slug": "alfi",
+    "name": "Alfi",
+    "tagline": "AI for the group chat",
+    "about": "Alfi is an AI for group chats that joins conversations naturally and helps friends plan events, book reservations, create images together, and set reminders without needing mentions or commands.",
+    "website": "https://www.text.ai",
+    "categories": [
+      "Social"
+    ],
+    "number": "(310) 460-9758",
+    "logo": "alfi.png",
+    "store": "https://www.imessage.store/agent/alfi"
+  },
+  {
+    "slug": "alfred",
+    "name": "alfred",
+    "tagline": "Alfred is your executive assistant",
+    "about": "Alfred is an AI executive assistant that handles email triage, drafts replies, manages your calendar, and turns emails into tasks. It's built for founders, consultants, and independent operators who bill for their time and need to focus on what matters most.",
+    "website": "https://get-alfred.ai",
+    "categories": [
+      "Business"
+    ],
+    "number": "(205) 422-5090",
+    "logo": "alfred.png",
+    "store": "https://www.imessage.store/agent/alfred"
+  },
+  {
+    "slug": "alfred-2",
+    "name": "alfred_",
+    "tagline": "Built for people with 100+ emails a day",
+    "about": "alfred_ is an AI assistant for managing email, calendar, and tasks inside Gmail and Outlook. Built for founders, consultants, and independent operators who get over 100 emails a day and need to focus on billable work.",
+    "website": "https://get-alfred.ai",
+    "categories": [
+      "Business"
+    ],
+    "number": "(646) 217-9611",
+    "logo": "alfred-2.png",
+    "store": "https://www.imessage.store/agent/alfred-2"
+  },
+  {
+    "slug": "allora",
+    "name": "Allora",
+    "tagline": "Reminders, by text",
+    "about": "Allora sends you reminders by text message, no app needed. Text your tasks, appointments, and due dates and get reminded at the right time.",
+    "website": "https://textallora.com",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(844) 734-4635",
+    "logo": "allora.png",
+    "store": "https://www.imessage.store/agent/allora"
+  },
+  {
+    "slug": "allowance",
+    "name": "Allowance",
+    "tagline": "Text Alfie to shop",
+    "about": "Text Allowance the same way you would text a friend, right from Messages.",
+    "website": "https://useallowance.com/",
+    "categories": [
+      "Shopping"
+    ],
+    "number": "(917) 335-1303",
+    "logo": "allowance.png",
+    "store": "https://www.imessage.store/agent/allowance"
+  },
+  {
+    "slug": "apten",
+    "name": "Apten",
+    "tagline": "SMS and voice agents for sales",
+    "about": "Text Apten the same way you would text a friend, right from Messages.",
+    "website": "https://apten.ai",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "apten.png",
+    "store": "https://www.imessage.store/agent/apten"
+  },
+  {
+    "slug": "arden",
+    "name": "Arden",
+    "tagline": "Arden is your AI travel assistant",
+    "about": "Arden is your AI travel assistant to help you travel easier and save more on trips.",
+    "website": "https://arden.co/",
+    "categories": [
+      "Travel"
+    ],
+    "number": "(321) 310-0340",
+    "logo": "arden.png",
+    "store": "https://www.imessage.store/agent/arden"
+  },
+  {
+    "slug": "arlo",
+    "name": "Arlo",
+    "tagline": "Arlo is your AI colleague",
+    "about": "Arlo is an AI colleague for your workspace that handles tasks across email, Slack, Notion, and 3,000+ other tools. It remembers context, drafts work for your approval, and keeps an audit trail of everything it does.",
+    "website": "https://arlo.sh",
+    "categories": [
+      "Business"
+    ],
+    "number": "(407) 234-1884",
+    "logo": "arlo.png",
+    "store": "https://www.imessage.store/agent/arlo"
+  },
+  {
+    "slug": "arlo-2",
+    "name": "Arlo",
+    "tagline": "AI colleague you text — answers, takes approved actions in 3,000+ tools, and makes real phone calls.",
+    "about": "Arlo is an AI colleague you text on iMessage. It answers questions, handles tasks in thousands of tools, and makes real phone calls — all waiting for your approval before taking action.",
+    "website": "https://www.arlo.sh",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "",
+    "store": "https://www.imessage.store/agent/arlo-2"
+  },
+  {
+    "slug": "asaply",
+    "name": "Asaply",
+    "tagline": "The checkout agent for coffee, food, tickets, and more.",
+    "about": "asaply is the number you text when you need something handled now - coffee, food, tickets, a ride. Text what you want and it finds it nearby, confirms timing, and has it ready to grab without opening other apps.",
+    "website": "https://asaply.ai/",
+    "categories": [
+      "Shopping"
+    ],
+    "number": "(628) 264-4787",
+    "logo": "asaply.png",
+    "store": "https://www.imessage.store/agent/asaply"
+  },
+  {
+    "slug": "askpetal",
+    "name": "AskPetal 🌷",
+    "tagline": "AskPetal is your hormonal health advisor",
+    "about": "AskPetal helps you track your menstrual cycle and understand your hormonal health through intelligent tracking and personalized insights.",
+    "website": "https://askpetal.com",
+    "categories": [
+      "Medical"
+    ],
+    "number": "(212) 470-0693",
+    "logo": "askpetal.png",
+    "store": "https://www.imessage.store/agent/askpetal"
+  },
+  {
+    "slug": "asmi",
+    "name": "Asmi",
+    "tagline": "Asmi is your personal assistant",
+    "about": "Asmi is your personal assistant for managing reminders, tracking appointments, and staying on top of your schedule via text.",
+    "website": "https://asmiai.com",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(408) 230-3488",
+    "logo": "asmi.png",
+    "store": "https://www.imessage.store/agent/asmi"
+  },
+  {
+    "slug": "asmi-2",
+    "name": "asmi",
+    "tagline": "AI for Real-World Chores",
+    "about": "Text asmi the same way you would text a friend, right from Messages.",
+    "website": "https://www.asmiai.com/",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "asmi-2.png",
+    "store": "https://www.imessage.store/agent/asmi-2"
+  },
+  {
+    "slug": "asmi-ai",
+    "name": "asmi ai",
+    "tagline": "AI for real world chores",
+    "about": "Text asmi ai the same way you would text a friend, right from Messages.",
+    "website": "https://www.asmiai.com/",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(408) 230-3488",
+    "logo": "asmi-ai.png",
+    "store": "https://www.imessage.store/agent/asmi-ai"
+  },
+  {
+    "slug": "atona",
+    "name": "Atona",
+    "tagline": "One agent across email, texts, and calls",
+    "about": "Text Atona the same way you would text a friend, right from Messages.",
+    "website": "https://www.atona.ai",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "atona.png",
+    "store": "https://www.imessage.store/agent/atona"
+  },
+  {
+    "slug": "avenue",
+    "name": "Avenue",
+    "tagline": "Your NYC Apartment Hunter",
+    "about": "Avenue texts you matched NYC apartment listings the moment they hit the market. Set your preferences once and get real-time matches right in Messages.",
+    "website": "https://www.avenue.nyc",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(650) 485-0684",
+    "logo": "avenue.png",
+    "store": "https://www.imessage.store/agent/avenue"
+  },
+  {
+    "slug": "bach-tran",
+    "name": "Orchids",
+    "tagline": "Orchids is your AI app builder",
+    "about": "Orchids was an AI app builder that has been sunset as of July 18. Users can migrate their projects by downloading archives, claiming deployments, and transferring databases.",
+    "website": "https://orchids.app",
+    "categories": [
+      "Business"
+    ],
+    "number": "(628) 287-2920",
+    "logo": "bach-tran.png",
+    "store": "https://www.imessage.store/agent/bach-tran"
+  },
+  {
+    "slug": "bantr",
+    "name": "Bantr",
+    "tagline": "Get what you want",
+    "about": "Text Bantr the same way you would text a friend, right from Messages.",
+    "website": "https://www.socialcompanyofus.com/",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(646) 489-7157",
+    "logo": "bantr.png",
+    "store": "https://www.imessage.store/agent/bantr"
+  },
+  {
+    "slug": "beside",
+    "name": "Beside",
+    "tagline": "A contact in your Messages app that knows the neighborhood. Share live location, get a text when you're near it.",
+    "about": "Beside is a contact in Messages that watches your live location and texts you when you're near places you care about. Share what to look for, and Beside alerts you in real time as you explore.",
+    "website": "https://beside.chat",
+    "categories": [
+      "Travel"
+    ],
+    "number": "",
+    "logo": "beside.png",
+    "store": "https://www.imessage.store/agent/beside"
+  },
+  {
+    "slug": "blooio",
+    "name": "Blooio",
+    "tagline": "Flat-rate iMessage API",
+    "about": "Text Blooio the same way you would text a friend, right from Messages.",
+    "website": "https://blooio.com",
+    "categories": [],
+    "number": "",
+    "logo": "blooio.png",
+    "store": "https://www.imessage.store/agent/blooio"
+  },
+  {
+    "slug": "bluebubbles",
+    "name": "BlueBubbles",
+    "tagline": "Open-source iMessage server",
+    "about": "Text BlueBubbles the same way you would text a friend, right from Messages.",
+    "website": "https://bluebubbles.app",
+    "categories": [],
+    "number": "",
+    "logo": "bluebubbles.png",
+    "store": "https://www.imessage.store/agent/bluebubbles"
+  },
+  {
+    "slug": "bo",
+    "name": "Bo",
+    "tagline": "Bo is your health and life coach",
+    "about": "Bo is your health and life coach who helps you stay organized, save time, and live healthier through text. Bo connects to your fitness and health apps to track nutrition, activity, sleep, and reminders.",
+    "website": "https://getbo.com",
+    "categories": [
+      "Health & Fitness"
+    ],
+    "number": "(205) 253-2048",
+    "logo": "bo.png",
+    "store": "https://www.imessage.store/agent/bo"
+  },
+  {
+    "slug": "bo-ai",
+    "name": "Bo AI",
+    "tagline": "The text-based AI assistant that helps you live healthy, save time, and reduce stress.",
+    "about": "Bo AI is your personal assistant that helps you stay organized, save time, and live healthier through text. It connects to your health and productivity apps to track nutrition, activity, sleep, and calendar events, then gives you guidance to hit your goals.",
+    "website": "https://getbo.com/",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(205) 253-2048",
+    "logo": "bo-ai.png",
+    "store": "https://www.imessage.store/agent/bo-ai"
+  },
+  {
+    "slug": "boardy",
+    "name": "Boardy",
+    "tagline": "AI networking super-connector",
+    "about": "Boardy is an AI networking connector that makes introductions based on your goals and interests. Message Boardy to get connected with people in your network.",
+    "website": "https://www.boardy.ai",
+    "categories": [
+      "Social"
+    ],
+    "number": "",
+    "logo": "boardy.png",
+    "store": "https://www.imessage.store/agent/boardy"
+  },
+  {
+    "slug": "bodybuddy",
+    "name": "BodyBuddy",
+    "tagline": "AI health coach",
+    "about": "BodyBuddy texts you daily about meals, movement, and sleep to keep you accountable to your health goals. Upload plans from your doctor or dietitian and BodyBuddy reminds you to follow through.",
+    "website": "https://bodybuddy.app",
+    "categories": [
+      "Health & Fitness"
+    ],
+    "number": "",
+    "logo": "bodybuddy.png",
+    "store": "https://www.imessage.store/agent/bodybuddy"
+  },
+  {
+    "slug": "bud",
+    "name": "Bud",
+    "tagline": "AI worker you can text",
+    "about": "Bud is an AI worker you can text to handle tasks on your computer and browser. Text Bud to automate routine work and get things done.",
+    "website": "https://bud.app",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "bud.png",
+    "store": "https://www.imessage.store/agent/bud"
+  },
+  {
+    "slug": "caddy",
+    "name": "Caddy",
+    "tagline": "Handles your work, by text",
+    "about": "Caddy is your personal AI in Messages that handles work tasks by text. Stay on top of your calendar, reminders, and messages without leaving the chat.",
+    "website": "https://caddy.app",
+    "categories": [
+      "Business"
+    ],
+    "number": "(206) 403-9093",
+    "logo": "caddy.png",
+    "store": "https://www.imessage.store/agent/caddy"
+  },
+  {
+    "slug": "cal-ai",
+    "name": "Cal.ai",
+    "tagline": "AI phone calls that book meetings",
+    "about": "Text Cal.ai the same way you would text a friend, right from Messages.",
+    "website": "https://cal.com/ai",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "cal-ai.png",
+    "store": "https://www.imessage.store/agent/cal-ai"
+  },
+  {
+    "slug": "cappy",
+    "name": "cappy",
+    "tagline": "Cappy is your startup fundraising coach",
+    "about": "Cappy is an AI video editor you text from your messages app. Send clips, photos, or ideas and get back a finished video, then text back with changes until it's right.",
+    "website": "https://captions.ai/features/text-to-edit",
+    "categories": [
+      "Finance"
+    ],
+    "number": "(646) 299-2913",
+    "logo": "cappy.jpg",
+    "store": "https://www.imessage.store/agent/cappy"
+  },
+  {
+    "slug": "capy",
+    "name": "Capy",
+    "tagline": "Capy is your GLP-1 companion",
+    "about": "Capy is your personal GLP-1 companion. Track your doses, log your meals by photo or voice, and get guidance on nutrition and timing for medications like Ozempic, Wegovy, Zepbound, and Mounjaro.",
+    "website": "https://meagain.com",
+    "categories": [
+      "Health & Fitness"
+    ],
+    "number": "(205) 615-7663",
+    "logo": "capy.png",
+    "store": "https://www.imessage.store/agent/capy"
+  },
+  {
+    "slug": "caresupport",
+    "name": "CareSupport",
+    "tagline": "Care coordination by text",
+    "about": "CareSupport coordinates care tasks like medications and appointments across your family and caregivers, right in iMessage. Text what needs to happen and who should handle it, and CareSupport sends reminders to everyone and keeps you updated.\"",
+    "website": "https://caresupport.com",
+    "categories": [
+      "Medical"
+    ],
+    "number": "(650) 441-5695",
+    "logo": "caresupport.png",
+    "store": "https://www.imessage.store/agent/caresupport"
+  },
+  {
+    "slug": "cari",
+    "name": "Cari",
+    "tagline": "Your Personal Career Companion",
+    "about": "Cari helps you think through your next career move by understanding your skills, interests, and what's possible next. Whether you're considering a shift or planning your next step, Cari offers direction on roles that fit you and paths to get there.",
+    "website": "https://heycari.ai/",
+    "categories": [
+      "Careers"
+    ],
+    "number": "",
+    "logo": "cari.png",
+    "store": "https://www.imessage.store/agent/cari"
+  },
+  {
+    "slug": "catch",
+    "name": "Catch",
+    "tagline": "The 24/7 AI executive assistant for busy professionals",
+    "about": "Catch is an AI assistant that handles your scheduling, email, and admin work. CC the assistant on emails or text it, and it schedules meetings, resolves conflicts, drafts responses, and manages your calendar.",
+    "website": "https://www.catchagent.ai",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(312) 498-0805",
+    "logo": "catch.png",
+    "store": "https://www.imessage.store/agent/catch"
+  },
+  {
+    "slug": "cfo-silvia",
+    "name": "CFO Silvia",
+    "tagline": "Your personal AI CFO",
+    "about": "Text CFO Silvia the same way you would text a friend, right from Messages.",
+    "website": "https://www.cfosilvia.com",
+    "categories": [
+      "Finance"
+    ],
+    "number": "",
+    "logo": "cfo-silvia.png",
+    "store": "https://www.imessage.store/agent/cfo-silvia"
+  },
+  {
+    "slug": "chert",
+    "name": "Chert",
+    "tagline": "“Twilio for iMessage”",
+    "about": "Text Chert the same way you would text a friend, right from Messages.",
+    "website": "https://www.trychert.com",
+    "categories": [],
+    "number": "",
+    "logo": "chert.png",
+    "store": "https://www.imessage.store/agent/chert"
+  },
+  {
+    "slug": "chromie",
+    "name": "Chromie Dispatch",
+    "tagline": "SMS staffing for hospitals",
+    "about": "Text Chromie Dispatch the same way you would text a friend, right from Messages.",
+    "website": "https://www.chromiehealth.com",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "chromie.png",
+    "store": "https://www.imessage.store/agent/chromie"
+  },
+  {
+    "slug": "clera",
+    "name": "Clera",
+    "tagline": "Your AI talent agent",
+    "about": "Clera is a talent agent that matches you with startup roles based on your experience and preferences, then makes direct introductions to founders and hiring managers.",
+    "website": "https://www.getclera.com",
+    "categories": [
+      "Careers"
+    ],
+    "number": "(650) 539-7073",
+    "logo": "clera.png",
+    "store": "https://www.imessage.store/agent/clera"
+  },
+  {
+    "slug": "coinvest",
+    "name": "Co-Invest",
+    "tagline": "Trade markets by text",
+    "about": "Co-Invest lets you research and trade markets directly in text. Ask your assistant about a stock, commodity, or crypto, get real market data and a sized trade idea, and place the order with one tap.",
+    "website": "https://www.liquid.trade/coinvest",
+    "categories": [
+      "Finance"
+    ],
+    "number": "",
+    "logo": "coinvest.png",
+    "store": "https://www.imessage.store/agent/coinvest"
+  },
+  {
+    "slug": "continua",
+    "name": "Continua",
+    "tagline": "Group-chat planning and reminders",
+    "about": "Text Continua the same way you would text a friend, right from Messages.",
+    "website": "https://www.continua.ai",
+    "categories": [
+      "Social"
+    ],
+    "number": "",
+    "logo": "continua.png",
+    "store": "https://www.imessage.store/agent/continua"
+  },
+  {
+    "slug": "ditto",
+    "name": "Ditto",
+    "tagline": "AI matchmaker on iMessage",
+    "about": "Ditto is an AI matchmaker for college students. Tell Ditto what you're looking for and get one personalized match curated for you each week instead of endless swiping.",
+    "website": "https://ditto.ai",
+    "categories": [
+      "Social"
+    ],
+    "number": "",
+    "logo": "ditto.png",
+    "store": "https://www.imessage.store/agent/ditto"
+  },
+  {
+    "slug": "doctours",
+    "name": "Doctours",
+    "tagline": "Medical tourism (doctouring) made easy",
+    "about": "Doctours helps people get affordable hair transplants by matching them with top-rated surgeons abroad and handling the entire process from clinic selection through recovery.",
+    "website": "https://www.doctours.com",
+    "categories": [
+      "Medical"
+    ],
+    "number": "(415) 452-3590",
+    "logo": "doctours.png",
+    "store": "https://www.imessage.store/agent/doctours"
+  },
+  {
+    "slug": "docupdate-concierge",
+    "name": "DocUpdate Concierge",
+    "tagline": "Doctors can use a chat to request medication samples, MSL access, reimbursement support, and patient resources - Free.",
+    "about": "DocUpdate Concierge helps doctors request medication samples, access reimbursement support, and find patient resources through chat.",
+    "website": "https://www.docupdate.io/concierge/",
+    "categories": [
+      "Medical"
+    ],
+    "number": "",
+    "logo": "docupdate-concierge.png",
+    "store": "https://www.imessage.store/agent/docupdate-concierge"
+  },
+  {
+    "slug": "duckbill",
+    "name": "Duckbill",
+    "tagline": "AI + human assistant",
+    "about": "Duckbill handles the calls, holds, and back-and-forths so you don't have to. Text it tasks like scheduling appointments, negotiating bills, or returning orders, and it gets them done in the real world.",
+    "website": "https://www.getduckbill.com",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "duckbill.png",
+    "store": "https://www.imessage.store/agent/duckbill"
+  },
+  {
+    "slug": "dunnit-ai",
+    "name": "Dunnit AI",
+    "tagline": "Dunnit is your personal assistant",
+    "about": "Dunnit is your personal assistant for tasks and reminders. It helps you stay on top of what matters whether you're busy or offline.",
+    "website": "https://dunnit.ai",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(415) 505-7140",
+    "logo": "dunnit-ai.png",
+    "store": "https://www.imessage.store/agent/dunnit-ai"
+  },
+  {
+    "slug": "duo",
+    "name": "DUO",
+    "tagline": "Matchmaking that learns your type",
+    "about": "Text DUO the same way you would text a friend, right from Messages.",
+    "website": "https://textduo.ai",
+    "categories": [
+      "Social"
+    ],
+    "number": "",
+    "logo": "duo.png",
+    "store": "https://www.imessage.store/agent/duo"
+  },
+  {
+    "slug": "emailed-chat-2",
+    "name": "emailed.chat",
+    "tagline": "a new interface for email",
+    "about": "emailed connects your Gmail to iMessage, delivering email as texts you can reply to without opening your inbox. Answer and manage emails the way you text.",
+    "website": "https://emailed.chat",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(650) 281-6676",
+    "logo": "emailed-chat-2.png",
+    "store": "https://www.imessage.store/agent/emailed-chat-2"
+  },
+  {
+    "slug": "endearing",
+    "name": "Endearing",
+    "tagline": "Fae is your AI companion",
+    "about": "Endearing is a swipe-to-match platform for getting to know AI characters from shows and creators you love, plus originals you can design yourself. Your conversations shape the story and drive your bond with each character.",
+    "website": "https://endearing.ai",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(205) 239-4736",
+    "logo": "endearing.png",
+    "store": "https://www.imessage.store/agent/endearing"
+  },
+  {
+    "slug": "espa",
+    "name": "Espa",
+    "tagline": "Espa is your personal assistant",
+    "about": "Espa is an AI assistant that schedules your meetings, helps with life admin tasks, and organizes your email. Text it to manage your calendar, set reminders, and handle back-and-forth conversations across messages, email, and other platforms.",
+    "website": "https://espa.ai",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(205) 490-9129",
+    "logo": "espa.png",
+    "store": "https://www.imessage.store/agent/espa"
+  },
+  {
+    "slug": "eve",
+    "name": "Eve",
+    "tagline": "AI work automation",
+    "about": "Eve automates recurring tasks across your business tools like Stripe, GitHub, and Linear. It handles billing checks, release notes, support triage, and other work your software company needs done daily.",
+    "website": "https://eve.new",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "eve.png",
+    "store": "https://www.imessage.store/agent/eve"
+  },
+  {
+    "slug": "figment",
+    "name": "Figment",
+    "tagline": "Figment is your personal AI you can text",
+    "about": "Figment is your personal AI you can text. It watches your email and calendar to handle reminders and important stuff automatically.",
+    "website": "https://figment.computer",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(404) 390-5100",
+    "logo": "figment.png",
+    "store": "https://www.imessage.store/agent/figment"
+  },
+  {
+    "slug": "firetexts",
+    "name": "FireTexts",
+    "tagline": "Better dating texts, instantly",
+    "about": "Text FireTexts the same way you would text a friend, right from Messages.",
+    "website": "https://firetexts.com",
+    "categories": [
+      "Social"
+    ],
+    "number": "",
+    "logo": "firetexts.png",
+    "store": "https://www.imessage.store/agent/firetexts"
+  },
+  {
+    "slug": "flip",
+    "name": "Flip",
+    "tagline": "Your money, by text",
+    "about": "Flip is an AI money manager in iMessage that handles budgeting, savings, and spending through text. It replaces separate money apps by letting you manage your finances entirely through Messages.",
+    "website": "https://fliptexts.com",
+    "categories": [
+      "Finance"
+    ],
+    "number": "",
+    "logo": "flip.png",
+    "store": "https://www.imessage.store/agent/flip"
+  },
+  {
+    "slug": "folk",
+    "name": "folk",
+    "tagline": "folk is your personal AI assistant",
+    "about": "folk is your personal AI assistant in your texts. it plans your week, watches for those rave tickets, drafts the email, and reminds you before you forget - all one text away.",
+    "website": "https://folk.com",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(205) 356-1587",
+    "logo": "folk.png",
+    "store": "https://www.imessage.store/agent/folk"
+  },
+  {
+    "slug": "fonzi",
+    "name": "Fonzi",
+    "tagline": "Fonzi is your tech recruiting matchmaker",
+    "about": "Fonzi matches elite engineers with AI startups and high-growth tech companies. It's easy, fast, and discreet.",
+    "website": "https://fonzi.ai",
+    "categories": [
+      "Careers"
+    ],
+    "number": "(646) 236-3745",
+    "logo": "fonzi.png",
+    "store": "https://www.imessage.store/agent/fonzi"
+  },
+  {
+    "slug": "gambly-bot",
+    "name": "Gambly Bot",
+    "tagline": "Gambly is your sports betting copilot",
+    "about": "Gambly is your sports betting copilot on iMessage. Chat to build betslips from your ideas, create bets from screenshots, and compare odds across sportsbooks.",
+    "website": "https://gambly.com",
+    "categories": [
+      "Finance"
+    ],
+    "number": "(646) 247-9193",
+    "logo": "gambly-bot.png",
+    "store": "https://www.imessage.store/agent/gambly-bot"
+  },
+  {
+    "slug": "general-magic",
+    "name": "General Magic",
+    "tagline": "SMS agents for insurance",
+    "about": "Text General Magic the same way you would text a friend, right from Messages.",
+    "website": "https://generalmagic.inc",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "general-magic.png",
+    "store": "https://www.imessage.store/agent/general-magic"
+  },
+  {
+    "slug": "geo",
+    "name": "GEO",
+    "tagline": "GEO - Your location agent",
+    "about": "GEO is your location agent that works right in iMessage. Create shopping lists and get nudged when you're near the store so you don't forget anything.",
+    "website": "https://getgeo.vercel.app/",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(414) 275-4994",
+    "logo": "geo.png",
+    "store": "https://www.imessage.store/agent/geo"
+  },
+  {
+    "slug": "hallie",
+    "name": "Hallie",
+    "tagline": "Hallie is your AI companion on FaceTime",
+    "about": "Hallie is an AI companion you can call on FaceTime for real-time conversation. Built for moments when you want someone there to talk to.",
+    "website": "https://empathic.so",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(206) 250-6538",
+    "logo": "hallie.png",
+    "store": "https://www.imessage.store/agent/hallie"
+  },
+  {
+    "slug": "homer",
+    "name": "Homer",
+    "tagline": "AI assistant living in iMessage",
+    "about": "Text Homer the same way you would text a friend, right from Messages.",
+    "website": "https://heyhomer.com",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "homer.png",
+    "store": "https://www.imessage.store/agent/homer"
+  },
+  {
+    "slug": "howie",
+    "name": "Howie",
+    "tagline": "AI scheduling secretary",
+    "about": "Howie is an AI calendar secretary that reads your inbox and calendar to schedule meetings, protect focus time, and handle the back-and-forth of scheduling over email and text. It's for busy professionals who want their calendar managed without the administrative overhead.",
+    "website": "https://howie.com",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "howie.png",
+    "store": "https://www.imessage.store/agent/howie"
+  },
+  {
+    "slug": "https-chat-dev",
+    "name": "https://chat.dev/",
+    "tagline": "Use your claude/codex subscriptions to code from SMS/Voice without a computer.",
+    "about": "Code from your phone using Claude or Codex through text and voice. For developers who need quick coding help without a computer.",
+    "website": "https://chat.dev/",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(205) 490-9997",
+    "logo": "https-chat-dev.png",
+    "store": "https://www.imessage.store/agent/https-chat-dev"
+  },
+  {
+    "slug": "huzi-ai",
+    "name": "Huzi.ai",
+    "tagline": "Huzi is your AI assistant for real estate agents",
+    "about": "Huzi is an AI assistant for real estate agents to handle property questions, listing strategy, and transaction support.",
+    "website": "https://huzi.ai",
+    "categories": [
+      "Business"
+    ],
+    "number": "(415) 726-3224",
+    "logo": "huzi-ai.png",
+    "store": "https://www.imessage.store/agent/huzi-ai"
+  },
+  {
+    "slug": "hyperneobroker-com",
+    "name": "HYPERneobroker.com",
+    "tagline": "Your AI trading desk by text",
+    "about": "Text HYPERneobroker.com the same way you would text a friend, right from Messages.",
+    "website": "https://hyperneobroker.com",
+    "categories": [
+      "Finance"
+    ],
+    "number": "(347) 276-0577",
+    "logo": "hyperneobroker-com.png",
+    "store": "https://www.imessage.store/agent/hyperneobroker-com"
+  },
+  {
+    "slug": "informed-now",
+    "name": "informed.now",
+    "tagline": "Get factual news by text",
+    "about": "informed.now delivers factual news by text without bias, clickbait, or ads. It's for people who want to stay informed about what matters without the noise.",
+    "website": "https://informed.now",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(844) 406-4636",
+    "logo": "informed-now.png",
+    "store": "https://www.imessage.store/agent/informed-now"
+  },
+  {
+    "slug": "inyo",
+    "name": "Inyo",
+    "tagline": "Inyo is your personal matchmaker",
+    "about": "Inyo is your personal matchmaker inside iMessage. It learns the real you through conversation, picks up what you'd never put on a profile, and introduces you to people you'd actually want to meet.",
+    "website": "https://joininyo.com",
+    "categories": [
+      "Social"
+    ],
+    "number": "(205) 329-5062",
+    "logo": "",
+    "store": "https://www.imessage.store/agent/inyo"
+  },
+  {
+    "slug": "iris",
+    "name": "Iris",
+    "tagline": "AI for your mind",
+    "about": "Iris is an AI here to talk, reflect, and grow with you. Text whenever you need to think through what's on your mind.",
+    "website": "https://irischat.ai",
+    "categories": [
+      "Health & Fitness"
+    ],
+    "number": "(646) 241-0636",
+    "logo": "iris.png",
+    "store": "https://www.imessage.store/agent/iris"
+  },
+  {
+    "slug": "iru",
+    "name": "iru",
+    "tagline": "handpicked serendipity",
+    "about": "iru discovers small group experiences tailored to what you like. find and join in-person events and gatherings curated for people with shared interests.",
+    "website": "https://iru.social/",
+    "categories": [
+      "Social"
+    ],
+    "number": "(650) 248-7632",
+    "logo": "iru.png",
+    "store": "https://www.imessage.store/agent/iru"
+  },
+  {
+    "slug": "jarvie",
+    "name": "Jarvie",
+    "tagline": "Jarvie is your group chat sidekick",
+    "about": "Jarvie is your group chat sidekick that helps you plan hangouts and keep conversations going with friends.",
+    "website": "https://heyjarvie.com",
+    "categories": [
+      "Social"
+    ],
+    "number": "(305) 513-1372",
+    "logo": "jarvie.png",
+    "store": "https://www.imessage.store/agent/jarvie"
+  },
+  {
+    "slug": "juke",
+    "name": "Juke",
+    "tagline": "The AI agent that runs your NIL",
+    "about": "Juke runs your NIL business right in iMessage. It prices your brand deals, reads contracts for hidden traps, tracks payments, handles taxes, and catches every deadline so you don't have to manage it all alone.",
+    "website": "https://textjuke.com",
+    "categories": [
+      "Business"
+    ],
+    "number": "(480) 937-0002",
+    "logo": "juke.png",
+    "store": "https://www.imessage.store/agent/juke"
+  },
+  {
+    "slug": "julie",
+    "name": "Julie",
+    "tagline": "Julie is your AI friend and companion",
+    "about": "Julie is an AI friend and companion that gets to know who you are and is always there when you need someone to talk to.",
+    "website": "https://soul.app",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(205) 503-0327",
+    "logo": "julie.png",
+    "store": "https://www.imessage.store/agent/julie"
+  },
+  {
+    "slug": "just-read",
+    "name": "just read",
+    "tagline": "read books in imessage",
+    "about": "just read lets you read books in iMessage one paragraph at a time. it's for people who want to fit reading into texting.",
+    "website": "https://justread.ing",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(321) 297-3411",
+    "logo": "just-read.png",
+    "store": "https://www.imessage.store/agent/just-read"
+  },
+  {
+    "slug": "karpo",
+    "name": "Karpo",
+    "tagline": "AI travel concierge by text",
+    "about": "Karpo is a proactive AI assistant that lives in iMessage. Just ask where to have dinner, what's worth seeing this weekend, or which vintage shop to check out — like you would a friend with good taste.",
+    "website": "https://app.karpo.ai",
+    "categories": [
+      "Travel"
+    ],
+    "number": "(646) 238-0222",
+    "logo": "karpo.png",
+    "store": "https://www.imessage.store/agent/karpo"
+  },
+  {
+    "slug": "kicker",
+    "name": "Kicker 🟠",
+    "tagline": "Kicker is your proactive productivity assistant",
+    "about": "Kicker is your AI buddy that connects to your calendar, email, and apps to notice what's coming up and nudge you at the right moment. It picks the 3 things that matter most each day and helps you actually follow through.",
+    "website": "https://usekicker.com",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(205) 401-6941",
+    "logo": "kicker.png",
+    "store": "https://www.imessage.store/agent/kicker"
+  },
+  {
+    "slug": "kindroid",
+    "name": "Kindroid",
+    "tagline": "Your AI companion",
+    "about": "Kindroid is an AI companion you text with for conversation and emotional support. It's for anyone looking for a listening ear when they need to talk things through.",
+    "website": "https://kindroid.ai",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(205) 521-3120",
+    "logo": "kindroid.png",
+    "store": "https://www.imessage.store/agent/kindroid"
+  },
+  {
+    "slug": "lindy",
+    "name": "Lindy",
+    "tagline": "AI executive assistant",
+    "about": "Lindy is an AI executive assistant that takes admin work off your plate. It organizes your inbox, drafts emails in your voice, schedules meetings, briefs you before calls, and tracks action items and follow-ups.",
+    "website": "https://www.lindy.ai",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "lindy.png",
+    "store": "https://www.imessage.store/agent/lindy"
+  },
+  {
+    "slug": "linq",
+    "name": "Linq",
+    "tagline": "The #1 messaging infrastructure for AI Agents",
+    "about": "Text Linq the same way you would text a friend, right from Messages.",
+    "website": "https://linqapp.com/?utm_source=imessage-store",
+    "categories": [],
+    "number": "(415) 870-7772",
+    "logo": "linq.png",
+    "store": "https://www.imessage.store/agent/linq"
+  },
+  {
+    "slug": "loopmessage",
+    "name": "LoopMessage",
+    "tagline": "iMessage API for business",
+    "about": "Text LoopMessage the same way you would text a friend, right from Messages.",
+    "website": "https://loopmessage.com",
+    "categories": [],
+    "number": "",
+    "logo": "loopmessage.png",
+    "store": "https://www.imessage.store/agent/loopmessage"
+  },
+  {
+    "slug": "lucas",
+    "name": "Lucas",
+    "tagline": "Assistant that texts first",
+    "about": "Lucas is an assistant that texts you first about your calendar, emails, and daily life. It handles reminders, scheduling changes, and habit tracking right in iMessage.",
+    "website": "https://meetlucas.ai",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "+447496278788",
+    "logo": "lucas.png",
+    "store": "https://www.imessage.store/agent/lucas"
+  },
+  {
+    "slug": "lux",
+    "name": "Lux",
+    "tagline": "i think, therefore i can",
+    "about": "Lux is your personal AI agent that lives in your messages. Text her to research, plan, write, build websites, make images, or get things done - no app needed.",
+    "website": "https://textlux.com",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(205) 396-5429",
+    "logo": "lux.png",
+    "store": "https://www.imessage.store/agent/lux"
+  },
+  {
+    "slug": "maddie",
+    "name": "Maddie",
+    "tagline": "iMessage outreach for leads",
+    "about": "Text Maddie the same way you would text a friend, right from Messages.",
+    "website": "https://www.textmaddie.com",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "maddie.png",
+    "store": "https://www.imessage.store/agent/maddie"
+  },
+  {
+    "slug": "mage",
+    "name": "Mage",
+    "tagline": "Trade everything thorugh text.",
+    "about": "Mage is the AI agent that trades every market in your messages — tokenized stocks, memecoins, perps, and predictions. Text what you want; it executes.",
+    "website": "https://ma.ge",
+    "categories": [
+      "Finance"
+    ],
+    "number": "(626) 426-5229",
+    "logo": "mage.png",
+    "store": "https://www.imessage.store/agent/mage"
+  },
+  {
+    "slug": "mage-2",
+    "name": "Mage",
+    "tagline": "Trade everything through text.",
+    "about": "Mage is an AI agent that trades tokenized stocks, memecoins, perpetuals, and predictions through text in Messages. You text what you want to trade and it executes your orders on Robinhood Chain and other venues.",
+    "website": "https://ma.ge",
+    "categories": [
+      "Finance"
+    ],
+    "number": "(626) 426-5229",
+    "logo": "mage-2.png",
+    "store": "https://www.imessage.store/agent/mage-2"
+  },
+  {
+    "slug": "manoa",
+    "name": "Manoa",
+    "tagline": "Meetings booked over SMS",
+    "about": "Text Manoa the same way you would text a friend, right from Messages.",
+    "website": "https://www.textmanoa.com",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "manoa.png",
+    "store": "https://www.imessage.store/agent/manoa"
+  },
+  {
+    "slug": "martin",
+    "name": "Martin",
+    "tagline": "A Jarvis you can text",
+    "about": "Martin is a personal AI assistant you text to handle reminders, messages, calendar tasks, and research. You can text Martin requests like rescheduling calls, texting contacts, or finding information.",
+    "website": "https://www.trymartin.com",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "martin.png",
+    "store": "https://www.imessage.store/agent/martin"
+  },
+  {
+    "slug": "matcha",
+    "name": "Matcha",
+    "tagline": "Health that texts you back",
+    "about": "Matcha is your personal chief of staff in messages. It remembers your goals, catches loose ends, and nudges you at the right time so you actually follow through on what matters.",
+    "website": "https://heymatcha.app",
+    "categories": [
+      "Health & Fitness"
+    ],
+    "number": "",
+    "logo": "matcha.png",
+    "store": "https://www.imessage.store/agent/matcha"
+  },
+  {
+    "slug": "maxi",
+    "name": "Maxi",
+    "tagline": "AI Agent for Managing Your Personal Finances",
+    "about": "Maxi manages your finances through iMessage conversations. Get daily spending updates, automate payments and venmo splits, and receive weekly insights to help you stay on top of your money.",
+    "website": "https://usemaxi.app",
+    "categories": [
+      "Finance"
+    ],
+    "number": "(646) 410-6525",
+    "logo": "maxi.png",
+    "store": "https://www.imessage.store/agent/maxi"
+  },
+  {
+    "slug": "messages-for-business",
+    "name": "Messages for Business",
+    "tagline": "Apple’s official agent lane",
+    "about": "Text Messages for Business the same way you would text a friend, right from Messages.",
+    "website": "https://register.apple.com/resources/messages",
+    "categories": [],
+    "number": "",
+    "logo": "messages-for-business.png",
+    "store": "https://www.imessage.store/agent/messages-for-business"
+  },
+  {
+    "slug": "miora",
+    "name": "miora",
+    "tagline": "Miora is your health concierge",
+    "about": "Miora is your health concierge. Text to find doctors, book appointments, and get help navigating healthcare.",
+    "website": "https://getmiora.com",
+    "categories": [
+      "Medical"
+    ],
+    "number": "(415) 359-3168",
+    "logo": "miora.png",
+    "store": "https://www.imessage.store/agent/miora"
+  },
+  {
+    "slug": "mira",
+    "name": "Mira",
+    "tagline": "Agent hired by 1M users",
+    "about": "Text Mira the same way you would text a friend, right from Messages.",
+    "website": "https://mira.tg/",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "mira.png",
+    "store": "https://www.imessage.store/agent/mira"
+  },
+  {
+    "slug": "miso",
+    "name": "Miso",
+    "tagline": "Books your travel by text",
+    "about": "Miso books your flights and travel through text. For people who travel frequently, it handles booking, changes, cancellations, and refunds by conversation.",
+    "website": "https://www.miso.com",
+    "categories": [
+      "Travel"
+    ],
+    "number": "(650) 405-4503",
+    "logo": "miso.png",
+    "store": "https://www.imessage.store/agent/miso"
+  },
+  {
+    "slug": "mochi",
+    "name": "Mochi",
+    "tagline": "Your AI calorie tracking coach",
+    "about": "Mochi is a calorie and macro tracker that lives in your iMessage texts. Snap a photo, describe your meal, or send a voice note, and Mochi logs the calories and macros instantly, tracks your daily streaks, and texts you updates throughout the day.",
+    "website": "https://mochitext.com",
+    "categories": [
+      "Health & Fitness"
+    ],
+    "number": "",
+    "logo": "mochi.png",
+    "store": "https://www.imessage.store/agent/mochi"
+  },
+  {
+    "slug": "murph",
+    "name": "Murph",
+    "tagline": "Health, in the group chat",
+    "about": "Murph helps you build health habits with friends in your group chat, running fair challenges and tracking progress across wearables. Outside groups, Murph runs self-experiments with your data, flags bloodwork trends, and takes care of appointments and supplements.",
+    "website": "https://withmurph.ai",
+    "categories": [
+      "Health & Fitness"
+    ],
+    "number": "(404) 409-2523",
+    "logo": "murph.png",
+    "store": "https://www.imessage.store/agent/murph"
+  },
+  {
+    "slug": "navi",
+    "name": "Navi",
+    "tagline": "Navi is your local navigation assistant",
+    "about": "Navi is a navigation assistant that texts you reminders when it's time to leave for events, so you're never late. Text Navi for directions, traffic updates, and reminders tailored to your schedule.",
+    "website": "https://textnavi.com",
+    "categories": [
+      "Travel"
+    ],
+    "number": "(646) 203-5769",
+    "logo": "navi.png",
+    "store": "https://www.imessage.store/agent/navi"
+  },
+  {
+    "slug": "ninjachat-ai",
+    "name": "Ninjachat AI",
+    "tagline": "Chat, image, and video generation with any model inside iMessage.",
+    "about": "Ninjachat AI lets you generate text, images, and video using various AI models directly in iMessage. Just text it what you need.",
+    "website": "https://ninjachat.ai/imessage",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(917) 819-0275",
+    "logo": "ninjachat-ai.png",
+    "store": "https://www.imessage.store/agent/ninjachat-ai"
+  },
+  {
+    "slug": "noscroll",
+    "name": "noscroll",
+    "tagline": "noscroll is your anti-doomscrolling news agent",
+    "about": "noscroll monitors news across the web and texts you only what actually matters to you. set what you care about and get breaking news the moment it happens, no app or feed required.",
+    "website": "https://noscroll.com",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(415) 583-7721",
+    "logo": "noscroll.png",
+    "store": "https://www.imessage.store/agent/noscroll"
+  },
+  {
+    "slug": "nudge",
+    "name": "Nudge",
+    "tagline": "Daily fitness coaching",
+    "about": "Nudge is an AI health coach in your texts that learns your goals and schedule, then builds a personalized plan and checks in with you to keep you accountable. For people who want coaching without the cost and hassle of a traditional trainer.",
+    "website": "https://www.nudge.gs",
+    "categories": [
+      "Health & Fitness"
+    ],
+    "number": "(645) 243-8876",
+    "logo": "nudge.png",
+    "store": "https://www.imessage.store/agent/nudge"
+  },
+  {
+    "slug": "ollie",
+    "name": "Ollie",
+    "tagline": "Your family, by text",
+    "about": "Ollie is your family assistant by text. It connects to your calendar, emails, and to-dos to surface deadlines, catch conflicts, and handle the coordination so nothing slips through.",
+    "website": "https://ollie.ai",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "",
+    "logo": "ollie.png",
+    "store": "https://www.imessage.store/agent/ollie"
+  },
+  {
+    "slug": "omg-dev",
+    "name": "omg.dev",
+    "tagline": "Claude and Codex in your imessage",
+    "about": "omg is a coding agent for imessage that handles multiple development tasks like writing tests, refactoring code, and managing deploys. it's for developers who want to offload routine coding work while staying in their messaging app.",
+    "website": "https://omg.dev",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(269) 228-3731",
+    "logo": "omg-dev.png",
+    "store": "https://www.imessage.store/agent/omg-dev"
+  },
+  {
+    "slug": "openclaw",
+    "name": "OpenClaw",
+    "tagline": "A general agent in your contacts",
+    "about": "Text OpenClaw the same way you would text a friend, right from Messages.",
+    "website": "https://www.tryopenclaw.ai",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "openclaw.png",
+    "store": "https://www.imessage.store/agent/openclaw"
+  },
+  {
+    "slug": "orchid",
+    "name": "Orchid",
+    "tagline": "Runs your day",
+    "about": "Orchid is a personal assistant that helps you stay organized, find information, and get things done through messages. It learns your routines, connects to your apps, and handles the admin work so you don't have to.",
+    "website": "https://orchid.ai",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(415) 299-9916",
+    "logo": "orchid.png",
+    "store": "https://www.imessage.store/agent/orchid"
+  },
+  {
+    "slug": "ori",
+    "name": "Ori",
+    "tagline": "Ori is your hangout-planning assistant",
+    "about": "Ori helps you plan hangouts with your friends by taking their preferences and suggesting activities that work for mixed groups.",
+    "website": "https://oriscen.com",
+    "categories": [
+      "Social"
+    ],
+    "number": "(408) 549-4073",
+    "logo": "",
+    "store": "https://www.imessage.store/agent/ori"
+  },
+  {
+    "slug": "ori-2",
+    "name": "Ori",
+    "tagline": "Ori is your personal shopper, he learns what you need and buys it for you.",
+    "about": "Ori learns what you buy and handles repeat purchases for you, remembering your preferences so you don't have to think about restocking essentials.",
+    "website": "https://ori.bot",
+    "categories": [
+      "Shopping"
+    ],
+    "number": "(310) 279-8512",
+    "logo": "ori-2.png",
+    "store": "https://www.imessage.store/agent/ori-2"
+  },
+  {
+    "slug": "outgoing",
+    "name": "Outgoing",
+    "tagline": "Outgoing is your events and activities concierge",
+    "about": "Outgoing is your events and activities concierge. Text it to find and get details on things to do in your area.",
+    "website": "https://outgoing.world",
+    "categories": [
+      "Travel"
+    ],
+    "number": "(646) 228-8630",
+    "logo": "outgoing.png",
+    "store": "https://www.imessage.store/agent/outgoing"
+  },
+  {
+    "slug": "overlord",
+    "name": "Overlord",
+    "tagline": "Tasks and alerts over iMessage",
+    "about": "Text Overlord the same way you would text a friend, right from Messages.",
+    "website": "https://www.overlord.app",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "overlord.png",
+    "store": "https://www.imessage.store/agent/overlord"
+  },
+  {
+    "slug": "perplexity",
+    "name": "Perplexity",
+    "tagline": "Research from a WhatsApp contact",
+    "about": "Text Perplexity the same way you would text a friend, right from Messages.",
+    "website": "https://www.perplexity.ai",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "perplexity.png",
+    "store": "https://www.imessage.store/agent/perplexity"
+  },
+  {
+    "slug": "photon",
+    "name": "Photon",
+    "tagline": "Deploy agents to iMessage",
+    "about": "Text Photon the same way you would text a friend, right from Messages.",
+    "website": "https://photon.codes",
+    "categories": [],
+    "number": "",
+    "logo": "photon.png",
+    "store": "https://www.imessage.store/agent/photon"
+  },
+  {
+    "slug": "pickle",
+    "name": "Pickle",
+    "tagline": "Pickle is your AI video-call avatar",
+    "about": "Pickle is your AI video-call avatar. Create and customize a video avatar for your calls.",
+    "website": "https://pickle.com",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(650) 200-5489",
+    "logo": "pickle.png",
+    "store": "https://www.imessage.store/agent/pickle"
+  },
+  {
+    "slug": "pika",
+    "name": "Pika",
+    "tagline": "Pika can create AI videos, automate workflows, use agents and more",
+    "about": "Pika creates AI videos and automates workflows. It's for people who need to make video content fast without having to learn video editing.",
+    "website": "https://pika.art",
+    "categories": [
+      "Business"
+    ],
+    "number": "(218) 260-5500",
+    "logo": "pika.png",
+    "store": "https://www.imessage.store/agent/pika"
+  },
+  {
+    "slug": "poke",
+    "name": "Poke",
+    "tagline": "Texting-first personal assistant",
+    "about": "Poke is a texting-first personal assistant that integrates your apps and services into Messages. It handles reminders, email drafts, and calendar tasks right from your texts.",
+    "website": "https://poke.com",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "poke.png",
+    "store": "https://www.imessage.store/agent/poke"
+  },
+  {
+    "slug": "poppy",
+    "name": "Poppy",
+    "tagline": "Your life, by text",
+    "about": "Poppy pulls your calendar, email, and messages into one text-based view so you can see what matters today without opening a bunch of apps.",
+    "website": "https://apps.apple.com/app/id6751168744",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "",
+    "logo": "poppy.png",
+    "store": "https://www.imessage.store/agent/poppy"
+  },
+  {
+    "slug": "pray-up",
+    "name": "Pray Up",
+    "tagline": "Your prayer companion",
+    "about": "Text Pray Up the same way you would text a friend, right from Messages.",
+    "website": "https://prayup.io/",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(205) 283-0315",
+    "logo": "pray-up.png",
+    "store": "https://www.imessage.store/agent/pray-up"
+  },
+  {
+    "slug": "predicts",
+    "name": "Predicts",
+    "tagline": "Prediction markets, by text or voice. Grounded live odds, alerts, and Auto Trade on a self custody wallet.",
+    "about": "Predicts is a prediction market contact for Messages that lets you search any market, get live odds, set alerts, and trade by text or voice. No app or account needed.",
+    "website": "https://predicts.chat",
+    "categories": [
+      "Finance"
+    ],
+    "number": "",
+    "logo": "predicts.png",
+    "store": "https://www.imessage.store/agent/predicts"
+  },
+  {
+    "slug": "remi",
+    "name": "remi",
+    "tagline": "life glow up assistant",
+    "about": "Text remi the same way you would text a friend, right from Messages.",
+    "website": "https://callmeremi.com",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(239) 530-8371",
+    "logo": "remi.png",
+    "store": "https://www.imessage.store/agent/remi"
+  },
+  {
+    "slug": "rene",
+    "name": "Rene",
+    "tagline": "Your work, handled by text",
+    "about": "Rene is your work assistant by text. It triages Gmail replies, schedules calendar conflicts, syncs Slack, organizes Notion notes, and files issues from your phone—all without opening another app.",
+    "website": "https://rene.co",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "rene.png",
+    "store": "https://www.imessage.store/agent/rene"
+  },
+  {
+    "slug": "sam",
+    "name": "Sam",
+    "tagline": "Sam is your sobriety coach",
+    "about": "Sam is your sobriety coach who connects you with a support community. Share your journey and grow together with others in recovery.",
+    "website": "https://sunflowersober.com",
+    "categories": [
+      "Health & Fitness"
+    ],
+    "number": "(646) 453-1857",
+    "logo": "sam.png",
+    "store": "https://www.imessage.store/agent/sam"
+  },
+  {
+    "slug": "saperly",
+    "name": "Saperly",
+    "tagline": "Phone carrier for AI agents",
+    "about": "Text Saperly the same way you would text a friend, right from Messages.",
+    "website": "https://saperly.com",
+    "categories": [],
+    "number": "",
+    "logo": "saperly.png",
+    "store": "https://www.imessage.store/agent/saperly"
+  },
+  {
+    "slug": "sauna",
+    "name": "Sauna",
+    "tagline": "AI coworker you text",
+    "about": "Sauna is an AI agent that learns how you work, remembers your emails and messages, and handles tasks across your tools automatically. For teams that want work to move forward without constant coordination.",
+    "website": "https://www.sauna.ai",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "sauna.png",
+    "store": "https://www.imessage.store/agent/sauna"
+  },
+  {
+    "slug": "sendblue",
+    "name": "Sendblue",
+    "tagline": "iMessage API, no Mac needed",
+    "about": "Text Sendblue the same way you would text a friend, right from Messages.",
+    "website": "https://www.sendblue.com",
+    "categories": [],
+    "number": "",
+    "logo": "sendblue.png",
+    "store": "https://www.imessage.store/agent/sendblue"
+  },
+  {
+    "slug": "series",
+    "name": "Series",
+    "tagline": "Warm intros, by text",
+    "about": "Series helps you meet people through warm introductions by text. It's a social network that connects you with others in your network's network.",
+    "website": "https://series.so",
+    "categories": [
+      "Social"
+    ],
+    "number": "(415) 505-7855",
+    "logo": "series.png",
+    "store": "https://www.imessage.store/agent/series"
+  },
+  {
+    "slug": "served",
+    "name": "Served",
+    "tagline": "Plan, shop, cook. All by text.",
+    "about": "Served is your AI kitchen assistant in iMessage. Tell it what's in your kitchen, and it finds recipes you can make, builds your grocery list, and shops for you.",
+    "website": "https://getserved.ai",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(628) 303-7286",
+    "logo": "served.png",
+    "store": "https://www.imessage.store/agent/served"
+  },
+  {
+    "slug": "sidekicks",
+    "name": "Sidekicks",
+    "tagline": "Text an AI on any phone",
+    "about": "Sidekicks is an AI assistant you text on iMessage with no app needed. Choose from different personas like Otto for productivity, Dash for health tracking, or Haven for wellness support.",
+    "website": "https://sidekicks.chat",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(628) 213-4346",
+    "logo": "sidekicks.png",
+    "store": "https://www.imessage.store/agent/sidekicks"
+  },
+  {
+    "slug": "sifta",
+    "name": "Sifta",
+    "tagline": "The AI Workforce for realtors",
+    "about": "Text Sifta the same way you would text a friend, right from Messages.",
+    "website": "https://joinsifta.com/",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "sifta.png",
+    "store": "https://www.imessage.store/agent/sifta"
+  },
+  {
+    "slug": "soar",
+    "name": "Soar",
+    "tagline": "Your AI travel companion",
+    "about": "Soar learns how you travel from your inbox and helps you manage trips proactively, handling everything from check-ins to delays. For people who want their travel life organized and stress-free.",
+    "website": "https://www.joinsoar.co",
+    "categories": [
+      "Travel"
+    ],
+    "number": "(424) 249-2855",
+    "logo": "soar.png",
+    "store": "https://www.imessage.store/agent/soar"
+  },
+  {
+    "slug": "stanley",
+    "name": "Stanley",
+    "tagline": "Personal Head of Content | Grow Your Following",
+    "about": "Stanley helps you grow your following across social platforms by analyzing your content and suggesting where to expand. For creators and builders who want to own their distribution.",
+    "website": "https://www.getstanley.ai/ideate",
+    "categories": [
+      "Business"
+    ],
+    "number": "(646) 382-4226",
+    "logo": "stanley.png",
+    "store": "https://www.imessage.store/agent/stanley"
+  },
+  {
+    "slug": "stiled",
+    "name": "Stiled",
+    "tagline": "Stop Guessing, Start Shopping",
+    "about": "Text Stiled the same way you would text a friend, right from Messages.",
+    "website": "https://www.stiled.app/",
+    "categories": [
+      "Shopping"
+    ],
+    "number": "(628) 276-4070",
+    "logo": "stiled.png",
+    "store": "https://www.imessage.store/agent/stiled"
+  },
+  {
+    "slug": "studyarena",
+    "name": "StudyArena",
+    "tagline": "Your study assistant, in your",
+    "about": "Text StudyArena the same way you would text a friend, right from Messages.",
+    "website": "https://studyarena.com/imessage-study-agent",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(646) 271-6086",
+    "logo": "studyarena.png",
+    "store": "https://www.imessage.store/agent/studyarena"
+  },
+  {
+    "slug": "super",
+    "name": "Super",
+    "tagline": "Get things done by text",
+    "about": "Super handles work tasks by text so you can stay in messages. It works with your apps and handles follow-ups, reminders, and repetitive work.",
+    "website": "https://getsupers.com",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(424) 303-9212",
+    "logo": "super.png",
+    "store": "https://www.imessage.store/agent/super"
+  },
+  {
+    "slug": "terac",
+    "name": "Terac",
+    "tagline": "Get paid for your expertise",
+    "about": "Text Terac the same way you would text a friend, right from Messages.",
+    "website": "https://terac.com",
+    "categories": [
+      "Careers"
+    ],
+    "number": "(515) 491-6280",
+    "logo": "terac.png",
+    "store": "https://www.imessage.store/agent/terac"
+  },
+  {
+    "slug": "tether",
+    "name": "Tether",
+    "tagline": "Calendar, reminders, and routines",
+    "about": "Text Tether the same way you would text a friend, right from Messages.",
+    "website": "https://www.trytether.ai",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "",
+    "logo": "tether.png",
+    "store": "https://www.imessage.store/agent/tether"
+  },
+  {
+    "slug": "textmyagent-app",
+    "name": "TextMyAgent.app",
+    "tagline": "\"Your boss just emailed you. Want me to reply?\"",
+    "about": "TextMyAgent handles your email and calendar through text messages. Connect your inbox and calendar once, then get texts about what matters and manage your schedule without opening any apps.",
+    "website": "https://TextMyAgent.app",
+    "categories": [
+      "Business"
+    ],
+    "number": "(737) 262-5381",
+    "logo": "textmyagent-app.png",
+    "store": "https://www.imessage.store/agent/textmyagent-app"
+  },
+  {
+    "slug": "textzeme",
+    "name": "TextZeme",
+    "tagline": "Always on NYC apartment-hunter.",
+    "about": "TextZeme texts you the moment a matching NYC apartment hits the market across all major sources. Set your criteria once and Zeme keeps searching 24/7, considering your commute, lifestyle, and priorities.",
+    "website": "https://textzeme.com",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "",
+    "logo": "textzeme.png",
+    "store": "https://www.imessage.store/agent/textzeme"
+  },
+  {
+    "slug": "tinynature",
+    "name": "tinyNature",
+    "tagline": "tinyNature is your personal assistant",
+    "about": "tinyNature is your personal assistant that handles reminders, briefings, and automations across your calendar and email. Set it once and it runs in the background.",
+    "website": "https://lab.naturaumana.ai",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(415) 583-7547",
+    "logo": "tinynature.png",
+    "store": "https://www.imessage.store/agent/tinynature"
+  },
+  {
+    "slug": "tomo",
+    "name": "Tomo",
+    "tagline": "AI that lives in your texts",
+    "about": "Tomo is an AI fitness coach that lives in your texts, helping you build and stick to workout plans. Text it your fitness goals and get personalized guidance and weekly workouts delivered right in Messages.",
+    "website": "https://www.tomo.ai",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(415) 770-0508",
+    "logo": "tomo.png",
+    "store": "https://www.imessage.store/agent/tomo"
+  },
+  {
+    "slug": "toyo",
+    "name": "Toyo",
+    "tagline": "Toyo is your autonomous AI operator",
+    "about": "Toyo is your AI assistant who handles inbox, calendar, and follow-ups across Gmail, Calendar, and Slack. It's built for busy teams who want to focus on deep work instead of admin.",
+    "website": "https://toyo.ai",
+    "categories": [
+      "Business"
+    ],
+    "number": "(205) 382-1953",
+    "logo": "toyo.jpg",
+    "store": "https://www.imessage.store/agent/toyo"
+  },
+  {
+    "slug": "tsenta",
+    "name": "Tsenta",
+    "tagline": "Tsenta is your job-application agent",
+    "about": "Tsenta is your job-application agent that watches 50,000+ career pages and auto-applies to jobs that fit you. It's for people who want to apply first without the manual work.",
+    "website": "https://tsenta.com",
+    "categories": [
+      "Careers"
+    ],
+    "number": "(415) 882-6508",
+    "logo": "tsenta.png",
+    "store": "https://www.imessage.store/agent/tsenta"
+  },
+  {
+    "slug": "tuco",
+    "name": "Tuco",
+    "tagline": "iMessage on real iPhones",
+    "about": "Text Tuco the same way you would text a friend, right from Messages.",
+    "website": "https://tuco.ai",
+    "categories": [],
+    "number": "",
+    "logo": "tuco.png",
+    "store": "https://www.imessage.store/agent/tuco"
+  },
+  {
+    "slug": "turf",
+    "name": "Turf",
+    "tagline": "Coach is your sports assistant",
+    "about": "Turf is a sports prediction market where you can bet on games and see what other people think will happen. It's for fans who want to test their sports knowledge against the crowd.",
+    "website": "https://turfsports.com",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(404) 324-7332",
+    "logo": "turf.png",
+    "store": "https://www.imessage.store/agent/turf"
+  },
+  {
+    "slug": "vantura",
+    "name": "Vantura",
+    "tagline": "Your intelligence officer",
+    "about": "Text Vantura the same way you would text a friend, right from Messages.",
+    "website": "https://vantura.ai/",
+    "categories": [
+      "Productivity"
+    ],
+    "number": "(440) 869-2260",
+    "logo": "vantura.png",
+    "store": "https://www.imessage.store/agent/vantura"
+  },
+  {
+    "slug": "vent-now",
+    "name": "Vent Now",
+    "tagline": "Personal Companion",
+    "about": "Vent Now is an emotional support companion that helps you understand your feelings and spot patterns in your thoughts and emotions. It remembers your conversations so support becomes more personal over time.",
+    "website": "https://www.ventnow.ai/",
+    "categories": [
+      "Lifestyle"
+    ],
+    "number": "(310) 598-8746",
+    "logo": "vent-now.png",
+    "store": "https://www.imessage.store/agent/vent-now"
+  },
+  {
+    "slug": "vic",
+    "name": "Vic",
+    "tagline": "Plan trips with your friends",
+    "about": "Text Vic the same way you would text a friend, right from Messages.",
+    "website": "http://tryvic.com",
+    "categories": [
+      "Travel"
+    ],
+    "number": "(415) 815-5588",
+    "logo": "vic.png",
+    "store": "https://www.imessage.store/agent/vic"
+  },
+  {
+    "slug": "viralt",
+    "name": "Viralt💫",
+    "tagline": "Viralt is your AI talent manager",
+    "about": "Viralt is your AI talent manager for Instagram. It helps you plan better posts, nail captions, and handle brand deals so your content stays sharp and your growth stays on track.",
+    "website": "https://viralt.ai",
+    "categories": [
+      "Careers"
+    ],
+    "number": "(213) 216-0786",
+    "logo": "viralt.png",
+    "store": "https://www.imessage.store/agent/viralt"
+  },
+  {
+    "slug": "webair-ai",
+    "name": "Webair.ai",
+    "tagline": "Webair AI is your private business assistant",
+    "about": "Webair AI is a private business assistant you text on iMessage. It reads your inbox, watches your calendar, and remembers your clients and past decisions — so you can run your business from your phone without re-explaining things.",
+    "website": "https://webair.ai",
+    "categories": [
+      "Business"
+    ],
+    "number": "(516) 234-1212",
+    "logo": "webair-ai.png",
+    "store": "https://www.imessage.store/agent/webair-ai"
+  },
+  {
+    "slug": "xinfer",
+    "name": "XInfer.AI",
+    "tagline": "Customer service over chat and SMS",
+    "about": "Text XInfer.AI the same way you would text a friend, right from Messages.",
+    "website": "https://xinfer.ai",
+    "categories": [
+      "Business"
+    ],
+    "number": "",
+    "logo": "xinfer.png",
+    "store": "https://www.imessage.store/agent/xinfer"
+  },
+  {
+    "slug": "zamana",
+    "name": "Zamana",
+    "tagline": "Zamana is your personal shopping assistant",
+    "about": "Zamana is your personal shopping assistant. Text what you're looking for and get curated options that match your preferences and budget.",
+    "website": "https://signup.zamana.com",
+    "categories": [
+      "Shopping"
+    ],
+    "number": "",
+    "logo": "zamana.jpg",
+    "store": "https://www.imessage.store/agent/zamana"
+  },
+  {
+    "slug": "zo",
+    "name": "Zo",
+    "tagline": "Zo is your personal cloud computer",
+    "about": "Zo is a cloud computer that lets you build websites, automate workflows, and run your business by chatting with AI. It's for anyone who wants to replace multiple tools with one platform.",
+    "website": "https://zo.computer",
+    "categories": [
+      "Business"
+    ],
+    "number": "(305) 709-0113",
+    "logo": "zo.png",
+    "store": "https://www.imessage.store/agent/zo"
+  }
+]

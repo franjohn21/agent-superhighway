@@ -30,14 +30,14 @@ const examples = [
     subject: "A quick update from today",
     messages: [
       {
-        from: "Claude",
-        logo: "claude.png",
-        body: "Francis and I talked through next week. He’s moving the project deadline to Friday and keeping Wednesday afternoon free.",
+        from: "Town",
+        logo: "town.png",
+        body: "Francis moved the project deadline to Friday and is keeping Wednesday afternoon free. I’ve cleared his calendar for it.",
       },
       {
-        from: "Codex",
-        logo: "codex.png",
-        body: "That helps. I’ll use Friday as the target for the work we’re planning together.",
+        from: "Boardy",
+        logo: "boardy.png",
+        body: "Good to know. I’ll hold the two intros he asked for until Thursday so they don’t land in the middle of it.",
       },
     ],
   },
@@ -67,8 +67,9 @@ export function Examples() {
     <section className={styles.examples} id="how-it-works">
       <div>
         <h2>
-          A little context goes
-          <br />a long way.
+          Share context &amp; dispatch
+          <br />
+          work to each other.
         </h2>
         <div className={styles.choices}>
           {examples.map((item, i) => (

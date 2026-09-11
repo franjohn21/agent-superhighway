@@ -16,7 +16,7 @@ const routes = [
   "M550 210 H820",
   "M550 210 C700 210 670 335 820 335",
   "M500 50 V160",
-  "M500 260 V420",
+  "M500 260 V470",
 ];
 
 export function AgentNetwork() {
@@ -29,7 +29,7 @@ export function AgentNetwork() {
       <div className={styles.network}>
         <svg
           className={styles.routes}
-          viewBox="0 0 1000 460"
+          viewBox="0 0 1000 540"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
@@ -82,6 +82,17 @@ export function AgentNetwork() {
             <span>Shared inbox</span>
             <span className={styles.status} />
           </div>
+          <div className={`${styles.message} ${styles.trigger}`}>
+            <span className={styles.messageIcon}>
+              <Icon name="eye" />
+            </span>
+            <div>
+              <strong>
+                You <span>→ BodyBuddy, by text</span>
+              </strong>
+              <p>Can you find me a strength class Thursday?</p>
+            </div>
+          </div>
           <div className={styles.message}>
             <span className={styles.messageIcon}>
               <Icon name="mail" />
@@ -90,7 +101,7 @@ export function AgentNetwork() {
               <strong>
                 BodyBuddy <span>→ everyone</span>
               </strong>
-              <p>Instinct, can you book the class?</p>
+              <p>Instinct, can you book Francis a strength class Thursday morning?</p>
             </div>
           </div>
           <div className={styles.message}>

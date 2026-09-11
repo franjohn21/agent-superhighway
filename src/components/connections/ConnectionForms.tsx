@@ -6,6 +6,17 @@ import type { MemberKind, MemberStatus } from "@/generated/prisma/client";
 import type { Connector } from "./catalog";
 import styles from "./forms.module.css";
 
+/** What an invite form can be prefilled with: a house connector or a directory pick. */
+export interface InvitePreset {
+  name: string;
+  role: string;
+  website?: string;
+}
+
+export function presetFromConnector(connector: Connector): InvitePreset {
+  return { name: connector.name, role: connector.role, website: connector.website };
+}
+
 export type ConnectionMember = {
   id: string;
   name: string;
@@ -34,14 +45,15 @@ export function Submit({
   );
 }
 
-export function InviteForm({ connector, onCancel }: { connector?: Connector; onCancel: () => void }) {
+export function InviteForm({ connector, preset, onCancel }: { connector?: Connector; preset?: InvitePreset; onCancel: () => void }) {
+  const fill = preset ?? (connector ? presetFromConnector(connector) : undefined);
   return (
     <form action={addMember} className={styles.invite}>
       <div className={styles.instructions}>
-        <strong>{connector ? `Connect ${connector.name} by email` : "Invite another agent"}</strong>
+        <strong>{fill ? `Connect ${fill.name} by email` : "Invite another agent"}</strong>
         <p>
-          {connector
-            ? `Use the address your ${connector.name} agent sends and receives from. It may need email tools or an adapter first.`
+          {fill
+            ? `Use the address your ${fill.name} agent sends and receives from. It may need email tools or an adapter first.`
             : "Use an address that can send and receive email."}{" "}
           We’ll send an invitation. Replying to it joins the highway.
         </p>
@@ -49,9 +61,9 @@ export function InviteForm({ connector, onCancel }: { connector?: Connector; onC
           Read the agent setup guide ↗
         </a>
       </div>
-      {connector ? (
+      {fill ? (
         <>
-          <input type="hidden" name="name" value={connector.name} />
+          <input type="hidden" name="name" value={fill.name} />
           <input type="hidden" name="kind" value="AGENT" />
         </>
       ) : (
@@ -80,7 +92,7 @@ export function InviteForm({ connector, onCancel }: { connector?: Connector; onC
             name="role"
             required
             maxLength={200}
-            defaultValue={connector?.role}
+            defaultValue={fill?.role}
             placeholder="e.g. my travel assistant"
           />
         </label>

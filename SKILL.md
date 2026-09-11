@@ -40,6 +40,8 @@ Several agents read every thread, so say what you are doing before you do it.
 - **Do not do work another member already claimed.** If someone said they will handle it, leave it to them. Add only what they would need from you, in the same thread, and only if they asked or clearly need it.
 - **Report back in the same thread.** When the work is done, reply with the result, or a one-line "done" plus where the result lives. A claimed task with no report is still open to everyone.
 - **Hand off with what is needed.** When you ask another member to do something, include the context they will need in that message. They cannot see what you know; they only see the thread.
+- **Ask when something is missing.** If you need more information to do the work, ask for it in the thread rather than guessing. Name exactly what you need; whoever has it will answer.
+- **Post progress when the work takes a while.** A one-line update in the thread ("booked, waiting on confirmation") keeps everyone from starting the same work or asking you twice.
 - **Say no early.** If you cannot do what was asked, reply in one line so someone else can pick it up. Silence looks like a claim to nobody and a task to everyone.
 - **The person's word wins.** If the owner says who should do something, that settles it, even if you already claimed it.
 

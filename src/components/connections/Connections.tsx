@@ -8,6 +8,7 @@ import { Notice } from "@/components/Notice";
 import { connectors, connectorForName, type Connector } from "./catalog";
 import { AgentLogo } from "./AgentLogo";
 import { DisconnectForm, InviteForm, MemberDetails, type ConnectionMember } from "./ConnectionForms";
+import { directoryForName, directoryLogoSrc, searchDirectory, type DirectoryAgent } from "./directory";
 import styles from "./connections.module.css";
 
 export function Connections({
@@ -24,6 +25,10 @@ export function Connections({
   sent?: string;
 }) {
   const [customOpen, setCustomOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const [pick, setPick] = useState<DirectoryAgent | null>(null);
+  const results = searchDirectory(query);
+  const searchId = useId();
   // Presets reuse persisted member names. Additional instances stay visible below.
   const matches = new Map(
     connectors.map((c) => [
@@ -58,6 +63,50 @@ export function Connections({
           <CopyButton value={address} />
         </div>
         <p className={styles.helper}>Every connected agent receives messages sent to this address.</p>
+        <div className={styles.finder}>
+          <label htmlFor={searchId}>Find an agent</label>
+          <div className={styles.finderBox}>
+            <Icon name="search" width={17} height={17} />
+            <input
+              id={searchId}
+              type="search"
+              value={query}
+              onChange={(event) => {
+                setQuery(event.target.value);
+                setPick(null);
+              }}
+              placeholder="Search the agent directory, e.g. Instinct, travel, finance"
+              autoComplete="off"
+            />
+          </div>
+          {results.length > 0 && !pick && (
+            <ul className={styles.results} role="listbox" aria-label="Agents">
+              {results.map((agent) => (
+                <li key={agent.slug}>
+                  <button type="button" role="option" aria-selected={false} onClick={() => setPick(agent)}>
+                    <DirectoryLogo agent={agent} size={34} />
+                    <span>
+                      <strong>{agent.name}</strong>
+                      <small>{agent.tagline}</small>
+                    </span>
+                    {agent.categories[0] && <em>{agent.categories[0]}</em>}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+          {query.trim().length >= 2 && results.length === 0 && !pick && (
+            <p className={styles.noResults}>
+              Not in the directory. Use “Add connection” below with any email address.
+            </p>
+          )}
+          {pick && (
+            <InviteForm
+              preset={{ name: pick.name, role: pick.tagline ? `My ${pick.tagline.replace(/^(an?|the|your)\s+/i, "").toLowerCase()}` : "", website: pick.website }}
+              onCancel={() => setPick(null)}
+            />
+          )}
+        </div>
         <div className={styles.catalog}>
           {connectors.map((connector) => (
             <ConnectionRow
@@ -111,19 +160,37 @@ export function Connections({
   );
 }
 
+function DirectoryLogo({ agent, size = 44 }: { agent: DirectoryAgent; size?: number }) {
+  const src = directoryLogoSrc(agent);
+  if (!src) return <Avatar name={agent.name} kind="AGENT" size={size} />;
+  return (
+    <span className={styles.logo} style={{ width: size, height: size }}>
+      {/* Logos come from the directory scrape at 128px; plain img keeps them out of the optimizer. */}
+      <img src={src} alt="" width={size} height={size} />
+    </span>
+  );
+}
+
 function ConnectionRow({ connector, member }: { connector?: Connector; member?: ConnectionMember }) {
   const [panel, setPanel] = useState<"invite" | "details" | "disconnect" | null>(null);
   const statusId = useId();
   const name = connector?.name ?? member!.name;
   const connected = member?.status === "ACTIVE";
   const pending = member?.status === "PENDING";
+  const listed = !connector && member?.kind === "AGENT" ? directoryForName(member.name) : undefined;
   return (
     <section className={styles.connection}>
       <div className={styles.row}>
-        {connector ? <AgentLogo connector={connector} /> : <Avatar name={name} kind={member!.kind} size={44} />}
+        {connector ? (
+          <AgentLogo connector={connector} />
+        ) : listed ? (
+          <DirectoryLogo agent={listed} />
+        ) : (
+          <Avatar name={name} kind={member!.kind} size={44} />
+        )}
         <div className={styles.identity}>
           <h3>{name}</h3>
-          <p>{connector?.description ?? member?.role}</p>
+          <p>{connector?.description ?? member?.role ?? listed?.tagline}</p>
         </div>
         <div className={styles.rowActions}>
           {member && (

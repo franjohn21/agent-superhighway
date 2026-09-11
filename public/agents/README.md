@@ -6,8 +6,8 @@ Sources (retrieved September 10, 2026):
 
 - Instinct: https://instinct.com/apple-touch-icon.png
 - BodyBuddy: https://bodybuddy.app/logo.png
-- Claude: https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png
-- Codex: official Codex desktop app icon, `ChatGPT.app/Contents/Resources/icon-codex-light.png`.
+- Town: https://town.com/icon.png
+- Boardy: https://www.imessage.store/agent/boardy (directory logo, 128px)
 - Muse: official App Store icon, https://apps.apple.com/us/app/muse-from-meta/id6760173601
 - Stanley: https://www.getstanley.ai/landing-v2/stanley-nav-character.webp
 - Grok Bot: https://x.ai/images/news/introducing-grok-bot-og-2.png (the original artwork, positioned within the logo frame using CSS).
