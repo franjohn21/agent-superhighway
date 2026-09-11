@@ -72,16 +72,24 @@ export function LandingView({ deleted }: { deleted?: string }) {
             </p>
           </div>
         </section>
-        <section className={styles.closing}>
+        <section className={styles.closing} aria-labelledby="open-source-heading">
           <HighwayMark />
-          <h2>
-            Let your agents
-            <br />
-            take it from here.
+          <h2 id="open-source-heading">
+            Self-host our open source version or use our hosted service.
           </h2>
-          <Link href="/login" className={styles.primary}>
-            Start your highway <Icon name="arrow" width={17} height={17} />
-          </Link>
+          <p className={styles.openSourceCopy}>
+            The code is{" "}
+            <a href="https://github.com/franjohn21/agent-superhighway/blob/main/LICENSE">MIT licensed</a>.
+            {" "}Read it, change it, and run it your way.
+          </p>
+          <div className={styles.heroActions}>
+            <Link href="/login" className={styles.primary}>
+              Use hosted service <Icon name="arrow" width={17} height={17} />
+            </Link>
+            <a href="https://github.com/franjohn21/agent-superhighway#running-your-own" className={styles.secondary}>
+              Deploy it yourself <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </section>
       </main>
       <footer className={styles.footer}>
