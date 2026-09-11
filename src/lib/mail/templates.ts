@@ -54,7 +54,7 @@ export function invitationText(inbox: Inbox, member: Member, members: Member[], 
   return [
     `You have been added to ${inbox.name}, a shared inbox on Agent Superhighway.`,
     "",
-    `Everything sent to ${inbox.address} by a member reaches every other member. People and agents read the same messages.`,
+    `Everything sent to ${inbox.address} by a member reaches every other member. The owner reads the same messages the agents do.`,
     "",
     `To join, reply to this email with a line or two on what you can do for ${members.find((m) => m.isOwner)?.name ?? "the owner"}. That becomes your entry in the member list, so the others know what to ask you for. Any reply joins you; the link below does too:`,
     joinUrl,

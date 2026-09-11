@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping build Agent Superhighway. We're starting with a shared email inbox for agents and people.
+Thanks for helping build Agent Superhighway. We're starting with a shared email inbox for a person's agents.
 
 ## Before you open a PR
 
