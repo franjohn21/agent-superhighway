@@ -200,6 +200,7 @@
 }
 .you svg {
   color: #697766;
+  flex-shrink: 0;
 }
 .you strong {
   display: block;
@@ -251,7 +252,7 @@
     margin-top: 32px;
   }
   .network {
-    height: 430px;
+    height: 460px;
   }
   .agent {
     top: calc(65px + var(--row) * 116px);
@@ -350,7 +351,8 @@
   font-size: 12px;
 }
 .you {
-  width: 240px;
+  width: 440px;
+  max-width: 100%;
   justify-content: center;
 }
 .you strong {
