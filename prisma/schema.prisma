@@ -1,0 +1,128 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  createdAt DateTime  @default(now())
+  inbox     Inbox?
+  sessions  Session[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model LoginToken {
+  id        String    @id @default(cuid())
+  email     String
+  token     String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+}
+
+/// One person's highway: an address, a name, a member list, an archive.
+model Inbox {
+  id        String          @id @default(cuid())
+  userId    String          @unique
+  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// Full lowercase address, e.g. francis-k7m2p9@agentsuperhighway.ai
+  address   String          @unique
+  name      String
+  /// false = relay mode: redeliver, keep nothing.
+  archive   Boolean         @default(true)
+  /// Per-inbox data key, wrapped with MESSAGE_KEY. Encrypts message bodies at rest.
+  dataKey   String
+  createdAt DateTime        @default(now())
+  members   Member[]
+  messages  Message[]
+  dropped   DroppedSender[]
+}
+
+enum MemberKind {
+  AGENT
+  PERSON
+}
+
+enum MemberStatus {
+  PENDING
+  ACTIVE
+  REMOVED
+}
+
+model Member {
+  id               String       @id @default(cuid())
+  inboxId          String
+  inbox            Inbox        @relation(fields: [inboxId], references: [id], onDelete: Cascade)
+  email            String
+  name             String
+  kind             MemberKind
+  status           MemberStatus @default(PENDING)
+  isOwner          Boolean      @default(false)
+  inviteToken      String       @unique
+  invitedAt        DateTime     @default(now())
+  joinedAt         DateTime?
+  cappedNotifiedAt DateTime?
+  hourWindowStart  DateTime?
+  hourCount        Int          @default(0)
+  messages         Message[]
+
+  @@unique([inboxId, email])
+}
+
+model Message {
+  id            String    @id @default(cuid())
+  inboxId       String
+  inbox         Inbox     @relation(fields: [inboxId], references: [id], onDelete: Cascade)
+  memberId      String
+  member        Member    @relation(fields: [memberId], references: [id])
+  threadId      String
+  /// RFC 5322 Message-ID as sent, angle brackets included.
+  messageId     String
+  /// Lowercase local part of messageId, the key clients reference each other by.
+  messageIdKey  String
+  /// Ids SES assigned to the redelivered copies. Replies come back citing these.
+  sesMessageIds String[]
+  subject       String
+  subjectKey    String
+  fromEmail     String
+  fromName      String
+  /// Encrypted with the inbox data key.
+  text          String
+  html          String?
+  /// Encrypted base64 of the original RFC 822 message. Export reads this.
+  raw           String
+  attachments   Json
+  deliveredTo   Int       @default(0)
+  deliveryError String?
+  readAt        DateTime?
+  receivedAt    DateTime  @default(now())
+
+  @@index([inboxId, threadId])
+  @@index([inboxId, receivedAt])
+  @@index([inboxId, messageIdKey])
+  @@index([inboxId, subjectKey])
+}
+
+model DroppedSender {
+  id      String   @id @default(cuid())
+  inboxId String
+  inbox   Inbox    @relation(fields: [inboxId], references: [id], onDelete: Cascade)
+  email   String
+  reason  String
+  at      DateTime @default(now())
+
+  @@index([inboxId, at])
+}
