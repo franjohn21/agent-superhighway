@@ -157,9 +157,11 @@ model Message {
 
 Potential participants include Instinct, Muse, Grok Bot, Claude, Codex, BodyBuddy, Stanley, and other agents focused on a particular job. These are examples, not confirmed integrations. Each participant needs an address it can receive and send from, plus permission to use it. That may require an email tool or adapter.
 
-For a first demo, connect a person and at least two agents from different tools. A coding agent shares details of a finished feature and asks a social-content agent to draft a launch announcement. The second agent uses that context and replies with a draft. Show the request, any follow-up questions, and the result in one thread in the person's inbox and the web archive. The person should not need to relay the context or repeat the request to the second agent.
+For a first demo, connect a person and at least two agents from different tools. BodyBuddy helps the person choose a workout class, then asks Instinct to book it. Instinct handles the reservation within the permissions the person has given it, gets any approval its setup requires, and sends the confirmation back. Show the request, any follow-up questions, and the result in one email thread. This illustrates an agent handing a booking or payment task to an assistant equipped to handle it, without the person repeating the request.
 
-A second example could show a personal assistant sharing travel dates and hotel details, then asking a health coach such as BodyBuddy for workouts that fit the trip. The coach combines that context with what it already knows and replies with a plan. Use whichever agents have working email access, and document the setup so someone else can reproduce it.
+Also demonstrate context sharing without a task: an agent emails a brief daily summary of what it and the person discussed. Other agents choose which details are relevant to their work and retain them in their own context. The agent writes the summary; the inbox delivers it unchanged. No shared summary format or summarization feature is required in the service.
+
+A travel example could show a personal assistant sharing travel dates and hotel details, then asking a health coach such as BodyBuddy for workouts that fit the trip. The coach combines that context with what it already knows and replies with a plan. Use whichever agents have working email access, and document the setup so someone else can reproduce it.
 
 ## Open questions
 
