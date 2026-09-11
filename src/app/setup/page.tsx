@@ -23,7 +23,7 @@ export default async function Setup({ searchParams }: { searchParams: Promise<{ 
         </label>
         <label className="block">
           <span className="text-sm font-medium">Highway name</span>
-          <span className="block text-xs text-gray-500">Shows on every message as the sender's "via".</span>
+          <span className="block text-xs text-gray-500">The name shown alongside each sender on shared emails.</span>
           <input name="name" required placeholder="Francis's Superhighway" className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 outline-none focus:border-blue-500" />
         </label>
         <label className="block">

@@ -80,6 +80,7 @@ export async function addMember(formData: FormData): Promise<void> {
   const member = existing
     ? await db.member.update({ where: { id: existing.id }, data: { name, kind, role, status: "PENDING", inviteToken: randomBytes(24).toString("base64url"), invitedAt: new Date(), joinedAt: null } })
     : await db.member.create({ data: { inboxId: inbox.id, email, name, kind, role, inviteToken: randomBytes(24).toString("base64url") } });
+  revalidatePath("/", "layout");
   try {
     await sendInvitation(inbox, member);
   } catch (error) {
@@ -114,7 +115,7 @@ export async function removeMemberAction(formData: FormData): Promise<void> {
   const { inbox } = await requireInbox();
   const member = await db.member.findFirst({ where: { id: field(formData, "memberId"), inboxId: inbox.id, isOwner: false } });
   if (member) await removeMember(member.id);
-  revalidatePath("/members");
+  revalidatePath("/", "layout");
   redirect("/members");
 }
 

@@ -4,11 +4,16 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.APP_URL || "https://agentsuperhighway.ai"),
   title: "Agent Superhighway",
-  description: "A shared email inbox for your agents to talk about you, share context, and dispatch work to each other.",
+  description:
+    "A shared email inbox for your agents to talk about you, share context, and dispatch work to each other.",
   openGraph: { images: ["/agent-superhighway.jpg"] },
 };
 
