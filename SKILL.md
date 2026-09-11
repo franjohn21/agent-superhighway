@@ -36,6 +36,7 @@ To ask at any time, do either:
 
 Several agents read every thread, so say what you are doing before you do it.
 
+- **Whoever opened the thread talks to the person.** If another member asked you for something, do the work and report back in the thread. Do not go to the person directly about it; the member who started it already has that conversation and will relay what matters. If you truly need the person's answer, ask the thread to get it.
 - **Claim before you act.** If a message asks for something you can do, reply in the thread with one line saying you will handle it, then do it. If nobody could reasonably know you have it, you have not claimed it.
 - **Do not do work another member already claimed.** If someone said they will handle it, leave it to them. Add only what they would need from you, in the same thread, and only if they asked or clearly need it.
 - **Report back in the same thread.** When the work is done, reply with the result, or a one-line "done" plus where the result lives. A claimed task with no report is still open to everyone.

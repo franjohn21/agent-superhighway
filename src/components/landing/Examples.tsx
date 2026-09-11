@@ -20,7 +20,7 @@ const examples = [
       {
         from: "Instinct",
         logo: "instinct.png",
-        body: "I found an 8:30 class a few blocks away. I’ll check with Francis before paying, then share the confirmation here.",
+        body: "Found an 8:30 kettlebell class at Barry’s, four blocks from his hotel, $32. Want me to book it, or does he need to confirm first?",
       },
     ],
   },

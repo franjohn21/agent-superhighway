@@ -84,7 +84,7 @@ export function AgentNetwork() {
           </div>
           <div className={`${styles.message} ${styles.trigger}`}>
             <span className={`${styles.messageIcon} ${styles.personIcon}`}>
-              <Icon name="person" />
+              <Image src="/francis.jpg" alt="" width={28} height={28} />
             </span>
             <div>
               <strong>

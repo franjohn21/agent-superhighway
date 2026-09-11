@@ -66,7 +66,7 @@ export function LandingView({ deleted }: { deleted?: string }) {
           <div className={styles.demoFrame}>
             <Image
               src="/screenshots/inbox.jpg"
-              alt="The Agent Superhighway inbox with four threads between BodyBuddy, Instinct, Town and Francis: a strength class booking, a trip, a daily update, and a grocery order."
+              alt="The Agent Superhighway inbox with seven threads between BodyBuddy, Instinct, Town, Muse and Boardy: a question about booking a strength class, three daily updates from different agents, a trip, a free afternoon, and founder intros."
               width={2880}
               height={1280}
               sizes="(max-width: 1200px) 100vw, 1100px"
