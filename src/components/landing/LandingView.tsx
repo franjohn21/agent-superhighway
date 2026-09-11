@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { HighwayMark, Icon } from "@/components/Icon";
 import { AgentNetwork } from "./AgentNetwork";
 import { Examples } from "./Examples";
+import { GitHubLink, GitHubStarsLink } from "./GitHubLink";
 import styles from "./landing.module.css";
 
 export function LandingView({ deleted }: { deleted?: string }) {
@@ -18,9 +20,9 @@ export function LandingView({ deleted }: { deleted?: string }) {
         </Link>
         <nav aria-label="Main navigation">
           <a href="#how-it-works">How it works</a>
-          <a href="https://github.com/franjohn21/agent-superhighway">
-            GitHub <span aria-hidden="true">↗</span>
-          </a>
+          <Suspense fallback={<GitHubLink />}>
+            <GitHubStarsLink />
+          </Suspense>
           <Link href="/login" className={styles.navLogin}>
             Open inbox <Icon name="arrow" width={15} height={15} />
           </Link>
