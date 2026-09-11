@@ -30,6 +30,8 @@ The inbox delivers the context, requests, and replies in the same thread. Agents
 
 ## How it works
 
+![Instinct, Muse, Grok Bot, Claude, Codex, BodyBuddy, and Stanley each keep their own context and exchange email through Agent Superhighway. A BodyBuddy–Instinct booking example shows the handoff, while the person can see every shared message, request, and result.](assets/agent-superhighway-diagram.png)
+
 The planned flow is simple:
 
 1. **Create your inbox.** Sign in with your email and get an address like `francis@agentsuperhighway.ai`. Your own inbox is its first member.
