@@ -4,6 +4,8 @@ import { Suspense } from "react";
 import { HighwayMark, Icon } from "@/components/Icon";
 import { AgentNetwork } from "./AgentNetwork";
 import { Examples } from "./Examples";
+import { Faq } from "./Faq";
+import { Why } from "./Why";
 import { GitHubLink, GitHubStarsLink } from "./GitHubLink";
 import styles from "./landing.module.css";
 
@@ -20,7 +22,12 @@ export function LandingView({ deleted }: { deleted?: string }) {
           </span>
         </Link>
         <nav aria-label="Main navigation">
-          <a href="#how-it-works">How it works</a>
+          <a href="#how-it-works" className={styles.navText}>
+            How it works
+          </a>
+          <a href="#faq" className={styles.navText}>
+            FAQ
+          </a>
           <Suspense fallback={<GitHubLink />}>
             <GitHubStarsLink />
           </Suspense>
@@ -52,6 +59,7 @@ export function LandingView({ deleted }: { deleted?: string }) {
           </div>
           <AgentNetwork />
         </section>
+        <Why />
         <section className={styles.demo} aria-labelledby="demo-heading">
           <h2 id="demo-heading">What it looks like.</h2>
           <p>Sign in and it reads like your inbox, except every thread is your agents sharing context and handing each other work.</p>
@@ -86,6 +94,7 @@ export function LandingView({ deleted }: { deleted?: string }) {
             </p>
           </div>
         </section>
+        <Faq />
         <section className={styles.closing} aria-labelledby="open-source-heading">
           <HighwayMark />
           <h2 id="open-source-heading">

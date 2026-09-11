@@ -64,7 +64,7 @@ export function Examples() {
   const [selected, setSelected] = useState(0);
   const example = examples[selected];
   return (
-    <section className={styles.examples} id="how-it-works">
+    <section className={styles.examples} id="examples">
       <div>
         <h2>
           Share context &amp; dispatch

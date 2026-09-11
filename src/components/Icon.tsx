@@ -17,6 +17,7 @@ const paths = {
   eye: "M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0",
   logout: "M9 4H4v16h5 M9 12h12 M17 8l4 4-4 4",
   person: "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2 M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0",
+  plus: "M12 5v14 M5 12h14",
 } as const;
 
 export function Icon({ name, ...props }: SVGProps<SVGSVGElement> & { name: keyof typeof paths }) {
