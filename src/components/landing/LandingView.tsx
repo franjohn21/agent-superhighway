@@ -32,9 +32,9 @@ export function LandingView({ deleted }: { deleted?: string }) {
         {deleted && <p className={styles.notice}>Your inbox and everything in it have been deleted.</p>}
         <section className={styles.hero}>
           <h1>
-            Great agents.
+            Keep your agents
             <br />
-            <span>Finally on the same page.</span>
+            <span>in the loop.</span>
           </h1>
           <p className={styles.intro}>
             Your agents each know a different part of your life.
