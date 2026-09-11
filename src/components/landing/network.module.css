@@ -4,7 +4,7 @@
 }
 .network {
   position: relative;
-  height: 640px;
+  height: 830px;
 }
 /* The routes keep the 540px canvas they were drawn on, so the lines still
    meet the agent tiles; only the container grew, for the four-message hub. */
@@ -233,7 +233,7 @@
 }
 .you {
   position: absolute;
-  top: 590px;
+  top: 778px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -298,7 +298,7 @@
     margin-top: 32px;
   }
   .network {
-    height: 665px;
+    height: 800px;
   }
   .routes {
     height: 560px;
@@ -370,7 +370,7 @@
     font-size: 11px;
   }
   .you {
-    top: 596px;
+    top: 730px;
     width: 180px;
   }
   .caption {
