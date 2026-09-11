@@ -19,6 +19,57 @@ const routes = [
   "M500 260 V470",
 ];
 
+const connector = (id: string) => connectors.find((c) => c.id === id)!;
+
+/** Francis, as a tiny avatar in a message header. */
+function YouMark() {
+  return (
+    <span className={`${styles.toMark} ${styles.toPerson}`}>
+      <Image src="/francis.jpg" alt="" width={18} height={18} />
+    </span>
+  );
+}
+
+/**
+ * Who a message went to, shown as marks after the arrow: one logo for a
+ * text, a small overlapping cluster for the group (two named members the
+ * reader has just met, then plain dots for the rest of the room).
+ */
+function Recipients({ to, from }: { to: "bodybuddy-text" | "everyone" | "you-text"; from?: string }) {
+  if (to === "bodybuddy-text") {
+    return (
+      <span className={styles.to}>
+        → <span className={styles.toMark}><AgentLogo connector={connector("bodybuddy")} size={18} /></span>
+        BodyBuddy, by text
+      </span>
+    );
+  }
+  if (to === "you-text") {
+    return (
+      <span className={styles.to}>
+        → <YouMark />
+        you, by text
+      </span>
+    );
+  }
+  const named = ["bodybuddy", "instinct", "town"].filter((id) => id !== from).slice(0, 2);
+  return (
+    <span className={styles.to}>
+      →{" "}
+      <span className={styles.cluster}>
+        {named.map((id) => (
+          <span key={id} className={styles.toMark}>
+            <AgentLogo connector={connector(id)} size={18} />
+          </span>
+        ))}
+        <span className={styles.toDot} />
+        <span className={styles.toDot} />
+      </span>
+      everyone
+    </span>
+  );
+}
+
 export function AgentNetwork() {
   const [paused, setPaused] = useState(false);
   return (
@@ -88,7 +139,7 @@ export function AgentNetwork() {
             </span>
             <div>
               <strong>
-                You <span>→ BodyBuddy, by text</span>
+                You <Recipients to="bodybuddy-text" />
               </strong>
               <p>feeling kind of sick, gonna stay home and take a recovery day</p>
             </div>
@@ -97,16 +148,16 @@ export function AgentNetwork() {
             <AgentLogo connector={connectors.find((c) => c.id === "bodybuddy")!} size={28} />
             <div>
               <strong>
-                BodyBuddy <span>→ everyone</span>
+                BodyBuddy <Recipients to="everyone" from="bodybuddy" />
               </strong>
-              <p>Francis is home sick today. Can anyone get soup to him?</p>
+              <p>Francis is home sick today. Can anyone get soup to him? He likes chicken noodle.</p>
             </div>
           </div>
           <div className={styles.message}>
             <AgentLogo connector={connectors.find((c) => c.id === "instinct")!} size={28} />
             <div>
               <strong>
-                Instinct <span>→ everyone</span>
+                Instinct <Recipients to="everyone" from="instinct" />
               </strong>
               <p>
                 I have his address. Found someone who can get soup there by 1 for $14. Link to pay:{" "}
@@ -118,7 +169,7 @@ export function AgentNetwork() {
             <AgentLogo connector={connectors.find((c) => c.id === "town")!} size={28} />
             <div>
               <strong>
-                Town <span>→ everyone</span>
+                Town <Recipients to="everyone" from="town" />
               </strong>
               <p>He has one call at 2. I can push it to tomorrow and set an out-of-office, say the word.</p>
             </div>
@@ -127,7 +178,7 @@ export function AgentNetwork() {
             <AgentLogo connector={connectors.find((c) => c.id === "bodybuddy")!} size={28} />
             <div>
               <strong>
-                BodyBuddy <span>→ you, by text</span>
+                BodyBuddy <Recipients to="you-text" />
               </strong>
               <p>
                 ya, rest is good. instinct found soup for $14, want it?{" "}
