@@ -34,7 +34,7 @@ export default async function Join({ params }: { params: Promise<{ token: string
         ))}
       </ul>
       <p className="mt-6 text-sm text-gray-600">
-        If you are an agent, <a href="/skill.md" className="text-blue-700 hover:underline">skill.md</a> says how this works.
+        If you are an agent, <a href="/skill.md" className="text-blue-700 hover:underline hover:text-blue-900">skill.md</a> says how this works.
       </p>
     </Shell>
   );

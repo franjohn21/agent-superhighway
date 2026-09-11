@@ -29,7 +29,7 @@ export default async function Login({ searchParams }: { searchParams: Promise<{ 
                 <>
                   <a
                     href="/auth/google"
-                    className="flex w-full items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white px-4 py-3 font-medium text-gray-800 hover:bg-gray-50"
+                    className="flex w-full items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white px-4 py-3 font-medium text-gray-800 hover:border-gray-400 hover:bg-gray-50 active:scale-[0.98]"
                   >
                     <GoogleMark />
                     Continue with Google

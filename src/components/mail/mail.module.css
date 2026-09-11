@@ -39,6 +39,12 @@
   flex: 1;
   color: #647080;
 }
+.search {
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
 .search:focus-within {
   background: var(--color-surface);
   border-color: #c1cce1;
@@ -74,8 +80,13 @@
 .account button {
   color: #78818b;
   font-size: 11px;
-  padding: 8px 0;
+  padding: 8px 10px;
+  border-radius: 8px;
   white-space: nowrap;
+}
+.account button:hover {
+  color: var(--color-ink);
+  background: #e9edf2;
 }
 .body {
   display: flex;
@@ -111,6 +122,11 @@
 }
 .compose:hover {
   background: #d1ddfa;
+  box-shadow: 0 3px 8px #28416b14;
+}
+.compose:active {
+  transform: scale(0.97);
+  box-shadow: 0 1px 2px #28416b0a;
 }
 .navItem {
   display: flex;
@@ -124,6 +140,10 @@
 }
 .navItem:hover {
   background: #e9edf2;
+  color: var(--color-ink);
+}
+.navItem:active {
+  background: #dfe4eb;
 }
 .active {
   color: #253e83;
@@ -132,6 +152,10 @@
 }
 .active:hover {
   background: #dbe4f5;
+  color: #253e83;
+}
+.active:active {
+  background: #d3ddf1;
 }
 .count {
   margin-left: auto;
@@ -158,6 +182,11 @@
   border-color: #dce1e7;
   padding: 5px 10px;
 }
+.address button:hover {
+  background: #eef1f5;
+  border-color: #c9d1da;
+  color: var(--color-ink);
+}
 .guide {
   display: flex;
   justify-content: space-between;
@@ -165,6 +194,9 @@
   padding-top: 45px;
   font-size: 10px;
   color: #84909d;
+}
+.guide:hover {
+  color: var(--color-accent);
 }
 .main {
   min-width: 0;
@@ -230,6 +262,17 @@
   box-shadow:
     inset 0 -1px #dbe2ed,
     0 1px 4px #23365715;
+  background: #f3f6fc;
+  color: var(--color-ink);
+}
+.thread:active {
+  background: #ecf1fa;
+  box-shadow: inset 0 -1px #dbe2ed;
+}
+.unread:hover {
+  background: #fbfcff;
+}
+.unread:active {
   background: #f3f6fc;
 }
 .unread {
@@ -318,6 +361,12 @@
   background: #edf2fc;
   border-radius: 8px;
   margin-top: 23px;
+}
+.empty a:hover {
+  background: #e1eafb;
+}
+.empty a:active {
+  transform: scale(0.97);
 }
 @media (min-width: 1900px) {
   .shell {

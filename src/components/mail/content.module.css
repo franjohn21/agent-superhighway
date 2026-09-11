@@ -33,6 +33,11 @@
 }
 .heading > a:hover {
   background: #f0f3f8;
+  color: var(--color-ink);
+}
+.heading > a:active {
+  background: #e6eaf0;
+  transform: scale(0.92);
 }
 .heading > span {
   margin-left: auto;
@@ -129,6 +134,11 @@
 }
 .primary:hover {
   background: #3355bf;
+  box-shadow: 0 2px 6px #1c2a4e1f;
+}
+.primary:active {
+  transform: scale(0.97);
+  box-shadow: none;
 }
 .primary:disabled {
   opacity: 0.45;
@@ -142,6 +152,15 @@
   border-radius: 8px;
   font-size: 12px;
   margin-top: 14px;
+  background: var(--color-surface);
+}
+.secondary:hover {
+  background: #f3f6fa;
+  border-color: #c9d3e0;
+  color: #3b4c69;
+}
+.secondary:active {
+  transform: scale(0.97);
 }
 .danger {
   display: inline-flex;
@@ -151,6 +170,12 @@
   border-radius: 8px;
   font-size: 12px;
   margin-top: 14px;
+  background: var(--color-surface);
+}
+.danger:hover {
+  background: #fbf1f1;
+  border-color: #e2bcbc;
+  color: #9b4b4b;
 }
 .compose {
   flex: 1;

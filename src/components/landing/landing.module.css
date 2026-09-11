@@ -48,6 +48,26 @@
   border-radius: 8px;
   background: #fff9;
 }
+.navLogin:hover {
+  background: var(--color-surface);
+  border-color: #c4cbbf;
+  box-shadow: 0 2px 6px #1c2a1a14;
+}
+.navLogin:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+.githubLink {
+  padding: 6px 8px;
+  margin: -6px -8px;
+  border-radius: 8px;
+}
+.githubLink:hover {
+  background: #eef1ea;
+}
+.githubLink:active {
+  transform: scale(0.97);
+}
 .githubLink {
   display: inline-flex;
   align-items: center;
@@ -111,9 +131,11 @@
 }
 .primary:hover {
   background: #2446c4;
+  box-shadow: 0 4px 10px #1c2a4e1f;
 }
 .primary:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
+  box-shadow: 0 1px 2px #1c2a4e12;
 }
 .secondary {
   display: inline-flex;
@@ -121,6 +143,15 @@
   align-items: center;
   font-size: 12px;
   color: #626e5e;
+  padding: 8px 10px;
+  margin: -8px -10px;
+  border-radius: 8px;
+}
+.secondary:hover {
+  background: #eef1ea;
+}
+.secondary:active {
+  transform: scale(0.97);
 }
 .examples {
   max-width: 1200px;
@@ -171,12 +202,25 @@
   margin: 2px 0 0 auto;
   width: 16px;
   opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 180ms ease,
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.choices button:hover svg {
+  opacity: 0.45;
+  transform: none;
+}
+.choices button:active {
+  transform: none;
+  opacity: 0.75;
 }
 .choices button.selected {
   color: #26372a;
 }
 .choices .selected svg {
   opacity: 1;
+  transform: none;
   color: var(--color-accent);
 }
 .choices button:hover {
@@ -292,6 +336,10 @@
   color: #42523a;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+.openSourceCopy a:hover,
+.credit a:hover {
+  color: var(--color-accent);
 }
 .footer {
   max-width: 1104px;

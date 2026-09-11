@@ -59,7 +59,7 @@ export default async function ThreadPage({ params }: { params: Promise<{ threadI
                       <li key={a.index}>
                         <a
                           href={`/inbox/attachments/${m.id}/${a.index}`}
-                          className="inline-flex items-center gap-1 rounded-lg border border-gray-200 px-3 py-1.5 text-xs hover:bg-gray-50"
+                          className="inline-flex items-center gap-1 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-xs hover:border-gray-300 hover:bg-gray-50 active:scale-[0.97]"
                         >
                           <Icon name="attachment" width={13} height={13} /> {a.filename}{" "}
                           <span className="text-gray-400">{Math.ceil(a.size / 1024)} KB</span>

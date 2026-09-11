@@ -158,8 +158,22 @@
   padding: 2px;
   border-radius: 20px;
   background: #e5e9ef;
-  transition: background 0.18s;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
   position: relative;
+}
+.toggle:hover {
+  background: #d9dfe8;
+  border-color: #c7cfda;
+}
+.toggle:active {
+  transform: scale(0.95);
+}
+.toggle:active > span {
+  transform: scaleX(1.18);
+  transform-origin: left center;
 }
 .toggle > span {
   width: 17px;
@@ -175,9 +189,25 @@
   background: #4269da;
   border-color: #4269da;
 }
+.on:hover {
+  background: #375dcb;
+  border-color: #375dcb;
+}
+.on:active > span {
+  transform: translateX(15px) scaleX(1.18);
+  transform-origin: right center;
+}
 .waiting {
   background: #c9ab74;
   border-color: #c9ab74;
+}
+.waiting:hover {
+  background: #bd9e64;
+  border-color: #bd9e64;
+}
+.waiting:active > span {
+  transform: translateX(15px) scaleX(1.18);
+  transform-origin: right center;
 }
 .on > span,
 .waiting > span {
@@ -191,7 +221,16 @@
 .manage {
   color: #61769a;
   font-size: 12px;
-  padding: 8px 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.manage:hover {
+  color: var(--color-accent);
+  background: #eef2fa;
+}
+.manage[aria-expanded="true"] {
+  color: var(--color-accent);
+  background: #e6ecf9;
 }
 .custom {
   display: flex;
@@ -222,6 +261,12 @@
   padding: 9px 12px;
   border-radius: 7px;
   white-space: nowrap;
+  background: var(--color-surface);
+}
+.custom > button:hover {
+  background: #f3f6fa;
+  border-color: #c9d3e0;
+  color: #3b4c69;
 }
 .owner {
   margin-top: 18px;
@@ -365,6 +410,16 @@
   .toggle,
   .toggle > span {
     transition: none;
+  }
+  .toggle:active,
+  .toggle:active > span,
+  .on:active > span,
+  .waiting:active > span {
+    transform: none;
+  }
+  .on:active > span,
+  .waiting:active > span {
+    transform: translateX(15px);
   }
 }
 .helper {

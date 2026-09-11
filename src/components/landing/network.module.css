@@ -113,6 +113,17 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+.agent:hover,
+.extraAgent:hover {
+  border-color: #cfd6cc;
+  box-shadow: 0 8px 18px -10px #23342340;
+}
+.agent:active {
+  transform: scale(0.97);
+}
+.extraAgent:active {
+  transform: translateX(-50%) scale(0.97);
+}
 .hub {
   position: absolute;
   top: 109px;
@@ -234,6 +245,7 @@
 }
 .caption button:hover {
   background: #edf0e9;
+  color: var(--color-ink);
 }
 @media (min-width: 1500px) {
   .figure {

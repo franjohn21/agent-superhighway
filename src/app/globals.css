@@ -50,6 +50,49 @@ button:not(:disabled),
 summary {
   cursor: pointer;
 }
+button:disabled {
+  cursor: not-allowed;
+}
+/* Interactive feel: controls answer on pointer-down, colors ease, presses scale. */
+button,
+a,
+summary,
+[role="button"] {
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    opacity 150ms ease,
+    transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+button,
+summary,
+[role="button"] {
+  user-select: none;
+  -webkit-user-select: none;
+}
+button:not(:disabled):active,
+summary:active,
+[role="button"]:active {
+  transform: scale(0.97);
+  transition-duration: 90ms;
+}
+input,
+textarea,
+select {
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px #3457da24;
+}
 :focus-visible {
   outline: 2px solid #3159dc;
   outline-offset: 4px;
@@ -62,5 +105,16 @@ select {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  button,
+  a,
+  summary,
+  [role="button"] {
+    transition-property: background-color, color, border-color, box-shadow, opacity;
+  }
+  button:not(:disabled):active,
+  summary:active,
+  [role="button"]:active {
+    transform: none;
   }
 }
