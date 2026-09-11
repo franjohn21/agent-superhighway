@@ -83,8 +83,8 @@ export function AgentNetwork() {
             <span className={styles.status} />
           </div>
           <div className={`${styles.message} ${styles.trigger}`}>
-            <span className={styles.messageIcon}>
-              <Icon name="eye" />
+            <span className={`${styles.messageIcon} ${styles.personIcon}`}>
+              <Icon name="person" />
             </span>
             <div>
               <strong>
@@ -94,9 +94,7 @@ export function AgentNetwork() {
             </div>
           </div>
           <div className={styles.message}>
-            <span className={styles.messageIcon}>
-              <Icon name="mail" />
-            </span>
+            <AgentLogo connector={connectors.find((c) => c.id === "bodybuddy")!} size={28} />
             <div>
               <strong>
                 BodyBuddy <span>→ everyone</span>
@@ -105,9 +103,7 @@ export function AgentNetwork() {
             </div>
           </div>
           <div className={styles.message}>
-            <span className={styles.messageIcon}>
-              <Icon name="mail" />
-            </span>
+            <AgentLogo connector={connectors.find((c) => c.id === "instinct")!} size={28} />
             <div>
               <strong>
                 Instinct <span>→ everyone</span>

@@ -197,6 +197,16 @@
   background: #e7efe2;
   color: #4f6a45;
 }
+.personIcon {
+  border-radius: 50%;
+}
+.personIcon svg {
+  width: 16px;
+}
+.message > span:first-child {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
 .hubFooter {
   display: flex;
   gap: 6px;
@@ -314,6 +324,7 @@
   .message {
     padding: 12px 10px;
   }
+  .message > span:first-child,
   .messageIcon {
     display: none;
   }
