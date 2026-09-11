@@ -1,0 +1,15 @@
+import { connectors } from "@/components/connections/catalog";
+
+const positions = [
+  { id: "bodybuddy", context: "Training & routines", side: "left", position: 0 },
+  { id: "claude", context: "Ideas & research", side: "left", position: 1 },
+  { id: "muse", context: "Your day to day", side: "left", position: 2 },
+  { id: "instinct", context: "Bookings & payments", side: "right", position: 0 },
+  { id: "codex", context: "Code & projects", side: "right", position: 1 },
+  { id: "stanley", context: "Plans & preferences", side: "right", position: 2 },
+] as const;
+
+export const agents = positions.map((position) => ({
+  ...connectors.find((agent) => agent.id === position.id)!,
+  ...position,
+}));

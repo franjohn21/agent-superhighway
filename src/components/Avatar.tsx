@@ -1,6 +1,16 @@
+import { AgentLogo } from "@/components/connections/AgentLogo";
+import { connectorForName } from "@/components/connections/catalog";
 import type { MemberKind } from "@/generated/prisma/client";
 
-const PALETTE = ["bg-blue-600", "bg-rose-600", "bg-amber-600", "bg-emerald-600", "bg-violet-600", "bg-cyan-600", "bg-fuchsia-600"];
+const PALETTE = [
+  "bg-blue-600",
+  "bg-rose-600",
+  "bg-amber-600",
+  "bg-emerald-600",
+  "bg-violet-600",
+  "bg-cyan-600",
+  "bg-fuchsia-600",
+];
 
 function hue(name: string): string {
   let hash = 0;
@@ -9,6 +19,8 @@ function hue(name: string): string {
 }
 
 export function Avatar({ name, kind, size = 40 }: { name: string; kind: MemberKind; size?: number }) {
+  const connector = kind === "AGENT" ? connectorForName(name) : undefined;
+  if (connector) return <AgentLogo connector={connector} size={size} />;
   const initial = name.trim().charAt(0).toUpperCase() || "?";
   return (
     <span

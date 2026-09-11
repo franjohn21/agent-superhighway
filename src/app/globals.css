@@ -7,6 +7,14 @@
 
 :root {
   color-scheme: light;
+  --color-surface: #ffffff;
+  --color-ink: #28323d;
+  --color-muted: #68788c;
+  --color-subtle: #758195;
+  --color-accent: #3457da;
+  --color-border: #e3e8ef;
+  --color-mail-background: #f3f5f8;
+  --color-landing-background: #fafbf8;
 }
 
 body {
@@ -22,4 +30,37 @@ body {
 
 .thread-html img {
   max-width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button:not(:disabled),
+summary {
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 2px solid #3159dc;
+  outline-offset: 4px;
+}
+input,
+textarea,
+select {
+  min-width: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

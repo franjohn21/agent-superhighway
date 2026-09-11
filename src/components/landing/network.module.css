@@ -1,0 +1,377 @@
+.figure {
+  margin: 48px auto 0;
+  max-width: 1080px;
+}
+.network {
+  position: relative;
+  height: 460px;
+}
+.routes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.road {
+  fill: none;
+  stroke: #e0e5e8;
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+}
+.pulse {
+  fill: none;
+  stroke: #497dfa;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 0.04 0.96;
+  vector-effect: non-scaling-stroke;
+  animation: travel 7s linear infinite;
+  animation-delay: var(--delay);
+  animation-direction: var(--direction);
+}
+@keyframes travel {
+  from {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+  12%,
+  88% {
+    opacity: 0.85;
+  }
+  to {
+    stroke-dashoffset: -1;
+    opacity: 0;
+  }
+}
+.paused .pulse {
+  animation-play-state: paused;
+}
+.agent {
+  position: absolute;
+  top: calc(48px + var(--row) * 125px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--color-landing-background);
+  border: 1px solid #e5e7e1;
+  border-radius: 14px;
+  width: 204px;
+  box-shadow: 0 3px 5px #23342303;
+}
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+}
+.logo {
+  width: 48px;
+  height: 48px;
+  background: var(--color-surface);
+  border: 1px solid #e9eae6;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.logo img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+.agent strong,
+.extraAgent strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 550;
+  letter-spacing: -0.2px;
+}
+.extraAgent {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: var(--color-landing-background);
+  padding: 8px 14px;
+  border: 1px solid #e5e7e1;
+  border-radius: 14px;
+}
+.hub {
+  position: absolute;
+  top: 109px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 354px;
+  border: 1px solid #d7ded8;
+  border-radius: 16px;
+  background: var(--color-surface);
+  box-shadow:
+    0 16px 48px -20px #263d3140,
+    0 2px 5px #1b302009;
+  overflow: hidden;
+  text-align: left;
+}
+.hubHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 17px 18px;
+  border-bottom: 1px solid #edf0ed;
+  font-size: 13px;
+  font-weight: 600;
+}
+.hubHeader svg {
+  color: #254be0;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+.status {
+  width: 6px;
+  height: 6px;
+  background: #42805d;
+  border-radius: 50%;
+  margin-left: auto;
+}
+.message {
+  display: flex;
+  gap: 10px;
+  padding: 15px 18px;
+  border-bottom: 1px solid #edf0ed;
+}
+.messageIcon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  color: #6c786c;
+  background: #f3f5f1;
+  border-radius: 7px;
+}
+.messageIcon svg {
+  width: 15px;
+}
+.message strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+}
+.message strong span {
+  font-weight: 400;
+  color: #7a8179;
+  padding-left: 6px;
+}
+.message p {
+  margin-top: 4px;
+  font-size: 12px;
+  letter-spacing: -0.15px;
+}
+.hubFooter {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+  color: #717b71;
+  font-size: 10px;
+  background: #fcfdfb;
+}
+.you {
+  position: absolute;
+  top: 402px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-landing-background);
+  padding: 5px 14px;
+  text-align: left;
+}
+.you svg {
+  color: #697766;
+}
+.you strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+.caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0 0;
+  color: #798173;
+  font-size: 11px;
+  text-align: left;
+}
+.caption button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  min-height: 32px;
+}
+.caption button:hover {
+  background: #edf0e9;
+}
+@media (min-width: 1500px) {
+  .figure {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 900px) {
+  .agent {
+    width: 155px;
+    gap: 8px;
+    padding: 8px;
+  }
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+  .logo img {
+    width: 28px;
+    height: 28px;
+  }
+  .hub {
+    width: 310px;
+  }
+}
+@media (max-width: 680px) {
+  .figure {
+    margin-top: 32px;
+  }
+  .network {
+    height: 430px;
+  }
+  .agent {
+    top: calc(65px + var(--row) * 116px);
+    width: 65px;
+    padding: 7px 3px;
+    flex-direction: column;
+    gap: 5px;
+    border: 0;
+    box-shadow: none;
+  }
+  .agent strong {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+  }
+  .logo {
+    width: 38px;
+    height: 38px;
+  }
+  .hub {
+    width: calc(100% - 145px);
+    top: 130px;
+    border-radius: 12px;
+  }
+  .hubHeader {
+    padding: 13px 10px;
+    gap: 7px;
+    font-size: 10px;
+  }
+  .hubHeader svg {
+    width: 23px;
+    height: 23px;
+  }
+  .hubHeader .status {
+    display: none;
+  }
+  .message {
+    padding: 12px 10px;
+  }
+  .messageIcon {
+    display: none;
+  }
+  .message strong {
+    font-size: 10px;
+  }
+  .message strong span {
+    font-size: 8px;
+    padding-left: 2px;
+  }
+  .message p {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .hubFooter {
+    font-size: 8px;
+    gap: 3px;
+    padding: 8px 2px;
+  }
+  .extraAgent {
+    top: 12px;
+    gap: 7px;
+    padding: 6px 9px;
+  }
+  .extraAgent strong {
+    font-size: 11px;
+  }
+  .you {
+    top: 383px;
+    width: 180px;
+  }
+  .caption {
+    font-size: 9px;
+    padding-top: 8px;
+    gap: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+    stroke-dasharray: none;
+    opacity: 0.25;
+  }
+  .caption button {
+    display: none;
+  }
+}
+.hubHeader {
+  font-size: 15px;
+}
+.message strong,
+.message p {
+  font-size: 13px;
+}
+.hubFooter,
+.caption {
+  font-size: 12px;
+}
+.you {
+  width: 240px;
+  justify-content: center;
+}
+.you strong {
+  font-size: 13px;
+}
+@media (max-width: 680px) {
+  .agent strong {
+    font-size: 11px;
+  }
+  .hubHeader {
+    font-size: 12px;
+  }
+  .message strong,
+  .message p {
+    font-size: 11px;
+  }
+  .hubFooter {
+    font-size: 10px;
+  }
+  .caption {
+    font-size: 11px;
+    gap: 12px;
+  }
+}

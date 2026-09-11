@@ -1,0 +1,259 @@
+.page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+.heading {
+  padding: 25px 28px;
+  border-bottom: 1px solid #edf0f3;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.heading h1 {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  overflow-wrap: anywhere;
+}
+.heading p {
+  font-size: 12px;
+  color: #7b8798;
+  margin-top: 5px;
+}
+.heading > a {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: #738195;
+}
+.heading > a:hover {
+  background: #f0f3f8;
+}
+.heading > span {
+  margin-left: auto;
+  white-space: nowrap;
+  color: #7f8b9c;
+  font-size: 12px;
+}
+.settings {
+  padding: 30px;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+}
+.section {
+  padding: 25px 0;
+  border-bottom: 1px solid #e9edf3;
+}
+.settings > .section:first-child {
+  padding-top: 0;
+}
+.section:last-child {
+  border-bottom: 0;
+}
+.section h2 {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+}
+.section p {
+  font-size: 12px;
+  color: #778397;
+  margin-top: 7px;
+  line-height: 1.8;
+}
+.field {
+  display: block;
+  margin-bottom: 22px;
+}
+.field > span:first-child {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+.field input {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid #dce3ec;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+.value {
+  font-size: 12px;
+  color: #75829a;
+  overflow-wrap: anywhere;
+}
+.archive {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.archive input {
+  margin-top: 4px;
+  accent-color: var(--color-accent);
+  width: 16px;
+  height: 16px;
+}
+.archive strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+.archive small {
+  display: block;
+  max-width: 550px;
+  font-size: 12px;
+  color: #778397;
+  line-height: 1.8;
+  margin-top: 5px;
+}
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: var(--color-accent);
+  color: var(--color-surface);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.primary:hover {
+  background: #3355bf;
+}
+.primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.secondary {
+  display: inline-flex;
+  border: 1px solid #dce3ed;
+  color: #637390;
+  padding: 9px 13px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-top: 14px;
+}
+.danger {
+  display: inline-flex;
+  border: 1px solid #ecd6d6;
+  color: #ad6262;
+  padding: 9px 13px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-top: 14px;
+}
+.compose {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 28px 25px;
+}
+.composeLine {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  border-bottom: 1px solid #ecf0f5;
+  padding: 16px 0;
+  font-size: 13px;
+}
+.composeLine > label {
+  width: 50px;
+  color: #8b96a7;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+.composeLine > input {
+  flex: 1;
+  width: 100%;
+  outline: none;
+}
+.recipients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.recipients > span {
+  border: 1px solid #e3e8f0;
+  background: #f8faff;
+  border-radius: 16px;
+  padding: 4px 9px;
+  font-size: 12px;
+  color: #6a7f9f;
+}
+.compose textarea {
+  flex: 1;
+  padding: 22px 0;
+  min-height: 300px;
+  font-size: 14px;
+  line-height: 1.8;
+  resize: vertical;
+  outline: none;
+}
+.composeFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+.composeFooter > span {
+  font-size: 12px;
+  color: #6c7d93;
+  overflow-wrap: anywhere;
+}
+.message {
+  padding: 26px 30px;
+  border-bottom: 1px solid #edf0f4;
+}
+.reply {
+  padding: 26px 30px;
+}
+.reply textarea {
+  border-color: #dce3ed;
+  font-size: 14px;
+}
+@media (max-width: 680px) {
+  .heading {
+    padding: 22px 19px;
+    gap: 10px;
+  }
+  .heading h1 {
+    font-size: 18px;
+  }
+  .heading > span {
+    display: none;
+  }
+  .settings {
+    padding: 25px 20px;
+  }
+  .compose {
+    padding: 6px 19px 22px;
+  }
+  .message,
+  .reply {
+    padding: 21px 18px;
+  }
+  .composeFooter {
+    align-items: flex-end;
+  }
+  .composeLine > input,
+  .compose textarea,
+  .reply textarea,
+  .field input {
+    font-size: 16px;
+  }
+}
+
+.message :global(.thread-body) {
+  max-width: 78ch;
+}

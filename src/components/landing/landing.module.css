@@ -1,0 +1,418 @@
+.landing {
+  background: var(--color-landing-background);
+  color: #253027;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+.header {
+  max-width: 1200px;
+  margin: auto;
+  padding: 25px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: -0.35px;
+  line-height: 1.15;
+}
+.brand svg {
+  color: #253027;
+  width: 34px;
+  height: 34px;
+}
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.header nav a:hover,
+.secondary:hover,
+.footer a:hover {
+  color: #3159dc;
+}
+.navLogin {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  border: 1px solid #d9ddd6;
+  padding: 11px 16px;
+  border-radius: 8px;
+  background: #fff9;
+}
+.hero {
+  max-width: 1200px;
+  margin: auto;
+  padding: 65px 48px 28px;
+  text-align: center;
+}
+.hero h1 {
+  margin: 5px 0 20px;
+  font-size: clamp(40px, 5vw, 68px);
+  letter-spacing: -3.5px;
+  line-height: 1.06;
+  font-weight: 500;
+  text-wrap: balance;
+}
+.hero h1 > span {
+  color: #74816d;
+}
+.intro {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #727a70;
+  letter-spacing: -0.2px;
+}
+.heroActions {
+  margin-top: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.primary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  border: 1px solid #2442b8;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: var(--color-surface);
+  padding: 13px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 2px 3px #1c2a4e12;
+  transition:
+    background 0.15s,
+    transform 0.15s;
+}
+.primary:hover {
+  background: #2446c4;
+}
+.primary:active {
+  transform: scale(0.98);
+}
+.secondary {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 12px;
+  color: #626e5e;
+}
+.examples {
+  max-width: 1200px;
+  padding: 100px 48px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 75px;
+  align-items: center;
+  scroll-margin-top: 30px;
+}
+.examples h2,
+.closing h2 {
+  font-size: 40px;
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+  font-weight: 500;
+  margin-top: 17px;
+}
+.choices {
+  margin-top: 35px;
+}
+.choices button {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 14px;
+  text-align: left;
+  border-top: 1px solid #e0e5dc;
+  padding: 18px 0;
+  color: #7e8779;
+  cursor: pointer;
+}
+.choices strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.choices button span span {
+  display: block;
+  font-size: 12px;
+  line-height: 1.6;
+  max-width: 310px;
+}
+.choices svg {
+  flex-shrink: 0;
+  margin: 2px 0 0 auto;
+  width: 16px;
+  opacity: 0;
+}
+.choices button.selected {
+  color: #26372a;
+}
+.choices .selected svg {
+  opacity: 1;
+  color: var(--color-accent);
+}
+.choices button:hover {
+  color: var(--color-accent);
+}
+.exampleMail {
+  border: 1px solid #dde2d8;
+  border-radius: 14px;
+  background: var(--color-surface);
+  box-shadow: 0 16px 35px -20px #35452c24;
+  overflow: hidden;
+  min-height: 405px;
+}
+.mailTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #788173;
+  background: #f3f5f0;
+  padding: 15px 22px;
+}
+.mailTop svg {
+  width: 15px;
+}
+.exampleMail h3 {
+  padding: 25px 25px 15px;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+.mailMessage {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 17px 25px;
+}
+.mailMessage img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border: 1px solid #edf0e9;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.mailMessage strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 550;
+}
+.mailMessage small {
+  display: block;
+  font-size: 12px;
+  margin-top: 2px;
+  font-weight: 400;
+  color: #869080;
+}
+.mailMessage p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 10px;
+  color: #65715e;
+}
+.principles {
+  max-width: 1104px;
+  margin: auto;
+  border-top: 1px solid #dde3d7;
+  border-bottom: 1px solid #dde3d7;
+  padding: 36px 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+.principles h3 {
+  font-size: 15px;
+  margin-top: 18px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+.principles p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #7a8572;
+  margin-top: 9px;
+}
+.closing {
+  text-align: center;
+  padding: 85px 25px 95px;
+}
+.closing > svg {
+  margin: auto;
+  color: #738566;
+}
+.closing h2 {
+  margin: 20px 0 28px;
+}
+.footer {
+  max-width: 1104px;
+  margin: auto;
+  border-top: 1px solid #dde3d7;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0;
+  gap: 20px;
+  color: #7b8872;
+  font-size: 12px;
+}
+.footer > span:first-child {
+  color: #42523a;
+  font-weight: 500;
+}
+.footer div {
+  display: flex;
+  gap: 24px;
+}
+.notice {
+  max-width: 800px;
+  margin: 16px auto;
+  padding: 16px;
+  background: #e7f0e4;
+  border-radius: 8px;
+  font-size: 14px;
+}
+@media (min-width: 1600px) {
+  .hero {
+    padding-top: 85px;
+  }
+}
+@media (max-width: 1000px) {
+  .examples {
+    gap: 35px;
+  }
+  .principles,
+  .footer {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+@media (max-width: 680px) {
+  .header {
+    padding: 20px;
+  }
+  .header nav {
+    gap: 15px;
+  }
+  .header nav > a:not(:last-child) {
+    display: none;
+  }
+  .hero {
+    padding: 40px 18px 20px;
+  }
+  .hero h1 {
+    font-size: 42px;
+    letter-spacing: -2px;
+    line-height: 1.1;
+  }
+  .intro {
+    font-size: 14px;
+    max-width: 325px;
+    margin: auto;
+  }
+  .desktopBreak {
+    display: none;
+  }
+  .heroActions {
+    gap: 20px;
+  }
+  .primary {
+    padding: 12px 14px;
+    font-size: 12px;
+    gap: 13px;
+  }
+  .secondary {
+    font-size: 12px;
+    gap: 5px;
+  }
+  .examples {
+    padding: 60px 22px;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .examples h2,
+  .closing h2 {
+    font-size: 34px;
+  }
+  .choices {
+    margin-top: 24px;
+  }
+  .choices button {
+    padding: 16px 0;
+  }
+  .exampleMail {
+    min-height: 400px;
+  }
+  .mailMessage {
+    padding: 16px 20px;
+  }
+  .principles {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 0 22px;
+    padding: 30px 0;
+  }
+  .principles h3 {
+    margin-top: 10px;
+  }
+  .principles p {
+    max-width: 370px;
+  }
+  .closing {
+    padding: 60px 20px;
+  }
+  .footer {
+    margin: 0 22px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primary {
+    transition: none;
+  }
+}
+.choices strong {
+  font-size: 16px;
+}
+.choices button span span,
+.mailMessage p,
+.principles p {
+  font-size: 14px;
+}
+.mailMessage strong {
+  font-size: 14px;
+}
+.principles h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+.exampleMail {
+  padding-bottom: 18px;
+}
+.examples {
+  border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 380px) {
+  .heroActions {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .heroActions .primary {
+    white-space: nowrap;
+  }
+}
