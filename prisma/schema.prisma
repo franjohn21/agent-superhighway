@@ -71,6 +71,8 @@ model Member {
   kind             MemberKind
   /// What this member is to the owner, in the owner's words: "my health coach", "my assistant for calendar and travel", "my mom".
   role             String       @default("")
+  /// What the member said about itself when it joined, in its own words. The owner can edit or clear it.
+  intro            String       @default("")
   status           MemberStatus @default(PENDING)
   isOwner          Boolean      @default(false)
   inviteToken      String       @unique

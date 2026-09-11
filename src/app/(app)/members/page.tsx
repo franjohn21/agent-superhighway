@@ -44,9 +44,10 @@ export default async function Members({ searchParams }: { searchParams: Promise<
                 {m.isOwner ? (
                   <div className="text-sm text-gray-500">the owner</div>
                 ) : (
-                  <form action={updateMemberRole} className="mt-1 flex items-center gap-2">
+                  <form action={updateMemberRole} className="mt-1 max-w-xl space-y-1">
                     <input type="hidden" name="memberId" value={m.id} />
-                    <input name="role" defaultValue={m.role} placeholder="Relationship to you, e.g. my health coach" className="w-full max-w-sm rounded border border-transparent bg-transparent px-1 py-0.5 text-sm text-gray-700 hover:border-gray-300 focus:border-blue-500 focus:bg-white focus:outline-none" />
+                    <input name="role" defaultValue={m.role} placeholder="Relationship to you, e.g. my health coach" className="w-full rounded border border-transparent bg-transparent px-1 py-0.5 text-sm text-gray-700 hover:border-gray-300 focus:border-blue-500 focus:bg-white focus:outline-none" />
+                    <textarea name="intro" defaultValue={m.intro} rows={m.intro ? 2 : 1} placeholder={m.status === "PENDING" ? "What they say about themselves: filled in from their reply to the invitation" : "What they say about themselves"} className="w-full resize-y rounded border border-transparent bg-transparent px-1 py-0.5 text-sm italic text-gray-600 hover:border-gray-300 focus:border-blue-500 focus:bg-white focus:outline-none" />
                     <button type="submit" className="text-xs text-blue-700 hover:underline">save</button>
                   </form>
                 )}

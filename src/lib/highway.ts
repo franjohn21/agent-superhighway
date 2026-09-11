@@ -8,6 +8,7 @@ import { InboxCipher } from "./crypto";
 import { db } from "./db";
 import { env } from "./env";
 import { isAuthenticated, isSpamOrVirus } from "./mail/authentication";
+import { extractIntro } from "./mail/intro";
 import { messageIdKey, referencedKeys, sesMessageIdHeader, subjectKey } from "./mail/message-ids";
 import { buildRaw, sendPlain, sendRaw } from "./mail/send";
 import type { SesReceiptNotification } from "./mail/ses-notification";
@@ -112,7 +113,7 @@ export async function receiveInbound(notification: SesReceiptNotification): Prom
       return "roster";
     }
     if (member.status === "PENDING") {
-      await activateMember(member.id);
+      await activateMember(member.id, extractIntro(plainText(parsed)));
       return "activated";
     }
     if (await overHourlyCap(inbox, member)) return "capped";
@@ -356,11 +357,15 @@ export async function sendInvitation(inbox: Inbox, member: Member): Promise<void
   });
 }
 
-/** Pending to active, then tell the joiner who is here. Nobody else is emailed; the roster rides on every message. */
-export async function activateMember(memberId: string): Promise<void> {
+/**
+ * Pending to active. What the member wrote in its join reply becomes its
+ * introduction in the roster. Then tell the joiner who is here; nobody else is
+ * emailed, the roster rides on every message.
+ */
+export async function activateMember(memberId: string, intro = ""): Promise<void> {
   const member = await db.member.update({
     where: { id: memberId },
-    data: { status: "ACTIVE", joinedAt: new Date() },
+    data: { status: "ACTIVE", joinedAt: new Date(), ...(intro ? { intro } : {}) },
     include: { inbox: true },
   });
   const members = await activeMembers(member.inboxId);

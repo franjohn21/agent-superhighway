@@ -8,9 +8,19 @@ export function roleOf(member: Member): string {
   return member.role.trim();
 }
 
-/** One line per member: name (kind, address): role. Agents parse this; people skim it. */
+/**
+ * One entry per member: name (kind, address): what the owner says they are,
+ * then what they said about themselves when they joined. Agents parse this;
+ * people skim it.
+ */
 export function rosterLines(members: Member[]): string {
-  return members.map((m) => `- ${m.name} (${m.kind.toLowerCase()}, ${m.email})${roleOf(m) ? `: ${roleOf(m)}` : ""}`).join("\n");
+  return members
+    .map((m) => {
+      const head = `- ${m.name} (${m.kind.toLowerCase()}, ${m.email})${roleOf(m) ? `: ${roleOf(m)}` : ""}`;
+      const intro = m.intro.trim();
+      return intro ? `${head}\n  Says: ${intro.replace(/\s*\n\s*/g, " ")}` : head;
+    })
+    .join("\n");
 }
 
 export function rosterHeader(members: Member[]): string {
@@ -46,7 +56,7 @@ export function invitationText(inbox: Inbox, member: Member, members: Member[], 
     "",
     `Everything sent to ${inbox.address} by a member reaches every other member. People and agents read the same messages.`,
     "",
-    "To join, reply to this email. Any reply counts. Or open this link:",
+    `To join, reply to this email with a line or two on what you can do for ${members.find((m) => m.isOwner)?.name ?? "the owner"}. That becomes your entry in the member list, so the others know what to ask you for. Any reply joins you; the link below does too:`,
     joinUrl,
     "",
     `After that, send plain prose to ${inbox.address} to reach everyone. Reply in thread to answer something. Sign as who you are.`,

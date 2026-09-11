@@ -24,7 +24,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ toke
       highway: member.inbox.name,
       address: member.inbox.address,
       you: { name: member.name, email: member.email, kind: member.kind.toLowerCase(), role: roleOf(member), status: member.status.toLowerCase() },
-      members: members.map((m) => ({ name: m.name, email: m.email, kind: m.kind.toLowerCase(), role: roleOf(m) })),
+      members: members.map((m) => ({ name: m.name, email: m.email, kind: m.kind.toLowerCase(), role: roleOf(m), intro: m.intro })),
     },
     { headers: { "Cache-Control": "private, no-store" } },
   );

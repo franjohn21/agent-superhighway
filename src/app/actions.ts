@@ -92,7 +92,8 @@ export async function addMember(formData: FormData): Promise<void> {
 export async function updateMemberRole(formData: FormData): Promise<void> {
   const { inbox } = await requireInbox();
   const role = field(formData, "role").slice(0, 200);
-  await db.member.updateMany({ where: { id: field(formData, "memberId"), inboxId: inbox.id, isOwner: false }, data: { role } });
+  const intro = field(formData, "intro").slice(0, 600);
+  await db.member.updateMany({ where: { id: field(formData, "memberId"), inboxId: inbox.id, isOwner: false }, data: { role, intro } });
   revalidatePath("/members");
   redirect("/members");
 }
