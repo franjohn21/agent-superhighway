@@ -27,6 +27,7 @@ export type ReceiveOutcome =
   | "removed"
   | "activated"
   | "capped"
+  | "roster"
   | "delivered";
 
 export type AttachmentMeta = {
@@ -87,8 +88,9 @@ function headerValues(parsed: ParsedMail, name: string): string[] {
  */
 export async function receiveInbound(notification: SesReceiptNotification): Promise<ReceiveOutcome> {
   const recipient = notification.receipt.recipients.map(normalizeEmail).find((r) => domainOf(r) === env.mailDomain);
-  const inbox = recipient ? await db.inbox.findUnique({ where: { address: recipient }, include: { members: true } }) : null;
-  if (!inbox) return "no_inbox";
+  const target = recipient ? parseRecipient(recipient) : null;
+  const inbox = target ? await db.inbox.findUnique({ where: { address: target.address }, include: { members: true } }) : null;
+  if (!inbox || !target) return "no_inbox";
 
   const raw = await fetchRaw(notification.receipt.action);
   try {
@@ -105,6 +107,10 @@ export async function receiveInbound(notification: SesReceiptNotification): Prom
       return drop(inbox, fromEmail, "auth_failed");
     }
     if (member.status === "REMOVED") return drop(inbox, fromEmail, "removed");
+    if (target.command === "roster") {
+      await replyWithRoster(inbox, member);
+      return "roster";
+    }
     if (member.status === "PENDING") {
       await activateMember(member.id);
       return "activated";
@@ -138,6 +144,37 @@ async function overHourlyCap(inbox: Inbox, member: Member): Promise<boolean> {
   }
   await db.member.update({ where: { id: member.id }, data: { hourCount: { increment: 1 } } });
   return false;
+}
+
+const COMMAND_TAGS: Record<string, "roster"> = { roster: "roster", members: "roster", who: "roster" };
+
+/** francis-k7m2p9+roster@domain -> the inbox address plus the command in the tag. */
+function parseRecipient(recipient: string): { address: string; command: "roster" | null } {
+  const at = recipient.indexOf("@");
+  const local = recipient.slice(0, at);
+  const plus = local.indexOf("+");
+  if (plus === -1) return { address: recipient, command: null };
+  const tag = local.slice(plus + 1);
+  return { address: `${local.slice(0, plus)}${recipient.slice(at)}`, command: COMMAND_TAGS[tag] ?? null };
+}
+
+/** Any member can ask who is listening by emailing the +roster address. The answer goes to them alone. */
+async function replyWithRoster(inbox: Inbox, member: Member): Promise<void> {
+  const members = await activeMembers(inbox.id);
+  await sendPlain({
+    from: highwayFrom(inbox),
+    to: member.email,
+    replyTo: inbox.address,
+    subject: `Who is on ${inbox.name}`,
+    text: templates.rosterReplyText(inbox, members),
+    headers: { "X-Superhighway-Members": templates.rosterHeader(members), "X-Superhighway-Kind": "highway" },
+  });
+}
+
+/** The +roster address for an inbox. */
+export function rosterAddress(inbox: Inbox): string {
+  const at = inbox.address.indexOf("@");
+  return `${inbox.address.slice(0, at)}+roster${inbox.address.slice(at)}`;
 }
 
 // Delivery ------------------------------------------------------------------

@@ -1,5 +1,6 @@
 import type { Inbox, Member } from "@/generated/prisma/client";
 import { env } from "../env";
+import { rosterAddress } from "../highway";
 
 /** One line per member: name (kind, address). Agents parse this; people skim it. */
 export function rosterLines(members: Member[]): string {
@@ -47,6 +48,8 @@ export function invitationText(inbox: Inbox, member: Member, members: Member[], 
     "",
     `You were added as ${member.name} (${member.kind.toLowerCase()}) at ${member.email}. Only the owner can add or remove members. Everything you send here is read by every member, so share only what belongs with this group.`,
     "",
+    `To check who is on it at any time: email ${rosterAddress(inbox)}, or fetch ${env.appUrl}/api/roster/${member.inviteToken}. Every message from the highway also ends with the current list.`,
+    "",
     `How agents use this: ${env.appUrl}/skill.md`,
   ].join("\n");
 }
@@ -59,9 +62,14 @@ export function welcomeText(inbox: Inbox, members: Member[]): string {
     rosterLines(members),
     "",
     `Send plain prose to ${inbox.address} to reach everyone. Reply in thread to answer. Everything you send is read by every member.`,
+    `To check who is on it later, email ${rosterAddress(inbox)}. Every message from the highway also ends with the current list.`,
     "",
     `How agents use this: ${env.appUrl}/skill.md`,
   ].join("\n");
+}
+
+export function rosterReplyText(inbox: Inbox, members: Member[]): string {
+  return [`On ${inbox.name} right now:`, rosterLines(members), "", `Send to ${inbox.address} to reach everyone.`].join("\n");
 }
 
 export function cappedText(inbox: Inbox): string {

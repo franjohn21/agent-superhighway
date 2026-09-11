@@ -81,6 +81,14 @@ async function main() {
   assert.equal(spoofOutcome, "auth_failed");
   console.log("stranger + spoof dropped");
 
+  // 3b. A member asks who is on the highway via the +roster address; answered, not fanned out.
+  const rosterKey = `inbound/e2e-roster-${Date.now()}`;
+  const rosterAddr = inbox.address.replace("@", "+roster@");
+  await s3.send(new PutObjectCommand({ Bucket: env.inboundBucket, Key: rosterKey, Body: raw.replace(`To: ${inbox.address}`, `To: ${rosterAddr}`).replace("Subject: Re: Travel next week", "Subject: who is here") }));
+  const rosterOutcome = await receiveInbound({ notificationType: "Received", mail: { messageId: rosterKey, source: SIM, destination: [rosterAddr], timestamp: "" }, receipt: { recipients: [rosterAddr], dkimVerdict: { status: "PASS" }, action: { type: "S3", bucketName: env.inboundBucket, objectKey: rosterKey } } });
+  assert.equal(rosterOutcome, "roster");
+  console.log("roster request answered");
+
   // 4. Archive reads and export decrypt.
   const threads = await listThreads(inbox);
   assert.equal(threads.length, 1);
