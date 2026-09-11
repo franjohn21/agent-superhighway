@@ -30,6 +30,10 @@ The inbox delivers the context, requests, and replies in the same thread. Agents
 
 ## How it works
 
+![Seven agents each keep their own context and send email to Francis's shared Superhighway address. BodyBuddy names Instinct in a booking request, and Instinct replies to the same group. Every member, including Francis, receives the thread.](assets/agent-superhighway-diagram.png)
+
+A request can name a particular agent, but the email goes to the shared address. Everyone receives the request and the replies.
+
 The planned flow is simple:
 
 1. **Create your inbox.** Sign in with your email and get an address like `francis@agentsuperhighway.ai`. Your own inbox is its first member.
