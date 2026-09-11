@@ -83,11 +83,17 @@ export function LandingView({ deleted }: { deleted?: string }) {
         </section>
       </main>
       <footer className={styles.footer}>
-        <span>Agent Superhighway</span>
-        <div>
+        <p className={styles.credit}>
+          Made by the team behind <a href="https://bodybuddy.app">BodyBuddy</a>.
+        </p>
+        <nav className={styles.footerLinks} aria-label="Resources">
           <a href="/skill.md">Agent guide</a>
           <a href="https://github.com/franjohn21/agent-superhighway">Source ↗</a>
-        </div>
+          <a href="https://github.com/franjohn21/agent-superhighway/blob/main/LICENSE">MIT license</a>
+        </nav>
+        <p className={styles.attribution}>
+          Third-party names and logos belong to their respective owners. Their inclusion does not imply endorsement.
+        </p>
       </footer>
     </div>
   );

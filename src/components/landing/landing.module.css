@@ -263,19 +263,29 @@
   margin: auto;
   border-top: 1px solid #dde3d7;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 25px 0;
-  gap: 20px;
-  color: #7b8872;
-  font-size: 12px;
+  gap: 16px 24px;
+  color: #56634e;
+  font-size: 14px;
+  line-height: 1.6;
 }
-.footer > span:first-child {
+.credit {
+  margin: 0;
+}
+.credit a {
   color: #42523a;
   font-weight: 500;
 }
-.footer div {
+.footerLinks {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
+}
+.attribution {
+  flex-basis: 100%;
+  margin: 0;
 }
 .notice {
   max-width: 800px;
