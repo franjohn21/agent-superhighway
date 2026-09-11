@@ -1,14 +1,17 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
+import { db } from "@/lib/db";
 import { mboxChunks } from "@/lib/mbox";
 import { currentUser } from "@/lib/session";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-export async function GET(): Promise<Response> {
+export async function GET(request: NextRequest): Promise<Response> {
   const user = await currentUser();
-  if (!user?.inbox) return NextResponse.redirect(new URL("/login", process.env.APP_URL ?? "http://localhost:3005"));
+  if (!user?.inbox) return NextResponse.redirect(new URL("/login", request.url), { status: 303 });
   const inbox = user.inbox;
+  const count = await db.message.count({ where: { inboxId: inbox.id } });
+  if (count === 0) return NextResponse.redirect(new URL("/settings?empty=1", request.url), { status: 303 });
   const encoder = new TextEncoder();
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {

@@ -35,7 +35,6 @@ export default async function AppShell({ children }: { children: ReactNode }) {
           <NavItem href="/inbox" label="Inbox" count={unread} />
           <NavItem href="/members" label="Members" count={pending} />
           <NavItem href="/settings" label="Settings" />
-          <a href="/export" className="rounded-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-200/60">Export .mbox</a>
         </nav>
         <main className="flex min-w-0 flex-1 flex-col p-2 md:pl-0 md:pr-3 md:pt-4">
           <div className="flex min-h-[70vh] flex-1 flex-col rounded-2xl bg-white shadow-sm">{children}</div>

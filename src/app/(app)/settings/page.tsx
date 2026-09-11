@@ -2,14 +2,15 @@ import { deleteAccount, updateSettings } from "@/app/actions";
 import { Notice } from "@/components/Notice";
 import { requireInbox } from "@/lib/guard";
 
-export default async function Settings({ searchParams }: { searchParams: Promise<{ saved?: string }> }) {
+export default async function Settings({ searchParams }: { searchParams: Promise<{ saved?: string; empty?: string }> }) {
   const { user, inbox } = await requireInbox();
-  const { saved } = await searchParams;
+  const { saved, empty } = await searchParams;
   return (
     <div className="flex flex-1 flex-col">
       <div className="border-b border-gray-100 px-4 py-3 text-lg font-medium">Settings</div>
       <div className="space-y-6 p-4">
         {saved && <Notice tone="ok">Saved.</Notice>}
+        {empty && <Notice tone="info">Nothing to export yet. The archive is empty.</Notice>}
         <form action={updateSettings} className="space-y-4 rounded-xl border border-gray-200 p-4">
           <label className="block">
             <span className="block text-sm font-medium">Highway name</span>
