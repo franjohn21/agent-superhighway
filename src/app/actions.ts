@@ -84,7 +84,7 @@ export async function addMember(formData: FormData): Promise<void> {
   try {
     await sendInvitation(inbox, member);
   } catch (error) {
-    redirect(`/members?error=${encodeURIComponent(`Added, but the invitation could not be sent: ${errorMessage(error)}`)}`);
+    redirect(`/members?error=${encodeURIComponent(`Added, but the invitation email could not be sent (${errorMessage(error)}). Open Manage and copy the invite link instead; sending it to them any other way works the same.`)}`);
   }
   revalidatePath("/members");
   redirect("/members");

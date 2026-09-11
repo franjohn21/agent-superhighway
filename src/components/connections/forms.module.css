@@ -134,6 +134,18 @@
 .resend p {
   font-size: 12px;
   color: #64758b;
+  min-width: 0;
+}
+.resend code {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: #35435c;
+  background: var(--color-surface);
+  border: 1px solid #e0e7f1;
+  border-radius: 6px;
+  padding: 4px 8px;
+  overflow-wrap: anywhere;
 }
 @media (prefers-reduced-motion: reduce) {
   .invite,

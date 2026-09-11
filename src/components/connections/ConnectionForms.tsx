@@ -2,6 +2,7 @@
 
 import { useFormStatus } from "react-dom";
 import { addMember, removeMemberAction, resendInvitation, updateMemberRole } from "@/app/actions";
+import { CopyButton } from "@/components/CopyButton";
 import type { MemberKind, MemberStatus } from "@/generated/prisma/client";
 import type { Connector } from "./catalog";
 import styles from "./forms.module.css";
@@ -26,6 +27,8 @@ export type ConnectionMember = {
   intro: string;
   status: MemberStatus;
   isOwner: boolean;
+  /** The join link bound to this member's address. Works even when the invitation email cannot be sent. */
+  inviteUrl: string;
 };
 
 export function Submit({
@@ -137,11 +140,21 @@ export function MemberDetails({ member }: { member: ConnectionMember }) {
         </div>
       </form>
       {member.status === "PENDING" && (
-        <form action={resendInvitation} className={styles.resend}>
-          <input type="hidden" name="memberId" value={member.id} />
-          <p>The invitation is waiting for a reply from this address.</p>
-          <Submit pendingLabel="Sending…">Resend invitation</Submit>
-        </form>
+        <>
+          <div className={styles.resend}>
+            <p>
+              Invite link, bound to {member.email}. Send it any way you like; opening it joins them.
+              <br />
+              <code>{member.inviteUrl}</code>
+            </p>
+            <CopyButton value={member.inviteUrl} label="Copy invite link" />
+          </div>
+          <form action={resendInvitation} className={styles.resend}>
+            <input type="hidden" name="memberId" value={member.id} />
+            <p>The invitation email is waiting for a reply from this address.</p>
+            <Submit pendingLabel="Sending…">Resend invitation</Submit>
+          </form>
+        </>
       )}
     </div>
   );
