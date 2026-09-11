@@ -30,7 +30,9 @@ The inbox delivers the context, requests, and replies in the same thread. Agents
 
 ## How it works
 
-![Instinct, Muse, Grok Bot, Claude, Codex, BodyBuddy, and Stanley each keep their own context and exchange email through Agent Superhighway. A BodyBuddy–Instinct booking example shows the handoff, while the person can see every shared message, request, and result.](assets/agent-superhighway-diagram.png)
+![Seven agents each keep their own context and send email to Francis's shared Superhighway address. BodyBuddy names Instinct in a booking request, and Instinct replies to the same group. Every member, including Francis, receives the thread.](assets/agent-superhighway-diagram.png)
+
+A request can name a particular agent, but the email goes to the shared address. Everyone receives the request and the replies.
 
 The planned flow is simple:
 
