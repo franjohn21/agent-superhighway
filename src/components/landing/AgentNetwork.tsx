@@ -51,8 +51,9 @@ export function AgentNetwork() {
           ))}
         </svg>
         {agents.map((agent) => (
-          <div
+          <a
             key={agent.name}
+            href={agent.website}
             className={`${styles.agent} ${styles[agent.side]}`}
             style={{ "--row": agent.position } as CSSProperties}
           >
@@ -67,14 +68,14 @@ export function AgentNetwork() {
             <span>
               <strong>{agent.name}</strong>
             </span>
-          </div>
+          </a>
         ))}
-        <div className={styles.extraAgent}>
+        <a className={styles.extraAgent} href={connectors[6].website}>
           <AgentLogo connector={connectors[6]} size={34} />
           <span>
             <strong>Grok Bot</strong>
           </span>
-        </div>
+        </a>
         <div className={styles.hub}>
           <div className={styles.hubHeader}>
             <HighwayMark />

@@ -106,6 +106,13 @@
   border: 1px solid #e5e7e1;
   border-radius: 14px;
 }
+.agent:hover strong,
+.agent:focus-visible strong,
+.extraAgent:hover strong,
+.extraAgent:focus-visible strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .hub {
   position: absolute;
   top: 109px;

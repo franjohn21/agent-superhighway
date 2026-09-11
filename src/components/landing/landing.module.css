@@ -227,6 +227,11 @@
   font-size: 12px;
   font-weight: 550;
 }
+.mailMessage a:hover,
+.mailMessage a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .mailMessage small {
   display: block;
   font-size: 12px;
