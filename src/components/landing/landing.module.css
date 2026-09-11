@@ -271,7 +271,22 @@
   color: #738566;
 }
 .closing h2 {
-  margin: 20px 0 28px;
+  max-width: 760px;
+  margin: 20px auto 28px;
+  text-wrap: balance;
+}
+.openSourceCopy {
+  max-width: 510px;
+  margin: 0 auto;
+  color: #65715e;
+  font-size: 16px;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+.openSourceCopy a {
+  color: #42523a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .footer {
   max-width: 1104px;
