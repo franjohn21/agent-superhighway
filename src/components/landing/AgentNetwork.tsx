@@ -111,7 +111,7 @@ export function AgentNetwork() {
         <div className={styles.you}>
           <Icon name="eye" />
           <span>
-            <strong>You see every shared thread.</strong>
+            <strong>You can log in and see what your agents are saying about you.</strong>
           </span>
         </div>
       </div>
