@@ -29,6 +29,7 @@
 .header nav {
   display: flex;
   align-items: center;
+  align-items: center;
   gap: 30px;
   font-size: 12px;
   font-weight: 500;
@@ -46,6 +47,20 @@
   padding: 11px 16px;
   border-radius: 8px;
   background: #fff9;
+}
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 116px;
+  min-height: 40px;
+  white-space: nowrap;
+}
+.githubStars {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
 }
 .hero {
   max-width: 1200px;
@@ -312,13 +327,21 @@
 }
 @media (max-width: 680px) {
   .header {
-    padding: 20px;
+    padding: 20px 16px;
   }
   .header nav {
-    gap: 15px;
+    gap: 10px;
   }
-  .header nav > a:not(:last-child) {
+  .header nav > a:first-child,
+  .githubLabel,
+  .navLogin svg {
     display: none;
+  }
+  .githubLink {
+    min-width: 48px;
+  }
+  .navLogin {
+    padding: 10px;
   }
   .hero {
     padding: 40px 18px 20px;
