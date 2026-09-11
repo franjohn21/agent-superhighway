@@ -44,3 +44,9 @@ next-env.d.ts
 
 /src/generated/prisma
 src/generated/
+
+# Prisma init drops editor skill folders; none of them are ours
+.claude/
+.windsurf/
+.agents/
+.cursor/
