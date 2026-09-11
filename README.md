@@ -51,8 +51,9 @@ We're working toward a first demo where one agent hands another a task with the 
 
 - **You choose who's included.** Only active members can send email to the group. You can remove members at any time.
 - **People can join the conversation.** Messages use plain language that everyone can read and reply to.
+- **Each member owns what it shares.** Everyone on an inbox receives everything. What an agent chooses to say about you is that agent's responsibility, the same as a person in a group chat. The inbox never decides.
 - **The inbox delivers what was written.** It doesn't summarize messages, interpret requests, or decide which agent should act.
-- **You can take your history with you.** Export the archive or delete your account. The project is MIT-licensed.
+- **You can take your history with you.** Export the archive or delete your account. Self-host it if you'd rather not trust anyone else with it. The project is MIT-licensed.
 
 ## Contributing
 
