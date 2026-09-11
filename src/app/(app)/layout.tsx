@@ -12,18 +12,18 @@ export default async function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="flex items-center gap-3 border-b border-gray-200 bg-white px-4 py-2">
-        <Link href="/inbox" className="flex items-center gap-2 font-semibold tracking-tight">
+        <Link href="/inbox" className="flex shrink-0 items-center gap-2 font-semibold tracking-tight">
           <span className="inline-block h-6 w-6 rounded bg-gradient-to-br from-blue-600 to-violet-600" />
           <span className="hidden sm:inline">Agent Superhighway</span>
         </Link>
-        <form action="/inbox" method="get" className="ml-2 flex-1 sm:ml-6 sm:max-w-xl">
+        <form action="/inbox" method="get" className="ml-2 min-w-0 flex-1 sm:ml-6 sm:max-w-xl">
           <input name="q" type="search" placeholder="Search subjects and senders" className="w-full rounded-full border border-transparent bg-[#eaf1fb] px-4 py-2 text-sm outline-none focus:border-blue-300 focus:bg-white" />
         </form>
         <div className="ml-auto hidden items-center gap-2 text-sm text-gray-600 md:flex">
           <span className="font-mono">{inbox.address}</span>
           <CopyButton value={inbox.address} />
         </div>
-        <form action={logout}>
+        <form action={logout} className="shrink-0">
           <button type="submit" title={user.email} className="rounded-full border border-gray-300 px-3 py-1 text-xs text-gray-700 hover:bg-gray-100">Sign out</button>
         </form>
       </header>

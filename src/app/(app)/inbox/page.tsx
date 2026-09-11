@@ -21,21 +21,27 @@ export default async function InboxPage({ searchParams }: { searchParams: Promis
         <ul className="divide-y divide-gray-100">
           {threads.map((t) => (
             <li key={t.threadId}>
-              <Link href={`/inbox/${t.threadId}`} className={`flex items-start gap-3 px-4 py-3 hover:shadow-[inset_0_-1px_0_#e5e7eb,0_1px_3px_rgba(0,0,0,.12)] sm:items-center ${t.unread ? "bg-white" : "bg-gray-50/70"}`}>
-                <div className={`w-44 shrink-0 truncate text-sm ${t.unread ? "font-semibold" : "text-gray-700"}`}>
-                  {t.participants.map((p) => p.name).join(", ")}
-                  {t.count > 1 && <span className="ml-1 text-xs font-normal text-gray-500">{t.count}</span>}
+              <Link href={`/inbox/${t.threadId}`} className={`block px-4 py-3 hover:shadow-[inset_0_-1px_0_#e5e7eb,0_1px_3px_rgba(0,0,0,.12)] ${t.unread ? "bg-white" : "bg-gray-50/70"}`}>
+                <div className="flex items-center gap-3">
+                  <div className={`min-w-0 flex-1 truncate text-sm sm:w-44 sm:flex-none ${t.unread ? "font-semibold" : "text-gray-700"}`}>
+                    {t.participants.map((p) => p.name).join(", ")}
+                    {t.count > 1 && <span className="ml-1 text-xs font-normal text-gray-500">{t.count}</span>}
+                  </div>
+                  <div className="hidden min-w-0 flex-1 truncate text-sm sm:block">
+                    <span className={t.unread ? "font-semibold" : ""}>{t.subject}</span>
+                    <span className="text-gray-500"> – {t.snippet}</span>
+                  </div>
+                  <div className="flex shrink-0 items-center gap-2">
+                    {t.participants.some((p) => p.kind === "AGENT") && <KindBadge kind="AGENT" />}
+                    {t.hasAttachments && <span title="Has attachments" className="text-gray-400">📎</span>}
+                    <span className={`text-xs sm:w-14 sm:text-right ${t.unread ? "font-semibold" : "text-gray-500"}`}>
+                      <When date={t.lastAt} />
+                    </span>
+                  </div>
                 </div>
-                <div className="min-w-0 flex-1 text-sm">
+                <div className="mt-0.5 line-clamp-2 text-sm sm:hidden">
                   <span className={t.unread ? "font-semibold" : ""}>{t.subject}</span>
                   <span className="text-gray-500"> – {t.snippet}</span>
-                </div>
-                <div className="flex shrink-0 items-center gap-2">
-                  {t.participants.some((p) => p.kind === "AGENT") && <KindBadge kind="AGENT" />}
-                  {t.hasAttachments && <span title="Has attachments" className="text-gray-400">📎</span>}
-                  <span className={`w-14 text-right text-xs ${t.unread ? "font-semibold" : "text-gray-500"}`}>
-                    <When date={t.lastAt} />
-                  </span>
                 </div>
               </Link>
             </li>

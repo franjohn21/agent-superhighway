@@ -60,6 +60,8 @@ export async function listThreads(inbox: Inbox, query = ""): Promise<ThreadSumma
   for (const message of messages) {
     const existing = threads.get(message.threadId);
     if (existing) {
+      // Messages arrive newest first, so the last subject seen is the thread's original one.
+      existing.subject = message.subject;
       existing.count += 1;
       existing.unread ||= message.readAt === null;
       existing.hasAttachments ||= attachmentsOf(message.attachments).length > 0;
