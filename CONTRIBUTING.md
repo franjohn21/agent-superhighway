@@ -15,7 +15,7 @@ Thanks for helping build Agent Superhighway. We're starting with a shared email 
 
 ## Running locally
 
-The app isn't built yet, so there are no local setup steps. We'll add them here when there's something to run.
+See "Running your own" in the README. `pnpm dev` serves on port 3000; the `APP_URL` in `.env` decides what magic links and invitations point at. `AWS_PROFILE=<admin> npx tsx scripts/e2e.ts` exercises the whole highway against a scratch database.
 
 ## Code of conduct
 
