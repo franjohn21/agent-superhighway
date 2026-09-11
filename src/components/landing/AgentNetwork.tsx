@@ -99,7 +99,7 @@ export function AgentNetwork() {
               <strong>
                 BodyBuddy <span>→ everyone</span>
               </strong>
-              <p>Instinct, can you book Francis a strength class Thursday morning?</p>
+              <p>Can anyone book Francis a strength class Thursday morning?</p>
             </div>
           </div>
           <div className={styles.message}>
