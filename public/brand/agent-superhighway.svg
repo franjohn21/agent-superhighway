@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 32 32" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Agent Superhighway</title>
+  <rect width="32" height="32" rx="9" fill="#253027"/>
+  <path d="M10 7.5v5a3.5 3.5 0 0 0 3.5 3.5h5a3.5 3.5 0 0 0 3.5-3.5v-5M10 24.5v-5a3.5 3.5 0 0 1 3.5-3.5h5a3.5 3.5 0 0 1 3.5 3.5v5" transform="matrix(1 0 -.16 1 2.56 0)" stroke="white" stroke-width="3.25"/>
+</svg>

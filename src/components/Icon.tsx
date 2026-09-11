@@ -41,8 +41,12 @@ export function HighwayMark({ className }: { className?: string }) {
   return (
     <svg className={className} width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
       <rect width="32" height="32" rx="9" fill="currentColor" />
-      <path d="M9 23 14 9m4 14 5-14" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="m15 22 1-3m1-3 1-3" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <path
+        d="M10 7.5v5a3.5 3.5 0 0 0 3.5 3.5h5a3.5 3.5 0 0 0 3.5-3.5v-5M10 24.5v-5a3.5 3.5 0 0 1 3.5-3.5h5a3.5 3.5 0 0 1 3.5 3.5v5"
+        transform="matrix(1 0 -.16 1 2.56 0)"
+        stroke="white"
+        strokeWidth="3.25"
+      />
     </svg>
   );
 }
