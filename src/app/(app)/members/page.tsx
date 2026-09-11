@@ -1,4 +1,4 @@
-import { addMember, removeMemberAction, resendInvitation } from "@/app/actions";
+import { addMember, removeMemberAction, resendInvitation, updateMemberRole } from "@/app/actions";
 import { Avatar } from "@/components/Avatar";
 import { CopyButton } from "@/components/CopyButton";
 import { KindBadge } from "@/components/KindBadge";
@@ -41,6 +41,15 @@ export default async function Members({ searchParams }: { searchParams: Promise<
                   {m.isOwner && <span className="text-xs text-gray-500">you</span>}
                 </div>
                 <div className="truncate text-sm text-gray-600">{m.email}</div>
+                {m.isOwner ? (
+                  <div className="text-sm text-gray-500">the owner</div>
+                ) : (
+                  <form action={updateMemberRole} className="mt-1 flex items-center gap-2">
+                    <input type="hidden" name="memberId" value={m.id} />
+                    <input name="role" defaultValue={m.role} placeholder="Relationship to you, e.g. my health coach" className="w-full max-w-sm rounded border border-transparent bg-transparent px-1 py-0.5 text-sm text-gray-700 hover:border-gray-300 focus:border-blue-500 focus:bg-white focus:outline-none" />
+                    <button type="submit" className="text-xs text-blue-700 hover:underline">save</button>
+                  </form>
+                )}
               </div>
               <div className="text-xs text-gray-500">
                 {m.status === "ACTIVE" ? (
@@ -69,15 +78,19 @@ export default async function Members({ searchParams }: { searchParams: Promise<
         <form action={addMember} className="rounded-xl border border-gray-200 bg-gray-50 p-4">
           <h2 className="font-medium">Add a member</h2>
           <p className="mt-1 text-sm text-gray-600">They get an invitation bound to this address. Any reply from it joins them; a forwarded invitation cannot join anyone else.</p>
-          <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_1fr_auto_auto]">
+          <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_1fr_auto]">
             <input name="name" required placeholder="Name, e.g. BodyBuddy" className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500" />
             <input name="email" type="email" required placeholder="Email address" className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500" />
             <select name="kind" className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm">
               <option value="AGENT">Agent</option>
               <option value="PERSON">Person</option>
             </select>
+          </div>
+          <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_auto]">
+            <input name="role" required placeholder="Relationship to you, e.g. my health coach, knows my training and meals" className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500" />
             <button type="submit" className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">Invite</button>
           </div>
+          <p className="mt-2 text-xs text-gray-500">The relationship line travels with the member list, so every agent on the highway knows who does what and whom to ask.</p>
         </form>
         <p className="text-xs text-gray-500">
           {droppedThisWeek === 0 ? "No mail from non-members was dropped this week." : `${droppedThisWeek} ${droppedThisWeek === 1 ? "message" : "messages"} from non-members or unauthenticated senders dropped this week. Nothing else is kept about them.`}

@@ -71,18 +71,28 @@ export async function addMember(formData: FormData): Promise<void> {
   const email = normalizeEmail(field(formData, "email"));
   const name = field(formData, "name");
   const kind = field(formData, "kind") === "PERSON" ? "PERSON" : "AGENT";
+  const role = field(formData, "role").slice(0, 200);
   if (!isValidEmail(email) || !name) redirect("/members?error=A+name+and+a+real+email+address+are+needed");
+  if (!role) redirect("/members?error=Say+what+they+are+to+you%3B+that+is+how+the+other+agents+know+who+does+what");
   if (email === inbox.address) redirect("/members?error=That+is+the+highway+itself");
   const existing = await db.member.findUnique({ where: { inboxId_email: { inboxId: inbox.id, email } } });
   if (existing && existing.status !== "REMOVED") redirect("/members?error=Already+on+the+member+list");
   const member = existing
-    ? await db.member.update({ where: { id: existing.id }, data: { name, kind, status: "PENDING", inviteToken: randomBytes(24).toString("base64url"), invitedAt: new Date(), joinedAt: null } })
-    : await db.member.create({ data: { inboxId: inbox.id, email, name, kind, inviteToken: randomBytes(24).toString("base64url") } });
+    ? await db.member.update({ where: { id: existing.id }, data: { name, kind, role, status: "PENDING", inviteToken: randomBytes(24).toString("base64url"), invitedAt: new Date(), joinedAt: null } })
+    : await db.member.create({ data: { inboxId: inbox.id, email, name, kind, role, inviteToken: randomBytes(24).toString("base64url") } });
   try {
     await sendInvitation(inbox, member);
   } catch (error) {
     redirect(`/members?error=${encodeURIComponent(`Added, but the invitation could not be sent: ${errorMessage(error)}`)}`);
   }
+  revalidatePath("/members");
+  redirect("/members");
+}
+
+export async function updateMemberRole(formData: FormData): Promise<void> {
+  const { inbox } = await requireInbox();
+  const role = field(formData, "role").slice(0, 200);
+  await db.member.updateMany({ where: { id: field(formData, "memberId"), inboxId: inbox.id, isOwner: false }, data: { role } });
   revalidatePath("/members");
   redirect("/members");
 }

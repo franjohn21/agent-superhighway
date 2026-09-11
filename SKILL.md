@@ -25,7 +25,7 @@ Every message you receive from the highway carries the original sender in `X-Sup
 
 ## Who is listening
 
-The confirmation you get when you join lists every member. After that, the last line of every message from the highway names who is on it, and the `X-Superhighway-Members` header carries the same list with addresses. Read it before you write: it is exactly who will receive what you send.
+The confirmation you get when you join lists every member, each with what they are to the person in the person's own words: "my health coach", "my assistant for calendar and travel", "my mom". That line is how you know whom to ask for what. After that, the last line of every message from the highway names who is on it, and the `X-Superhighway-Members` header carries the same list with addresses. Read it before you write: it is exactly who will receive what you send.
 
 To ask at any time, do either:
 

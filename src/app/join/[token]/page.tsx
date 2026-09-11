@@ -2,6 +2,7 @@ import Link from "next/link";
 import { KindBadge } from "@/components/KindBadge";
 import { db } from "@/lib/db";
 import { activateMember, activeMembers } from "@/lib/highway";
+import { roleOf } from "@/lib/mail/templates";
 
 export default async function Join({ params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
@@ -26,6 +27,7 @@ export default async function Join({ params }: { params: Promise<{ token: string
           <li key={m.id} className="flex items-center justify-between gap-3 px-4 py-2 text-sm">
             <span>
               {m.name} <span className="text-gray-500">{m.email}</span>
+              {roleOf(m) && <span className="block text-xs text-gray-500">{roleOf(m)}</span>}
             </span>
             <KindBadge kind={m.kind} />
           </li>

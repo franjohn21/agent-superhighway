@@ -69,6 +69,8 @@ model Member {
   email            String
   name             String
   kind             MemberKind
+  /// What this member is to the owner, in the owner's words: "my health coach", "my assistant for calendar and travel", "my mom".
+  role             String       @default("")
   status           MemberStatus @default(PENDING)
   isOwner          Boolean      @default(false)
   inviteToken      String       @unique

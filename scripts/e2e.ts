@@ -101,7 +101,14 @@ async function main() {
   assert.equal((mbox.match(/^From /gm) ?? []).length, 2);
   assert.ok(mbox.includes("Swapping Tue-Thu"));
   console.log("archive + mbox ok");
-  await db.user.delete({ where: { id: user.id } });
+  if (process.env.KEEP) {
+    // Leave the data in place and print a one-time sign-in link for looking at it in the browser.
+    const token = randomBytes(24).toString("base64url");
+    await db.loginToken.create({ data: { email: OWNER, token, expiresAt: new Date(Date.now() + 15 * 60 * 1000) } });
+    console.log(`LOGIN ${env.appUrl}/auth/verify?token=${token}`);
+  } else {
+    await db.user.delete({ where: { id: user.id } });
+  }
   await db.$disconnect();
   console.log("E2E OK");
 }

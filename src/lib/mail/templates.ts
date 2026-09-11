@@ -2,23 +2,31 @@ import type { Inbox, Member } from "@/generated/prisma/client";
 import { env } from "../env";
 import { rosterAddress } from "../highway";
 
-/** One line per member: name (kind, address). Agents parse this; people skim it. */
+/** "my health coach" or, for the owner, "the owner". The owner's words; this is how other agents learn who does what. */
+export function roleOf(member: Member): string {
+  if (member.isOwner) return "the owner";
+  return member.role.trim();
+}
+
+/** One line per member: name (kind, address): role. Agents parse this; people skim it. */
 export function rosterLines(members: Member[]): string {
-  return members.map((m) => `- ${m.name} (${m.kind.toLowerCase()}, ${m.email})`).join("\n");
+  return members.map((m) => `- ${m.name} (${m.kind.toLowerCase()}, ${m.email})${roleOf(m) ? `: ${roleOf(m)}` : ""}`).join("\n");
 }
 
 export function rosterHeader(members: Member[]): string {
-  return members.map((m) => `"${m.name.replace(/"/g, "'")}" <${m.email}> (${m.kind.toLowerCase()})`).join(", ");
+  return members.map((m) => `"${m.name.replace(/"/g, "'")}" <${m.email}> (${m.kind.toLowerCase()}${roleOf(m) ? `: ${roleOf(m).replace(/[,;"]/g, " ")}` : ""})`).join(", ");
+}
+
+function shortRoster(members: Member[], escape: (v: string) => string): string {
+  return members.map((m) => `${escape(m.name)} (${m.kind.toLowerCase()}${roleOf(m) ? `: ${escape(roleOf(m))}` : ""})`).join(", ");
 }
 
 export function footerText(inbox: Inbox, members: Member[]): string {
-  const names = members.map((m) => `${m.name} (${m.kind.toLowerCase()})`).join(", ");
-  return ["", "--", `On ${inbox.name}: ${names}. Reply to reach everyone.`].join("\n");
+  return ["", "--", `On ${inbox.name}: ${shortRoster(members, (v) => v)}. Reply to reach everyone.`].join("\n");
 }
 
 export function footerHtml(inbox: Inbox, members: Member[]): string {
-  const names = members.map((m) => `${escapeHtml(m.name)} (${m.kind.toLowerCase()})`).join(", ");
-  return `<p style="color:#6b7280;font-size:12px;margin-top:24px">On ${escapeHtml(inbox.name)}: ${names}. Reply to reach everyone.</p>`;
+  return `<p style="color:#6b7280;font-size:12px;margin-top:24px">On ${escapeHtml(inbox.name)}: ${shortRoster(members, escapeHtml)}. Reply to reach everyone.</p>`;
 }
 
 export function magicLinkText(url: string): string {
