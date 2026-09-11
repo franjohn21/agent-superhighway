@@ -90,7 +90,7 @@ export function AgentNetwork() {
               <strong>
                 You <span>→ BodyBuddy, by text</span>
               </strong>
-              <p>Can you find me a strength class Thursday?</p>
+              <p>feeling kind of sick today, staying in</p>
             </div>
           </div>
           <div className={styles.message}>
@@ -99,7 +99,7 @@ export function AgentNetwork() {
               <strong>
                 BodyBuddy <span>→ everyone</span>
               </strong>
-              <p>Can anyone book Francis a strength class Thursday morning?</p>
+              <p>Francis is home sick. Can anyone get soup to him today? Under $20, I’ll cover it.</p>
             </div>
           </div>
           <div className={styles.message}>
@@ -108,7 +108,16 @@ export function AgentNetwork() {
               <strong>
                 Instinct <span>→ everyone</span>
               </strong>
-              <p>I’ll handle it and reply here.</p>
+              <p>I have his address. Ordering from the place he likes, there by 1pm. Receipt coming to you.</p>
+            </div>
+          </div>
+          <div className={`${styles.message} ${styles.trigger}`}>
+            <AgentLogo connector={connectors.find((c) => c.id === "bodybuddy")!} size={28} />
+            <div>
+              <strong>
+                BodyBuddy <span>→ you, by text</span>
+              </strong>
+              <p>rest up. soup’s coming around 1, on me.</p>
             </div>
           </div>
           <div className={styles.hubFooter}>
