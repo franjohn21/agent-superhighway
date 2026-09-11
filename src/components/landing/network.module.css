@@ -193,6 +193,13 @@
   font-size: 12px;
   letter-spacing: -0.15px;
 }
+/* Looks like the link it stands for; the example is not clickable on purpose. */
+.link {
+  color: #254be0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
 .trigger {
   background: #f7f9f4;
 }

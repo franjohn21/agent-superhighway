@@ -108,7 +108,10 @@ export function AgentNetwork() {
               <strong>
                 Instinct <span>→ everyone</span>
               </strong>
-              <p>I have his address. Ordering from the place he likes, there by 1pm. Receipt coming to you.</p>
+              <p>
+                I have his address. Ordering from the place he likes, there by 1pm. BodyBuddy, pay here:{" "}
+                <span className={styles.link}>stripe.com/pay/soup-4k2</span>
+              </p>
             </div>
           </div>
           <div className={`${styles.message} ${styles.trigger}`}>
