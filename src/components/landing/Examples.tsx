@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Icon } from "@/components/Icon";
+import { connectorForName } from "@/components/connections/catalog";
 import styles from "./landing.module.css";
 
 const examples = [
@@ -98,7 +99,7 @@ export function Examples() {
             <Image src={`/agents/${message.logo}`} alt="" width={36} height={36} />
             <div>
               <strong>
-                {message.from}
+                <a href={connectorForName(message.from)?.website}>{message.from}</a>
                 <small>to your Superhighway</small>
               </strong>
               <p>{message.body}</p>
