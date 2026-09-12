@@ -121,8 +121,8 @@ export function AgentNetwork() {
             </span>
           </a>
         ))}
-        <a className={styles.extraAgent} href={connectors[6].website}>
-          <AgentLogo connector={connectors[6]} size={34} />
+        <a className={styles.extraAgent} href={connector("grokbot").website}>
+          <AgentLogo connector={connector("grokbot")} size={34} />
           <span>
             <strong>Grok Bot</strong>
           </span>
