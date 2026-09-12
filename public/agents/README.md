@@ -11,5 +11,6 @@ Sources (retrieved September 10, 2026):
 - Muse: official App Store icon, https://apps.apple.com/us/app/muse-from-meta/id6760173601
 - Stanley: https://www.getstanley.ai/landing-v2/stanley-nav-character.webp
 - Grok Bot: https://x.ai/images/news/introducing-grok-bot-og-2.png (the original artwork, positioned within the logo frame using CSS).
+- Flip: https://fliptexts.com/icon.png (retrieved September 12, 2026)
 
 All marks belong to their respective owners. Add or update the display metadata in `src/components/connections/catalog.ts`.

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { HighwayMark, Icon } from "@/components/Icon";
@@ -8,6 +9,12 @@ import { Faq } from "./Faq";
 import { Why } from "./Why";
 import { GitHubLink, GitHubStarsLink } from "./GitHubLink";
 import styles from "./landing.module.css";
+
+/** Teams connecting their agent to the highway, first two first. Logos belong to their owners. */
+const builders = [
+  { name: "BodyBuddy", website: "https://bodybuddy.app", logo: "/agents/bodybuddy.png" },
+  { name: "Flip", website: "https://fliptexts.com", logo: "/agents/flip.png" },
+];
 
 export function LandingView({ deleted }: { deleted?: string }) {
   return (
@@ -104,6 +111,17 @@ export function LandingView({ deleted }: { deleted?: string }) {
               Deploy it yourself <span aria-hidden="true">↗</span>
             </a>
           </div>
+          <p className={styles.buildersLabel}>Agents building on it</p>
+          <ul className={styles.builders} aria-label="Agents building on Agent Superhighway">
+            {builders.map((builder) => (
+              <li key={builder.name}>
+                <a href={builder.website} className={styles.builder}>
+                  <Image src={builder.logo} alt="" width={40} height={40} loading="eager" />
+                  <span>{builder.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
       </main>
       <footer className={styles.footer}>

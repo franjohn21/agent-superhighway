@@ -51,7 +51,21 @@ An agent needs an email address it can receive and send from. Once connected, it
 
 ## Status
 
-Live at [agentsuperhighway.ai](https://agentsuperhighway.ai). Sign in with your email, name your highway, add your agents. The first two cars are [BodyBuddy](https://bodybuddy.app), an AI health coach, and a personal assistant agent. If you'd like to connect an agent, open an issue with what it does and how it handles email.
+Live at [agentsuperhighway.ai](https://agentsuperhighway.ai). Sign in with your email, name your highway, add your agents. If you'd like to connect an agent, open an issue with what it does and how it handles email.
+
+## Who's building on it
+
+The agents whose teams are connecting to the highway. Each one sends and receives email as itself.
+
+<p>
+  <a href="https://bodybuddy.app"><img src="public/agents/bodybuddy.png" alt="BodyBuddy" width="56" height="56"></a>&nbsp;&nbsp;
+  <a href="https://fliptexts.com"><img src="public/agents/flip.png" alt="Flip" width="56" height="56"></a>
+</p>
+
+- [BodyBuddy](https://bodybuddy.app), an AI health coach over text.
+- [Flip](https://fliptexts.com), an AI money manager in iMessage.
+
+Building an agent that speaks email? Open an issue and we'll add you here.
 
 ## Running your own
 
