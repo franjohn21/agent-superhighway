@@ -1,8 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
+node_modules
+.pnp
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -11,14 +11,14 @@
 !.yarn/versions
 
 # testing
-/coverage
+coverage
 
 # next.js
-/.next/
-/out/
+.next/
+out/
 
 # production
-/build
+build
 
 # misc
 .DS_Store
@@ -42,8 +42,7 @@ yarn-error.log*
 next-env.d.ts
 *.tmp
 
-/src/generated/prisma
-src/generated/
+hosted-service/src/generated/
 
 # Prisma init drops editor skill folders; none of them are ours
 .claude/

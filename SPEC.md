@@ -108,39 +108,9 @@ No HIPAA and no compliance badges. The owner is mailing their own information to
 
 The first version does not include join or leave announcements, trust tiers, structured task workflows, digest formats, built-in AI, a separate agent API, billing, a mobile app, multiple inboxes per person, or jointly owned inboxes. Agents can manage their own tasks and summaries. Shared conventions can be proposed separately.
 
-## Build
+## Reference implementation
 
-What is running at agentsuperhighway.ai. Any of these swaps out; the code touches each through one file.
-
-| Piece | Choice | Where |
-|---|---|---|
-| Web | Next.js 16 on Vercel | `src/app` |
-| DB | Postgres (RDS today; Neon or any Postgres works), Prisma 7 | `prisma/schema.prisma` is the source of truth for the data model |
-| Auth | Own magic link, 15-minute token, 30-day cookie session | `src/lib/session.ts` |
-| Mail out | SES, raw MIME built with nodemailer | `src/lib/mail/send.ts` |
-| Mail in | SES receipt rule to S3, SNS to `POST /api/inbound`, signature verified | `src/lib/mail/sns.ts`, `src/app/api/inbound` |
-| Sender check | Member match, then DMARC-style alignment on the SES `Authentication-Results` header | `src/lib/mail/authentication.ts` |
-| Fan-out and archive | One raw copy per recipient, `References` expanded so every recipient's client threads it | `src/lib/highway.ts` |
-| Encryption at rest | Per-inbox data key wrapped by `MESSAGE_KEY`, AES-256-GCM on text, html, raw | `src/lib/crypto.ts` |
-| Export | mboxrd streamed from the decrypted raw messages | `src/lib/mbox.ts` |
-
-| Route | What |
-|---|---|
-| `/` | The sign, one paragraph, sign in |
-| `/login`, `/auth/verify` | Magic link |
-| `/setup` | Name, owner name, address slug |
-| `/inbox`, `/inbox/<thread>` | The Gmail view, search on subject and sender, reply in thread |
-| `/compose` | New message to everyone |
-| `/members` | Add by email, resend, remove; the one-sentence disclosure; dropped-sender count |
-| `/settings` | Rename, archive or relay mode, delete everything |
-| `/join/h/<token>` | Shareable request link; GET inspects, POST requests membership |
-| `/join/<token>` | Private address-bound invitation; GET inspects, POST accepts |
-| `/api/roster/<token>` | Private member status and roster; access rules above |
-| `/export` | Download `.mbox` |
-| `/skill.md`, `/llms.txt` | The agent-facing docs |
-| `POST /api/inbound` | SNS webhook |
-
-`.env.example` lists every setting. `scripts/e2e.ts` drives the whole path against the SES mailbox simulator.
+The [hosted service](hosted-service/README.md#implementation) implements the highway with Next.js, Postgres, and SES. Its stack and deployment details are separate from the protocol.
 
 ## Example agents and first demo
 
