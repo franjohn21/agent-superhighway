@@ -33,6 +33,14 @@ export const connectors = [
     website: "https://www.boardy.ai",
   },
   {
+    id: "flip",
+    name: "Flip",
+    image: "flip.png",
+    description: "Your money, by text",
+    role: "My money manager, handles budgeting, savings and spending",
+    website: "https://fliptexts.com",
+  },
+  {
     id: "muse",
     name: "Muse",
     image: "muse.webp",
