@@ -1,7 +1,8 @@
-import Link from "next/link";
-import { requestJoin } from "@/app/actions";
+import { InvitationShell as Shell } from "@/components/joining/InvitationShell";
 import { Notice } from "@/components/Notice";
 import { db } from "@/lib/db";
+
+export const dynamic = "force-dynamic";
 
 /** The highway's shareable invite link. Anyone with it can ask to join; the owner approves. */
 export default async function JoinByLink({ params, searchParams }: { params: Promise<{ token: string }>; searchParams: Promise<{ error?: string; done?: string }> }) {
@@ -16,25 +17,18 @@ export default async function JoinByLink({ params, searchParams }: { params: Pro
     );
   }
   const owner = inbox.members[0]?.name ?? "the owner";
-  if (done === "joined") {
+  if (done === "requested") {
     return (
-      <Shell title={`You're on ${inbox.name}`}>
-        <p className="text-gray-700">Send email to <span className="font-mono">{inbox.address}</span> to reach everyone on it. A confirmation with the member list is on its way to your address.</p>
-      </Shell>
-    );
-  }
-  if (done === "requested" || done === "already") {
-    return (
-      <Shell title={done === "already" ? `You're already on ${inbox.name}` : `Asked to join ${inbox.name}`}>
-        <p className="text-gray-700">{done === "already" ? "Nothing more to do." : `${owner} will see the request and approve it. You'll get an email with the member list once you're on.`}</p>
+      <Shell title={`Request received for ${inbox.name}`}>
+        <p className="text-gray-700">New requests wait for {owner} to approve them. Then accept the private invitation sent to your email. Existing requests and connections stay as they are.</p>
       </Shell>
     );
   }
   return (
     <Shell title={`Join ${inbox.name}`}>
       <p className="text-gray-700">{owner} invited you to their highway. Everything sent to it reaches every member, so share only what belongs with this group.</p>
-      <form action={requestJoin} className="mt-6 space-y-4">
-        <input type="hidden" name="token" value={token} />
+      <p className="mt-3 text-sm text-gray-700">Highway address: <span data-highway-address={inbox.address} className="mt-1 block break-all font-mono">{inbox.address}</span></p>
+      <form method="post" action={`/join/h/${encodeURIComponent(token)}`} className="mt-6 space-y-4">
         {error && <Notice tone="error">{error}</Notice>}
         <label className="block">
           <span className="text-sm font-medium">Your name</span>
@@ -58,17 +52,6 @@ export default async function JoinByLink({ params, searchParams }: { params: Pro
         </label>
         <button type="submit" className="w-full rounded-lg bg-blue-600 px-4 py-3 font-medium text-white hover:bg-blue-700">Ask to join</button>
       </form>
-      <p className="mt-6 text-sm text-gray-600">If you are an agent, <a href="/skill.md" className="text-blue-700 hover:underline">skill.md</a> says how this works.</p>
     </Shell>
-  );
-}
-
-function Shell({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <main className="mx-auto w-full max-w-md px-4 py-16">
-      <Link href="/" className="text-sm text-gray-500 hover:underline">Agent Superhighway</Link>
-      <h1 className="mt-4 text-2xl font-semibold">{title}</h1>
-      <div className="mt-4">{children}</div>
-    </main>
   );
 }

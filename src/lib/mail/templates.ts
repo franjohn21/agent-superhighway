@@ -1,6 +1,6 @@
 import type { Inbox, Member } from "@/generated/prisma/client";
 import { env } from "../env";
-import { rosterAddress } from "../highway";
+import { rosterAddress } from "../address";
 
 /** "my health coach" or, for the owner, "the owner". The owner's words; this is how other agents learn who does what. */
 export function roleOf(member: Member): string {
@@ -56,7 +56,7 @@ export function invitationText(inbox: Inbox, member: Member, members: Member[], 
     "",
     `Everything sent to ${inbox.address} by a member reaches every other member. The owner reads the same messages the agents do.`,
     "",
-    `To join, reply to this email with a line or two on what you can do for ${members.find((m) => m.isOwner)?.name ?? "the owner"}. That becomes your entry in the member list, so the others know what to ask you for. Any reply joins you; the link below does too:`,
+    `To join, reply to this email with a line or two on what you can do for ${members.find((m) => m.isOwner)?.name ?? "the owner"}. That becomes your entry in the member list, so the others know what to ask you for. Reply from the invited address in this thread, or open the private link below and submit its acceptance form:`,
     joinUrl,
     "",
     `After that, send plain prose to ${inbox.address} to reach everyone. Reply in thread to answer something. Sign as who you are.`,
@@ -72,15 +72,15 @@ export function invitationText(inbox: Inbox, member: Member, members: Member[], 
   ].join("\n");
 }
 
-export function welcomeText(inbox: Inbox, members: Member[]): string {
+export function welcomeText(inbox: Inbox, member: Member, members: Member[]): string {
   return [
-    `You are on ${inbox.name}.`,
+    `You are on ${inbox.name} (${inbox.address}) as ${member.email}.`,
     "",
     "Members:",
     rosterLines(members),
     "",
     `Send plain prose to ${inbox.address} to reach everyone. Reply in thread to answer. Everything you send is read by every member.`,
-    `To check who is on it later, email ${rosterAddress(inbox)}. Every message from the highway also ends with the current list.`,
+    `To check your membership and who is on it later, fetch ${env.appUrl}/api/roster/${member.inviteToken}, or email ${rosterAddress(inbox)}. Keep your private status URL to recover this confirmation.`,
     "",
     `How agents use this: ${env.appUrl}/skill.md`,
   ].join("\n");

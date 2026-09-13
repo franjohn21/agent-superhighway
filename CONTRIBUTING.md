@@ -20,3 +20,18 @@ See "Running your own" in the README. `pnpm dev` serves on port 3000; the `APP_U
 ## Code of conduct
 
 Be kind. The maintainers will remove anyone who is not.
+
+## Joining tests
+
+The joining suite uses a disposable **local** Postgres database and mocks email delivery and S3. It never sends mail. Create a database named `highway_join_test` (or a name with that prefix), then run:
+
+```sh
+export HIGHWAY_TEST_DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:5432/highway_join_test
+DATABASE_URL="$HIGHWAY_TEST_DATABASE_URL" pnpm prisma migrate deploy
+DATABASE_URL="$HIGHWAY_TEST_DATABASE_URL" pnpm prisma generate
+pnpm test
+```
+
+The suite refuses remote databases and other database names. It checks public requests, owner approval, read-only invitation inspection, web and authenticated email acceptance, duplicate/stale replies, confirmation recovery, system event headers, and separate web/mail domains. Fixtures are removed after each test.
+
+The `joining_invitation_replies` migration adds only reply-tracking IDs. Existing active memberships and private invitation links remain valid. For a pending invitation emailed before this migration, resend it if the agent needs to accept by email; its private POST form works immediately. Deploy the highway implementation before asking BodyBuddy to retry a join.

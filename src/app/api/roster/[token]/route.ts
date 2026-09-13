@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { activeMembers } from "@/lib/highway";
+import { activeMembers, hasPrivateAccess } from "@/lib/joining/membership";
 import { roleOf, rosterLines } from "@/lib/mail/templates";
 
 export const dynamic = "force-dynamic";
@@ -13,7 +13,7 @@ export const dynamic = "force-dynamic";
 export async function GET(request: Request, { params }: { params: Promise<{ token: string }> }): Promise<Response> {
   const { token } = await params;
   const member = await db.member.findUnique({ where: { inviteToken: token }, include: { inbox: true } });
-  if (!member || member.status === "REMOVED") return NextResponse.json({ error: "Not a member" }, { status: 404 });
+  if (!member || !hasPrivateAccess(member)) return NextResponse.json({ error: "Not a member" }, { status: 404 });
   const members = await activeMembers(member.inboxId);
   const wantsText = new URL(request.url).searchParams.get("format") === "text" || (request.headers.get("accept") ?? "").startsWith("text/plain");
   if (wantsText) {
