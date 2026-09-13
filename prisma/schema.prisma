@@ -78,6 +78,8 @@ model Member {
   status           MemberStatus @default(PENDING)
   isOwner          Boolean      @default(false)
   inviteToken      String       @unique
+  /// SES message IDs for the current approved invitation. Old replies cannot accept a new invitation.
+  invitationMessageIds String[] @default([])
   invitedAt        DateTime     @default(now())
   joinedAt         DateTime?
   cappedNotifiedAt DateTime?

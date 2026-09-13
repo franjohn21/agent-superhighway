@@ -1,4 +1,5 @@
 import { randomUUID } from "crypto";
+import { activeMembers, activateMember, highwayFrom, hasPrivateAccess, systemHeaders } from "./joining/membership";
 import { DeleteObjectCommand, GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { simpleParser, type ParsedMail } from "mailparser";
 import type Mail from "nodemailer/lib/mailer";
@@ -14,6 +15,9 @@ import { buildRaw, sendPlain, sendRaw } from "./mail/send";
 import type { SesReceiptNotification } from "./mail/ses-notification";
 import * as templates from "./mail/templates";
 
+export { rosterAddress } from "./address";
+export { activeMembers, activateMember, sendInvitation, removeMember } from "./joining/membership";
+
 const HOURLY_CAP = 30;
 const HOUR = 60 * 60 * 1000;
 const SUBJECT_THREAD_WINDOW = 14 * 24 * HOUR;
@@ -26,6 +30,8 @@ export type ReceiveOutcome =
   | "spam"
   | "auth_failed"
   | "removed"
+  | "not_approved"
+  | "not_invitation"
   | "activated"
   | "capped"
   | "roster"
@@ -40,18 +46,6 @@ export type AttachmentMeta = {
 
 export function attachmentsOf(json: unknown): AttachmentMeta[] {
   return Array.isArray(json) ? (json as AttachmentMeta[]) : [];
-}
-
-/** Active members, owner first, then in join order. */
-export async function activeMembers(inboxId: string): Promise<Member[]> {
-  return db.member.findMany({
-    where: { inboxId, status: "ACTIVE" },
-    orderBy: [{ isOwner: "desc" }, { joinedAt: "asc" }],
-  });
-}
-
-function highwayFrom(inbox: Inbox): string {
-  return `"${inbox.name.replace(/"/g, "'")}" <${inbox.address}>`;
 }
 
 // Inbound -----------------------------------------------------------------
@@ -108,13 +102,16 @@ export async function receiveInbound(notification: SesReceiptNotification): Prom
       return drop(inbox, fromEmail, "auth_failed");
     }
     if (member.status === "REMOVED") return drop(inbox, fromEmail, "removed");
+    if (!hasPrivateAccess(member)) return drop(inbox, fromEmail, "not_approved");
     if (target.command === "roster") {
       await replyWithRoster(inbox, member);
       return "roster";
     }
-    if (member.status === "PENDING") {
-      await activateMember(member.id, extractIntro(plainText(parsed)));
-      return "activated";
+    const invitationReply = referencedKeys(parsed.inReplyTo, parsed.references).some((key) => member.invitationMessageIds.includes(key));
+    if (member.status === "PENDING" || invitationReply) {
+      if (!invitationReply) return drop(inbox, fromEmail, "not_invitation");
+      return await activateMember(member.id, member.inviteToken, extractIntro(plainText(parsed)))
+        ? "activated" : "removed";
     }
     if (await overHourlyCap(inbox, member)) return "capped";
 
@@ -139,7 +136,7 @@ async function overHourlyCap(inbox: Inbox, member: Member): Promise<boolean> {
   if (member.hourCount >= HOURLY_CAP) {
     if (!member.cappedNotifiedAt || now.getTime() - member.cappedNotifiedAt.getTime() > HOUR) {
       await db.member.update({ where: { id: member.id }, data: { cappedNotifiedAt: now } });
-      await sendPlain({ from: highwayFrom(inbox), to: member.email, subject: `Paused on ${inbox.name}`, text: templates.cappedText(inbox) }).catch(() => undefined);
+      await sendPlain({ from: highwayFrom(inbox), to: member.email, subject: `Paused on ${inbox.name}`, text: templates.cappedText(inbox), headers: systemHeaders("paused") }).catch(() => undefined);
     }
     return true;
   }
@@ -168,14 +165,8 @@ async function replyWithRoster(inbox: Inbox, member: Member): Promise<void> {
     replyTo: inbox.address,
     subject: `Who is on ${inbox.name}`,
     text: templates.rosterReplyText(inbox, members),
-    headers: { "X-Superhighway-Members": templates.rosterHeader(members), "X-Superhighway-Kind": "highway" },
+    headers: systemHeaders("roster", members),
   });
-}
-
-/** The +roster address for an inbox. */
-export function rosterAddress(inbox: Inbox): string {
-  const at = inbox.address.indexOf("@");
-  return `${inbox.address.slice(0, at)}+roster${inbox.address.slice(at)}`;
 }
 
 // Delivery ------------------------------------------------------------------
@@ -341,44 +332,4 @@ export async function postFromOwner(inbox: Inbox, owner: Member, input: { subjec
   });
   const parsed = await simpleParser(raw);
   return deliver(inbox, owner, parsed, raw);
-}
-
-// Membership ----------------------------------------------------------------
-
-export async function sendInvitation(inbox: Inbox, member: Member): Promise<void> {
-  const members = await activeMembers(inbox.id);
-  await sendPlain({
-    from: highwayFrom(inbox),
-    to: member.email,
-    replyTo: inbox.address,
-    subject: `You're invited to ${inbox.name}`,
-    text: templates.invitationText(inbox, member, members, `${env.appUrl}/join/${member.inviteToken}`),
-    headers: { "X-Superhighway-Members": templates.rosterHeader(members), "X-Superhighway-Kind": "highway" },
-  });
-}
-
-/**
- * Pending to active. What the member wrote in its join reply becomes its
- * introduction in the roster. Then tell the joiner who is here; nobody else is
- * emailed, the roster rides on every message.
- */
-export async function activateMember(memberId: string, intro = ""): Promise<void> {
-  const member = await db.member.update({
-    where: { id: memberId },
-    data: { status: "ACTIVE", joinedAt: new Date(), ...(intro ? { intro } : {}) },
-    include: { inbox: true },
-  });
-  const members = await activeMembers(member.inboxId);
-  await sendPlain({
-    from: highwayFrom(member.inbox),
-    to: member.email,
-    replyTo: member.inbox.address,
-    subject: `You're on ${member.inbox.name}`,
-    text: templates.welcomeText(member.inbox, members),
-    headers: { "X-Superhighway-Members": templates.rosterHeader(members), "X-Superhighway-Kind": "highway" },
-  }).catch((error) => console.warn("welcome failed", error));
-}
-
-export async function removeMember(memberId: string): Promise<void> {
-  await db.member.update({ where: { id: memberId }, data: { status: "REMOVED" } });
 }

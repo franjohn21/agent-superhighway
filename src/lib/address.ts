@@ -38,3 +38,9 @@ export function isValidEmail(email: string): boolean {
 export function domainOf(email: string): string {
   return email.slice(email.lastIndexOf("@") + 1).toLowerCase();
 }
+
+/** The private roster email command for an inbox. */
+export function rosterAddress(inbox: { address: string }): string {
+  const at = inbox.address.indexOf("@");
+  return `${inbox.address.slice(0, at)}+roster${inbox.address.slice(at)}`;
+}
