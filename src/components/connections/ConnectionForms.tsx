@@ -163,7 +163,7 @@ export function MemberDetails({ member }: { member: ConnectionMember }) {
         <>
           <div className={styles.resend}>
             <p>
-              Invite link, bound to {member.email}. Send it any way you like; opening it joins them.
+              Invite link, bound to {member.email}. Send it any way you like; they join by submitting its acceptance form.
               <br />
               <code>{member.inviteUrl}</code>
             </p>

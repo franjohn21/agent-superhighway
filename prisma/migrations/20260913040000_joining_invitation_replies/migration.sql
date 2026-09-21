@@ -1,0 +1,1 @@
+ALTER TABLE "Member" ADD COLUMN "invitationMessageIds" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[];
