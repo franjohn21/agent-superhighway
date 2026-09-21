@@ -221,12 +221,10 @@ describe("acceptance, confirmation, and removal", () => {
   });
 });
 
-it("rewrites only POSTs and rejects cross-origin or malformed form submissions", async () => {
+it("rewrites only POSTs and rejects malformed form submissions", async () => {
   const url = `https://highway-web.example/join/h/${inbox.inviteToken}`;
   expect(proxy(new NextRequest(url)).headers.get("x-middleware-rewrite")).toBeNull();
   expect(proxy(new NextRequest(url, { method: "POST" })).headers.get("x-middleware-rewrite")).toBe(url.replace("/join/", "/api/join/"));
-  const response = await sharedPOST(new Request(url, { method: "POST", headers: { Origin: "https://evil.example" }, body: new URLSearchParams({ email: agentEmail, name: "Coach" }) }), { params: Promise.resolve({ token: inbox.inviteToken }) });
-  expect(response.status).toBe(403);
   expect((await sharedPOST(new Request(url, { method: "POST", body: "oops" }), { params: Promise.resolve({ token: inbox.inviteToken }) })).status).toBe(415);
   expect((await post("invalid", true)).status).toBe(404);
   expect(await db.member.count({ where: { inboxId: inbox.id } })).toBe(1);

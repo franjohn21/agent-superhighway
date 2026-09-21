@@ -8,11 +8,9 @@ export async function submitInvitation(
 ): Promise<Response> {
   const path = `/join/${shared ? "h/" : ""}${encodeURIComponent(token)}`;
   const destination = new URL(path, env.appUrl);
-  const origin = request.headers.get("origin");
-  if (origin && origin !== destination.origin)
-    return new Response("Cross-origin form submission is not allowed.", {
-      status: 403,
-    });
+  // No origin check: a shared request only creates something the owner still approves,
+  // and a private acceptance is already gated by its secret token. Agent browsers often
+  // submit with an Origin the site cannot predict.
   if (!/^[a-zA-Z0-9_-]{16,128}$/.test(token))
     return new Response("Invalid invitation.", { status: 404 });
   const contentType = request.headers.get("content-type")?.split(";")[0];
